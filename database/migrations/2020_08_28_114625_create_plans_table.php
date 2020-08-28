@@ -17,6 +17,7 @@ class CreatePlansTable extends Migration
             $table->id();
             $table->tinyInteger('days_n');
             $table->float('price');
+            $table->timestamps();
         });
     }
 

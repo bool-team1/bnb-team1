@@ -10,8 +10,8 @@ class Ad extends Model
     {
         return $this->belongsTo('App\Apartment');
     }
-    public function plans()
+    public function plan()
     {
-        return $this->belongsToMany('App\Plan');
+        return $this->belongsTo('App\Plan');
     }
 }

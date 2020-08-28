@@ -23,6 +23,8 @@ class CreateApartmentFacilityTable extends Migration
             $table->foreign('facility_id')->references('id')->on('facilities');
 
             $table->primary(['apartment_id', 'facility_id']);
+
+            $table->timestamps();
         });
     }
 
