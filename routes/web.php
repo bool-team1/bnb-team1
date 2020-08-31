@@ -23,5 +23,5 @@ Route::get('/', 'HomeController@index')->name('home');
 Route::prefix('admin')->namespace('Admin')->name('admin.')->middleware('auth')->group(function() {
 //queste rotte iniziano con admin , sono le pagine della dashboard, navigabili solo con l'autenticazione
     Route::get('/', 'HomeController@index')->name('home');
-    
+    Route::resource('/apartment', 'ApartmentController');
 });
