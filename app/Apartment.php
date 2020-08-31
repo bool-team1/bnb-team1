@@ -35,6 +35,6 @@ class Apartment extends Model
     {
         return $this->hasMany('App\Message');
     }
-    
-    protected $fillable = [];
+
+    protected $fillable = ['title','address', 'rooms_n', 'bathrooms_n', 'square_mt', 'slug'];
 }

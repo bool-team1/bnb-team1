@@ -39,10 +39,16 @@ class ApartmentController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-
+            'title' => 'required|max:30',
+            'address' => 'required|max:100|unique:apartments',
+            'rooms_n' => 'required|',
+            'bathrooms_n' => 'required|',
+            'square_mt' => 'required|'
         ]);
 
         $data = $request->all();
+        $slug = Str::of($data['title'])->slug('-')->__toString();
+        $data['slug'] = $slug;
         $new_apartment = new Apartment();
         $new_apartment->fill($data);
         $new_apartment->save();
@@ -93,16 +99,19 @@ class ApartmentController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $apartment = Apartment::find($id);
         $request->validate([
-
+            'title' => 'required|max:30',
+            'address' => 'required|max:100|unique:apartments,' .$id,
+            'rooms_n' => 'required|',
+            'bathrooms_n' => 'required|',
+            'square_mt' => 'required|'
         ]);
-
         $data = $request->all();
-        $apartment->update($data);
+        $slug = Str::of($data['title'])->slug('-');
         $apartment = Apartment::find($id);
+        $apartment->update($data);
         $apartment->save();
-        
+
         return redirect()->route('admin.apartments.index');
     }
 
