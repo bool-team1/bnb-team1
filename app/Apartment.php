@@ -35,4 +35,6 @@ class Apartment extends Model
     {
         return $this->hasMany('App\Message');
     }
+    
+    protected $fillable = [];
 }

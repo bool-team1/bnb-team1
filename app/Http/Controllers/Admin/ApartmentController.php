@@ -15,7 +15,7 @@ class ApartmentController extends Controller
      */
     public function index()
     {
-        //RECUPERO tutti gli appartamenti e li passo alla view
+        //recupero tutti gli appartamenti e li passo alla view
         $apartments = Apartment::all();
         return view('admin.apartments.index', compact('apartments'));
     }
@@ -27,7 +27,7 @@ class ApartmentController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.apartments.create');
     }
 
     /**
@@ -38,7 +38,16 @@ class ApartmentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+
+        ]);
+
+        $data = $request->all();
+        $new_apartment = new Apartment();
+        $new_apartment->fill($data);
+        $new_apartment->save();
+        return redirect()->route('admin.apartments.index');
+
     }
 
     /**
@@ -49,7 +58,13 @@ class ApartmentController extends Controller
      */
     public function show($id)
     {
-        //
+        $apartment = Apartment::find($id);
+        if($apartment) {
+            return view('admin.apartments.show', compact('apartment'));
+        } else {
+            return abort('404');
+        }
+
     }
 
     /**
