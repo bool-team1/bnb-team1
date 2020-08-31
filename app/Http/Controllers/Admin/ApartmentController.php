@@ -75,7 +75,13 @@ class ApartmentController extends Controller
      */
     public function edit($id)
     {
-        //
+        $apartment = Apartment::find($id);
+        if($apartment) {
+            return view('admin.apartments.edit', compact('apartment'));
+        } else {
+            return abort('404');
+        }
+
     }
 
     /**
@@ -87,7 +93,17 @@ class ApartmentController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $apartment = Apartment::find($id);
+        $request->validate([
+
+        ]);
+
+        $data = $request->all();
+        $apartment->update($data);
+        $apartment = Apartment::find($id);
+        $apartment->save();
+        
+        return redirect()->route('admin.apartments.index');
     }
 
     /**
@@ -98,6 +114,12 @@ class ApartmentController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $apartment = Apartment::find($id);
+        if($apartment) {
+            $apartment->delete();
+            return redirect()->route('admin.apartments.index');
+        } else {
+            return abort('404');
+        }
     }
 }
