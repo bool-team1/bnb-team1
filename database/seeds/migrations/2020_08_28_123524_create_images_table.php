@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateApartmentFacilityTable extends Migration
+class CreateImagesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,14 @@ class CreateApartmentFacilityTable extends Migration
      */
     public function up()
     {
-        Schema::create('apartment_facility', function (Blueprint $table) {
+        Schema::create('images', function (Blueprint $table) {
+            $table->id();
+
             $table->unsignedBigInteger('apartment_id');
+            //Set apartment_id as foreign key
             $table->foreign('apartment_id')->references('id')->on('apartments');
 
-            $table->unsignedBigInteger('facility_id');
-            $table->foreign('facility_id')->references('id')->on('facilities');
-
-            $table->primary(['apartment_id', 'facility_id']);
-
+            $table->string('image_url');
             $table->timestamps();
         });
     }
@@ -33,6 +32,6 @@ class CreateApartmentFacilityTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('apartment_facility');
+        Schema::dropIfExists('images');
     }
 }

@@ -21,8 +21,8 @@ class ApartmentsTableSeeder extends Seeder
              $newApartment->rooms_n = $faker->numberBetween(1, 7);
              $newApartment->bathrooms_n = $faker->numberBetween(1, 3);
              $newApartment->square_mt = $faker->numberBetween(100, 900);
-             $newApartment->longitude = $faker->randomFloat(6, 0, 999.99);
-             $newApartment->latitude = $faker->randomFloat(6, 0, 99.99);
+             $newApartment->longitude = $faker->longitude(-180, 180);
+             $newApartment->latitude = $faker->latitude(-90, 90);
              $newApartment->slug = Helper::slugify($newApartment->title);
              $newApartment->isPublic = $faker->numberBetween(0, 1);
              $newApartment->main_pic = $faker->imageUrl(640, 480);

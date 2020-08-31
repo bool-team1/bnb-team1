@@ -1,3 +1,43 @@
+
+//Seeder da inserire a mano per la tabella ponte
+INSERT INTO ad_plan (ad_id, plan_id)
+VALUE (1, 1), (2, 3), (3, 2), (4, 1), (5, 2)
+
+//Seeder da inserire a mano per la tabella ponte
+INSERT INTO apartment_facility (apartment_id, facility_id)
+VALUE (1, 1), (1, 3), (1, 2), (2, 4), (2, 5), (3, 1), (4, 3), (8, 1), (8, 2), (7, 5), (7, 1), (4, 5), (4, 2)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400"></p>
 
 <p align="center">

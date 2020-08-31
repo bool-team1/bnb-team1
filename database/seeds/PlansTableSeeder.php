@@ -14,22 +14,22 @@ class PlansTableSeeder extends Seeder
     {
         $plans = [
             [
-                'days_n' => 1,
+                'hours_n' => 24,
                 'price' => 2.99
             ],
             [
-                'days_n' => 3,
+                'hours_n' => 72,
                 'price' => 5.99
             ],
             [
-                'days_n' => 6,
+                'hours_n' => 144,
                 'price' => 9.99
             ]
         ];
 
         foreach ($plans as $plan) {
             $newPlan = new Plan();
-            $newPlan->days_n = $plan['days_n'];
+            $newPlan->hours_n = $plan['hours_n'];
             $newPlan->price = $plan['price'];
 
             $newPlan->save();
