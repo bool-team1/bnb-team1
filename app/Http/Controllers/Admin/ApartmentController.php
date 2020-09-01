@@ -41,9 +41,9 @@ class ApartmentController extends Controller
         $request->validate([
             'title' => 'required|max:30',
             'address' => 'required|max:100|unique:apartments',
-            'rooms_n' => 'required|',
-            'bathrooms_n' => 'required|',
-            'square_mt' => 'required|'
+            'rooms_n' => 'required',
+            'bathrooms_n' => 'required',
+            'square_mt' => 'required'
         ]);
 
         $data = $request->all();
