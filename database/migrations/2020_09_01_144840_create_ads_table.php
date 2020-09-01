@@ -16,15 +16,16 @@ class CreateAdsTable extends Migration
         Schema::create('ads', function (Blueprint $table) {
             $table->id();
 
-            $table->unsignedBigInteger('apartment_id');
-            //Set apartment_id as foreign key
-            $table->foreign('apartment_id')->references('id')->on('apartments');
-            $table->unsignedBigInteger('plan_id');
-            //Set plan_id as foreign key
-            $table->foreign('plan_id')->references('id')->on('plans');
-            $table->date('start');
-            $table->date('end');
-            $table->timestamps();
+           $table->unsignedBigInteger('apartment_id');
+           //Set apartment_id as foreign key
+           $table->foreign('apartment_id')->references('id')->on('apartments');
+           $table->unsignedBigInteger('plan_id');
+           //Set plan_id as foreign key
+           $table->foreign('plan_id')->references('id')->on('plans');
+
+           $table->date('start');
+           $table->date('end');
+           $table->timestamps();
         });
     }
 
