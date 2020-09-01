@@ -1,0 +1,78 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.main-ctn {
+    margin: 0;
+    height: 100vh;
+    max-width: 100%;
+    padding-top: 85px;
+        .sidebar {
+            background-color: $mainDark;
+            height: calc(100vh - 85px);
+            position: fixed;
+            z-index: 9;
+                ul {
+                    list-style-type: none;
+                    padding-top: 30px;
+                        li {
+                            color: white;
+                            padding: 20px 10px;
+                            font-size: 24px;
+                                a {
+                                    text-decoration: none;
+                                    color: white;
+                                    padding: 5px 15px;
+                                        &.active {
+                                            border-left: 5px solid $mainOrange;
+                                        }
+                                        &:hover {
+                                            border-left: 5px solid $mainOrange;
+                                        }
+                                }
+                        }
+                }
+        }
+}
+main {
+    background-color: #434343;
+    padding-top: 20px;
+        .apt_card {
+            padding-top: 20px;
+            padding-bottom: 20px;
+            background-color: white;
+            border-radius: 6px;
+            margin-bottom: 20px;
+                ul {
+                    list-style-type: none;
+                    font-size: 18px;
+                        li {
+                            padding: 10px 0;
+                                i {
+                                    padding-left: 4px;
+                                    color: $mainOrange;
+                                    font-size: 20px;
+                                }
+                        }
+                }
+                .buttons {
+                    margin-top: 10px;
+                        button, .btn-info {
+                            margin: 0 20px;
+                            color: white;
+                        }
+                }
+        }
+        .apt_info p {
+            text-align: center;
+            font-size: 23px;
+        }
+        h2 {
+            color: $mainOrange;
+        }
+        .poster_wrapper img {
+            padding: 0;
+        }
+
+}

@@ -16056,3 +16056,159 @@ readers do not read off random characters that represent icons */
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
 }
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.main-ctn {
+  margin: 0;
+  height: 100vh;
+  max-width: 100%;
+  padding-top: 85px;
+}
+.main-ctn .sidebar {
+  background-color: #333333;
+  height: calc(100vh - 85px);
+  position: fixed;
+  z-index: 9;
+}
+.main-ctn .sidebar ul {
+  list-style-type: none;
+  padding-top: 30px;
+}
+.main-ctn .sidebar ul li {
+  color: white;
+  padding: 20px 10px;
+  font-size: 24px;
+}
+.main-ctn .sidebar ul li a {
+  text-decoration: none;
+  color: white;
+  padding: 5px 15px;
+}
+.main-ctn .sidebar ul li a.active {
+  border-left: 5px solid #FF6633;
+}
+.main-ctn .sidebar ul li a:hover {
+  border-left: 5px solid #FF6633;
+}
+
+main {
+  background-color: #434343;
+  padding-top: 20px;
+}
+main .apt_card {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-color: white;
+  border-radius: 6px;
+  margin-bottom: 20px;
+}
+main .apt_card ul {
+  list-style-type: none;
+  font-size: 18px;
+}
+main .apt_card ul li {
+  padding: 10px 0;
+}
+main .apt_card ul li i {
+  padding-left: 4px;
+  color: #FF6633;
+  font-size: 20px;
+}
+main .apt_card .buttons {
+  margin-top: 10px;
+}
+main .apt_card .buttons button, main .apt_card .buttons .btn-info {
+  margin: 0 20px;
+  color: white;
+}
+main .apt_info p {
+  text-align: center;
+  font-size: 23px;
+}
+main h2 {
+  color: #FF6633;
+}
+main .poster_wrapper img {
+  padding: 0;
+}
+
+.fixed-top {
+  background-color: #1C1C1C;
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: white;
+  float: left;
+}
+.navbar-light .navbar-nav .nav-link:hover {
+  color: white;
+  border-bottom: 2px solid #F56837;
+}
+
+.navbar-brand {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.navbar-brand img {
+  margin-top: -1px;
+  width: 80px;
+}
+
+.active {
+  color: white;
+}
+
+.navbar {
+  color: dimgrey;
+  height: 85px;
+}
+
+.button {
+  padding-left: 10px;
+  padding-right: 10px;
+  font-size: 13px;
+  color: white;
+  background-color: #F56837;
+  border-radius: 8px;
+  border: none;
+}
+
+.fa-globe {
+  font-weight: 900;
+  color: white;
+  padding-left: 20px;
+  font-size: 20px;
+}
+
+.menu-link {
+  margin-right: 20px;
+}
+.menu-link .fa-angle-down {
+  margin-top: 11px;
+}
+
+.fa-angle-down {
+  color: white;
+  font-size: medium;
+  padding-left: 3px;
+}
+
+.fa-user-circle {
+  color: white;
+  padding-left: 20px;
+  font-size: 22px;
+  margin-top: 1px;
+  cursor: pointer;
+}
+
+.language {
+  cursor: pointer;
+  margin-top: 3px;
+}
