@@ -1,9 +1,6 @@
 .fixed-top {
-<<<<<<< HEAD
     background-color: #1C1C1C;
-=======
     background-color: $specialdark;
->>>>>>> Homepage_view
 }
 
 .navbar-light .navbar-nav .nav-link {
@@ -11,11 +8,8 @@
     float: left;
     &:hover {
         color: white;
-<<<<<<< HEAD
         border-bottom: 2px solid #F56837;
-=======
         border-bottom: 2px solid $specialorange;
->>>>>>> Homepage_view
     }
 }
 
@@ -44,11 +38,8 @@
     padding-right: 10px;
     font-size: 13px;
     color: white;
-<<<<<<< HEAD
     background-color: #F56837;
-=======
     background-color: $specialorange;
->>>>>>> Homepage_view
     border-radius: 8px;
     border: none;
 }
@@ -85,8 +76,6 @@
     cursor: pointer;
     margin-top: 3px;
 }
-<<<<<<< HEAD
-=======
 
 .avatar {
     margin-right: 50px;
@@ -95,4 +84,3 @@
 .menu {
     margin-left: 50px;
 }
->>>>>>> Homepage_view

@@ -7,7 +7,7 @@
 
         {{-- main --}}
 
-        <main>
+        <section>
             <div class="bg-img">
                 <div class="container ">
                     <div class="jumbotron d-flex justify-content-center">
@@ -37,7 +37,7 @@
                     </div>
                 </div>
             </div>
-        </main>
+        </section>
         {{-- fine main --}}
         <section class="apartament">
 
