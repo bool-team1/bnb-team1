@@ -8,6 +8,6 @@ class Plan extends Model
 {
     public function ads()
     {
-        return $this->belongsToMany('App\Ad');
+        return $this->hasMany('App\Ad');
     }
 }

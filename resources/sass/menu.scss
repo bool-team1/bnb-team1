@@ -1,0 +1,75 @@
+.fixed-top {
+    background-color: #1C1C1C;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: white;
+    float: left;
+    &:hover {
+        color: white;
+        border-bottom: 2px solid #F56837;
+    }
+}
+
+.navbar-brand {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.navbar-brand img {
+    margin-top: -1px;
+    width: 80px;
+}
+
+.active {
+    color: white;
+}
+
+.navbar {
+    color: dimgrey;
+    height: 85px;
+}
+
+.button {
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 13px;
+    color: white;
+    background-color: #F56837;
+    border-radius: 8px;
+    border: none;
+}
+
+.fa-globe {
+    font-weight: 900;
+    color: white;
+    padding-left: 20px;
+    font-size: 20px;
+}
+
+.menu-link {
+    margin-right: 20px;
+    .fa-angle-down {
+        margin-top: 11px;
+    }
+}
+
+.fa-angle-down {
+    color: white;
+    font-size: medium;
+    padding-left: 3px;
+}
+
+.fa-user-circle {
+    color: white;
+    padding-left: 20px;
+    font-size: 22px;
+    margin-top: 1px;
+    cursor: pointer;
+}
+
+.language {
+    cursor: pointer;
+    margin-top: 3px;
+}
