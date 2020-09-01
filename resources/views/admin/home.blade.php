@@ -1,4 +1,4 @@
-@extends('layouts.menu')
+@extends('layouts.app')
 @section('body')
     <div class="container main-ctn">
             <div class="row">
