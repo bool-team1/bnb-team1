@@ -1,28 +1,45 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
 .main-ctn {
     margin: 0;
     height: 100vh;
     max-width: 100%;
     padding-top: 85px;
         .sidebar {
-            background-color: $mainDark;
-            height: calc(100vh - 85px);
+            background-color: #2B2929;
+            height: calc(100vh - 118px);
             position: fixed;
             z-index: 9;
+            width: 245px;
                 .user_info {
-                    width: 100px;
-                }
+                    padding-top: 15px;
+                    display: flex;
+                    align-items: baseline;
+                        .prof_pic_wrapper {
+                            width: 60px;
+                            img {
+                                width: 100%;
+                                border-radius: 50%;
+                            }
+                        }
+                        p {
+                            color: white;
+                            margin-left: 10px;
+                            font-size: 20px;
+                        }
+                    }
                 ul {
                     list-style-type: none;
                     padding-top: 30px;
                         li {
                             color: white;
-                            padding: 20px 10px;
+                            padding: 20px 0;
+                            padding-left: 5px;
+                            border-radius: 3px;
                             font-size: 18px;
+                                &:hover {
+                                    background-color: #353333;
+                                    border-left: 2px solid $mainOrange;
+                                    cursor: pointer;
+                                }
                                 a {
                                     text-decoration: none;
                                     color: white;
@@ -31,45 +48,110 @@
                         }
                 }
         }
+    footer {
+        margin-left: 0;
+    }
 }
 #main {
-    background-color: #434343;
+    background-color: $specialdark;
     padding-top: 20px;
+    padding: 15px;
+    margin-left: 245px;
+    width: 100%;
         .apt_card {
             padding-top: 20px;
             padding-bottom: 20px;
-            background-color: white;
+            background-color: #353333;
             border-radius: 6px;
             margin-bottom: 20px;
+            color: rgba(255, 255, 255, .9);
+                .apt_title {
+                    color: $mainOrange;
+                }
+                &:first-child {
+                    margin-top: 65px;
+                }
                 ul {
                     list-style-type: none;
                     font-size: 18px;
                         li {
-                            padding: 10px 0;
+                            padding: 5px 0;
                                 i {
                                     padding-left: 4px;
                                     color: $mainOrange;
                                     font-size: 20px;
                                 }
+                            &:first-child {
+                                color: $mainOrange;
+                            }
                         }
                 }
                 .buttons {
                     margin-top: 10px;
+                    display: flex;
+                    justify-content: center;
                         button, .btn-info {
                             margin: 0 20px;
                             color: white;
                         }
                 }
         }
-        .apt_info p {
-            text-align: center;
-            font-size: 23px;
+        .apt_info {
+                p {
+                    text-align: center;
+                    font-size: 23px;
+                }
         }
         h2 {
-            color: $mainOrange;
+
         }
         .poster_wrapper img {
             padding: 0;
+            border-radius: 5px;
         }
+}
+.dashboard_header {
+    background: #2B2929;
+    padding: 25px 5px;
+    position: absolute;
+    top: 85px;
+    left: 245px;
+    width: 100%;
+        &+ .apt_card {
+            margin-top: 80px;
+        }
+        h2 {
+            color: white;
+            font-size: 20px;
+            margin-bottom: 0;
+        }
+}
 
+@media screen and (max-width: 800px) {
+    .sidebar {
+        width: 80px !important;
+            ul {
+                text-align: center;
+                    li a {
+                        display: none;
+                    }
+            }
+            .user_info {
+                p {
+                    display: none;
+                }
+                .prof_pic_wrapper {
+                    padding-left: 5px;
+                }
+            }
+            .side_wrap {
+                padding: 0;
+            }
+  }
+  .dashboard_header {
+      left: 80px;
+  }
+  #main {
+      margin-left: 80px;
+  }
 }
