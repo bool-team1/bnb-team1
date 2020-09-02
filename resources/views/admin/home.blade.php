@@ -1,6 +1,6 @@
 @extends('layouts.app_admin')
 @section('content')
-<main class="col-10 offset-2">
+<main class="col-10 offset-2" id="main">
     <div class="container apt_card">
         <div class="row">
             <h2 class="col-4">Apartment Title</h2>

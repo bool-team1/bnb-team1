@@ -13,29 +13,26 @@
             height: calc(100vh - 85px);
             position: fixed;
             z-index: 9;
+                .user_info {
+                    width: 100px;
+                }
                 ul {
                     list-style-type: none;
                     padding-top: 30px;
                         li {
                             color: white;
                             padding: 20px 10px;
-                            font-size: 24px;
+                            font-size: 18px;
                                 a {
                                     text-decoration: none;
                                     color: white;
                                     padding: 5px 15px;
-                                        &.active {
-                                            border-left: 5px solid $mainOrange;
-                                        }
-                                        &:hover {
-                                            border-left: 5px solid $mainOrange;
-                                        }
                                 }
                         }
                 }
         }
 }
-main {
+#main {
     background-color: #434343;
     padding-top: 20px;
         .apt_card {

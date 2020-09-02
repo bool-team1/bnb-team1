@@ -16075,6 +16075,9 @@ readers do not read off random characters that represent icons */
   position: fixed;
   z-index: 9;
 }
+.main-ctn .sidebar .user_info {
+  width: 100px;
+}
 .main-ctn .sidebar ul {
   list-style-type: none;
   padding-top: 30px;
@@ -16082,59 +16085,66 @@ readers do not read off random characters that represent icons */
 .main-ctn .sidebar ul li {
   color: white;
   padding: 20px 10px;
-  font-size: 24px;
+  font-size: 18px;
 }
 .main-ctn .sidebar ul li a {
   text-decoration: none;
   color: white;
   padding: 5px 15px;
 }
-.main-ctn .sidebar ul li a.active {
-  border-left: 5px solid #FF6633;
-}
-.main-ctn .sidebar ul li a:hover {
-  border-left: 5px solid #FF6633;
-}
 
-main {
+#main {
   background-color: #434343;
   padding-top: 20px;
 }
-main .apt_card {
+#main .apt_card {
   padding-top: 20px;
   padding-bottom: 20px;
   background-color: white;
   border-radius: 6px;
   margin-bottom: 20px;
 }
-main .apt_card ul {
+#main .apt_card ul {
   list-style-type: none;
   font-size: 18px;
 }
-main .apt_card ul li {
+#main .apt_card ul li {
   padding: 10px 0;
 }
-main .apt_card ul li i {
+#main .apt_card ul li i {
   padding-left: 4px;
   color: #FF6633;
   font-size: 20px;
 }
-main .apt_card .buttons {
+#main .apt_card .buttons {
   margin-top: 10px;
 }
-main .apt_card .buttons button, main .apt_card .buttons .btn-info {
+#main .apt_card .buttons button, #main .apt_card .buttons .btn-info {
   margin: 0 20px;
   color: white;
 }
-main .apt_info p {
+#main .apt_info p {
   text-align: center;
   font-size: 23px;
 }
-main h2 {
+#main h2 {
   color: #FF6633;
 }
-main .poster_wrapper img {
+#main .poster_wrapper img {
   padding: 0;
+}
+
+.footer {
+  padding-bottom: 10px;
+  margin-left: 50px;
+  margin-top: 20px;
+  background-color: #1c1c1c;
+  color: white;
+}
+.footer a {
+  color: white;
+  text-decoration: none;
+  padding-left: 10px;
 }
 
 .fixed-top {
@@ -16296,12 +16306,9 @@ body {
   margin-top: 20px;
 }
 
-.footer {
-  padding-bottom: 10px;
-  margin-left: 50px;
-  margin-top: 20px;
+.main {
   background-color: #1c1c1c;
-  color: white;
+  padding-top: 0px;
 }
 
 * {
