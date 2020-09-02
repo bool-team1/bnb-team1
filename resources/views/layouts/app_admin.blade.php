@@ -1,56 +1,46 @@
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- CSRF Token -->
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-
-    <title>{{ config('app.name', 'Laravel') }}</title>
-
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
-
-    <!-- Fonts -->
-    <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
-
-    <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-</head>
-
+{{-- menu + HEAD  --}}
+@include("partials.menu")
+{{-- fine menu --}}
 <body>
-    {{-- menu section --}}
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
-        <a class="navbar-brand" href="#"> <img src="{{ asset('img/logo.png')}}" alt=""> </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav">
-                <div class="menu-link">
-                    <a class="nav-item nav-link" href="#">HOME</a>
-                    <i class="fas fa-angle-down"></i>
+    <div class="container main-ctn">
+            <div class="row">
+                <div class="sidebar col-2">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <ul>
+                                    <li>
+                                        <a href="#" class="active">
+                                            My apartments
+                                        </a>
+                                        <i class="far fa-building"></i>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            Messages
+                                        </a>
+                                        <i class="far fa-envelope"></i>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            Charts
+                                        </a>
+                                        <i class="fas fa-chart-pie"></i>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="menu-link">
-                    <a class="nav-item nav-link" href="#">APPARTAMENTI</a>
-                    <i class="fas fa-angle-down"></i>
-                </div>
-                <div class="menu-link">
-                    <a class="nav-item nav-link" href="#">ASSISTENZA</a>
-                    <i class="fas fa-angle-down"></i>
-                </div>
-            </div>
-            <div class="navbar-nav ml-auto">
-                <button class="button" type="button" name="button">DIVENTA UN HOST</button>
-                <div class="language">
-                    <i class="fas fa-globe"></i>
-                    <i class="fas fa-angle-down"></i>
-                </div>
-                <div class="avatar">
-                    <i class="far fa-user-circle"></i>
-                </div>
+                @yield('content')
             </div>
         </div>
-    </nav>
-    @yield('body')
+
+
+
+    {{-- footer --}}
+    @include('partials.footer')
+    {{-- fine footer --}}
+    <script src="{{("js/app.js")}}" charset="utf-8"></script>
 </body>
+</html>
