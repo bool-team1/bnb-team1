@@ -13,8 +13,10 @@ $fa-font-path: 'fonts';
 @import '~@fortawesome/fontawesome-free/scss/brands';
 @import '~@fortawesome/fontawesome-free/scss/regular';
 @import '~@fortawesome/fontawesome-free/scss/solid';
-@import 'dashboard';
+
 // Page CSS
+@import 'dashboard';
+@import 'footer';
 @import 'menu';
 @import 'homepage';
 @import 'std_rules';
