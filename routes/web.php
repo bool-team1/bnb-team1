@@ -18,7 +18,9 @@ use Illuminate\Support\Facades\Route;
 Auth::routes();
 //queste sono le rotte pubbliche
 Route::get('/', 'HomeController@index')->name('home');
-
+Route::get('/search', function () {
+    return view('search');
+});
 
 Route::prefix('admin')->namespace('Admin')->name('admin.')->middleware('auth')->group(function() {
 //queste rotte iniziano con admin , sono le pagine della dashboard, navigabili solo con l'autenticazione
