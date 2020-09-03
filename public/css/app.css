@@ -16137,6 +16137,19 @@ main .poster_wrapper img {
   padding: 0;
 }
 
+.footer {
+  padding-bottom: 10px;
+  margin-left: 50px;
+  margin-top: 20px;
+  background-color: #1c1c1c;
+  color: white;
+}
+.footer a {
+  color: white;
+  text-decoration: none;
+  padding-left: 10px;
+}
+
 .fixed-top {
   background-color: #1C1C1C;
   background-color: #1c1c1c;
@@ -16296,12 +16309,9 @@ body {
   margin-top: 20px;
 }
 
-.footer {
-  padding-bottom: 10px;
-  margin-left: 50px;
-  margin-top: 20px;
+.main {
   background-color: #1c1c1c;
-  color: white;
+  padding-top: 0px;
 }
 
 * {
