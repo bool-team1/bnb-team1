@@ -86,6 +86,7 @@
 /************************************************************************/
 /******/ ({
 
+<<<<<<< HEAD
 /***/ "./node_modules/algoliasearch/node_modules/debug/src/browser.js":
 /*!**********************************************************************!*\
   !*** ./node_modules/algoliasearch/node_modules/debug/src/browser.js ***!
@@ -47749,11 +47750,14 @@ module.exports = function(module) {
 
 /***/ }),
 
+=======
+>>>>>>> algolia
 /***/ "./resources/js/app.js":
 /*!*****************************!*\
   !*** ./resources/js/app.js ***!
   \*****************************/
 /*! no static exports found */
+<<<<<<< HEAD
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js"); //Dipendenza Jquery
@@ -47797,22 +47801,11 @@ try {
  * CSRF token as a header based on the value of the "XSRF" token cookie.
  */
 
+=======
+/***/ (function(module, exports) {
+>>>>>>> algolia
 
-window.axios = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
-/**
- * Echo exposes an expressive API for subscribing to channels and listening
- * for events that are broadcast by Laravel. Echo and event broadcasting
- * allows your team to easily build robust real-time web applications.
- */
-// import Echo from 'laravel-echo';
-// window.Pusher = require('pusher-js');
-// window.Echo = new Echo({
-//     broadcaster: 'pusher',
-//     key: process.env.MIX_PUSHER_APP_KEY,
-//     cluster: process.env.MIX_PUSHER_APP_CLUSTER,
-//     forceTLS: true
-// });
+throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: C:\\MAMP\\htdocs\\boolean\\bnb-team1\\resources\\js\\app.js: Unexpected token (6:0)\n\n\u001b[0m \u001b[90m 4 | \u001b[39m\u001b[36mvar\u001b[39m $ \u001b[33m=\u001b[39m require( \u001b[32m\"jquery\"\u001b[39m )\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 5 | \u001b[39m\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 6 | \u001b[39m\u001b[33m<<\u001b[39m\u001b[33m<<\u001b[39m\u001b[33m<<\u001b[39m\u001b[33m<\u001b[39m \u001b[33mHEAD\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m   | \u001b[39m\u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 7 | \u001b[39m$(document)\u001b[33m.\u001b[39mready(\u001b[36mfunction\u001b[39m(){\u001b[0m\n\u001b[0m \u001b[90m 8 | \u001b[39m    \u001b[36mvar\u001b[39m places \u001b[33m=\u001b[39m require(\u001b[32m'places.js'\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 9 | \u001b[39m\u001b[0m\n    at Parser._raise (C:\\MAMP\\htdocs\\boolean\\bnb-team1\\node_modules\\@babel\\parser\\lib\\index.js:766:17)\n    at Parser.raiseWithData (C:\\MAMP\\htdocs\\boolean\\bnb-team1\\node_modules\\@babel\\parser\\lib\\index.js:759:17)\n    at Parser.raise (C:\\MAMP\\htdocs\\boolean\\bnb-team1\\node_modules\\@babel\\parser\\lib\\index.js:753:17)\n    at Parser.unexpected (C:\\MAMP\\htdocs\\boolean\\bnb-team1\\node_modules\\@babel\\parser\\lib\\index.js:8966:16)\n    at Parser.parseExprAtom (C:\\MAMP\\htdocs\\boolean\\bnb-team1\\node_modules\\@babel\\parser\\lib\\index.js:10282:20)\n    at Parser.parseExprSubscripts (C:\\MAMP\\htdocs\\boolean\\bnb-team1\\node_modules\\@babel\\parser\\lib\\index.js:9844:23)\n    at Parser.parseUpdate (C:\\MAMP\\htdocs\\boolean\\bnb-team1\\node_modules\\@babel\\parser\\lib\\index.js:9824:21)\n    at Parser.parseMaybeUnary (C:\\MAMP\\htdocs\\boolean\\bnb-team1\\node_modules\\@babel\\parser\\lib\\index.js:9813:17)\n    at Parser.parseExprOps (C:\\MAMP\\htdocs\\boolean\\bnb-team1\\node_modules\\@babel\\parser\\lib\\index.js:9683:23)\n    at Parser.parseMaybeConditional (C:\\MAMP\\htdocs\\boolean\\bnb-team1\\node_modules\\@babel\\parser\\lib\\index.js:9657:23)\n    at Parser.parseMaybeAssign (C:\\MAMP\\htdocs\\boolean\\bnb-team1\\node_modules\\@babel\\parser\\lib\\index.js:9620:21)\n    at Parser.parseExpressionBase (C:\\MAMP\\htdocs\\boolean\\bnb-team1\\node_modules\\@babel\\parser\\lib\\index.js:9564:23)\n    at C:\\MAMP\\htdocs\\boolean\\bnb-team1\\node_modules\\@babel\\parser\\lib\\index.js:9558:39\n    at Parser.allowInAnd (C:\\MAMP\\htdocs\\boolean\\bnb-team1\\node_modules\\@babel\\parser\\lib\\index.js:11296:16)\n    at Parser.parseExpression (C:\\MAMP\\htdocs\\boolean\\bnb-team1\\node_modules\\@babel\\parser\\lib\\index.js:9558:17)\n    at Parser.parseStatementContent (C:\\MAMP\\htdocs\\boolean\\bnb-team1\\node_modules\\@babel\\parser\\lib\\index.js:11561:23)\n    at Parser.parseStatement (C:\\MAMP\\htdocs\\boolean\\bnb-team1\\node_modules\\@babel\\parser\\lib\\index.js:11430:17)\n    at Parser.parseBlockOrModuleBlockBody (C:\\MAMP\\htdocs\\boolean\\bnb-team1\\node_modules\\@babel\\parser\\lib\\index.js:12012:25)\n    at Parser.parseBlockBody (C:\\MAMP\\htdocs\\boolean\\bnb-team1\\node_modules\\@babel\\parser\\lib\\index.js:11998:10)\n    at Parser.parseTopLevel (C:\\MAMP\\htdocs\\boolean\\bnb-team1\\node_modules\\@babel\\parser\\lib\\index.js:11361:10)\n    at Parser.parse (C:\\MAMP\\htdocs\\boolean\\bnb-team1\\node_modules\\@babel\\parser\\lib\\index.js:13044:10)\n    at parse (C:\\MAMP\\htdocs\\boolean\\bnb-team1\\node_modules\\@babel\\parser\\lib\\index.js:13097:38)\n    at parser (C:\\MAMP\\htdocs\\boolean\\bnb-team1\\node_modules\\@babel\\core\\lib\\parser\\index.js:54:34)\n    at parser.next (<anonymous>)\n    at normalizeFile (C:\\MAMP\\htdocs\\boolean\\bnb-team1\\node_modules\\@babel\\core\\lib\\transformation\\normalize-file.js:99:38)\n    at normalizeFile.next (<anonymous>)\n    at run (C:\\MAMP\\htdocs\\boolean\\bnb-team1\\node_modules\\@babel\\core\\lib\\transformation\\index.js:31:50)\n    at run.next (<anonymous>)\n    at Function.transform (C:\\MAMP\\htdocs\\boolean\\bnb-team1\\node_modules\\@babel\\core\\lib\\transform.js:27:41)\n    at transform.next (<anonymous>)\n    at step (C:\\MAMP\\htdocs\\boolean\\bnb-team1\\node_modules\\gensync\\index.js:254:32)\n    at C:\\MAMP\\htdocs\\boolean\\bnb-team1\\node_modules\\gensync\\index.js:266:13\n    at async.call.result.err.err (C:\\MAMP\\htdocs\\boolean\\bnb-team1\\node_modules\\gensync\\index.js:216:11)");
 
 /***/ }),
 
@@ -47836,6 +47829,7 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 __webpack_require__(/*! C:\MAMP\htdocs\boolean\bnb-team1\resources\js\app.js */"./resources/js/app.js");
 module.exports = __webpack_require__(/*! C:\MAMP\htdocs\boolean\bnb-team1\resources\sass\app.scss */"./resources/sass/app.scss");
+<<<<<<< HEAD
 
 
 /***/ }),
@@ -47846,6 +47840,8 @@ module.exports = __webpack_require__(/*! C:\MAMP\htdocs\boolean\bnb-team1\resour
   \****************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
+=======
+>>>>>>> algolia
 
 /* (ignored) */
 

@@ -43,6 +43,9 @@
         </div>
     </div>
     <div class="navbar-nav ml-auto">
+        {{-- Algolia barra di ricerca --}}
+        <input type="search" id="addressInput" placeholder="Dove vuoi andare?" />
+        {{-- Algolia barra di ricerca --}}
         <button class="button" type="button" name="button">DIVENTA UN HOST</button>
         <div class="language">
             <i class="fas fa-globe"></i>
