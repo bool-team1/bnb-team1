@@ -41,9 +41,9 @@ class ApartmentController extends Controller
         $request->validate([
             'title' => 'required|max:30',
             'address' => 'required|max:100|unique:apartments',
-            'rooms_n' => 'required',
-            'bathrooms_n' => 'required',
-            'square_mt' => 'required'
+            'rooms_n' => 'required|numeric|min:1',
+            'bathrooms_n' => 'required|numeric|min:1',
+            'square_mt' => 'required|numeric|min:1'
         ]);
 
         $data = $request->all();
@@ -102,9 +102,9 @@ class ApartmentController extends Controller
         $request->validate([
             'title' => 'required|max:30',
             'address' => 'required|max:100|unique:apartments,' .$id,
-            'rooms_n' => 'required|',
-            'bathrooms_n' => 'required|',
-            'square_mt' => 'required|'
+            'rooms_n' => 'required|numeric|min:1',
+            'bathrooms_n' => 'required|numeric|min:1',
+            'square_mt' => 'required|numeric|min:1'
         ]);
         $data = $request->all();
         $slug = Str::of($data['title'])->slug('-');
