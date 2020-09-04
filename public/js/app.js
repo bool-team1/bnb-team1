@@ -86,10 +86,17 @@
 /************************************************************************/
 /******/ ({
 
+<<<<<<< refs/remotes/origin/master
 /***/ "./node_modules/axios/index.js":
 /*!*************************************!*\
   !*** ./node_modules/axios/index.js ***!
   \*************************************/
+=======
+/***/ "./node_modules/algoliasearch/node_modules/debug/src/browser.js":
+/*!**********************************************************************!*\
+  !*** ./node_modules/algoliasearch/node_modules/debug/src/browser.js ***!
+  \**********************************************************************/
+>>>>>>> rimozione input Algolia menu
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -37354,8 +37361,23 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
+<<<<<<< refs/remotes/origin/master
 __webpack_require__(/*! C:\Users\Utente Pc\Documents\Boolean\bnb-team1\resources\js\app.js */"./resources/js/app.js");
 module.exports = __webpack_require__(/*! C:\Users\Utente Pc\Documents\Boolean\bnb-team1\resources\sass\app.scss */"./resources/sass/app.scss");
+=======
+__webpack_require__(/*! C:\MAMP\htdocs\boolean\bnb-team1\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\MAMP\htdocs\boolean\bnb-team1\resources\sass\app.scss */"./resources/sass/app.scss");
+
+
+/***/ }),
+
+/***/ 1:
+/*!****************************!*\
+  !*** ./nextTick (ignored) ***!
+  \****************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+>>>>>>> rimozione input Algolia menu
 
 
 /***/ })
