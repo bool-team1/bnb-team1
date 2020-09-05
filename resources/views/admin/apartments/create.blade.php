@@ -24,6 +24,11 @@
                         <input type="text" name="title" class="form-control" id="titolo" placeholder="..." value="{{ old('title') }}">
                     </div>
                     <div class="form-group">
+                        <label for="address">Indirizzo</label>
+                        <input type="text" name="address" class="form-control" id="address" placeholder="..." value="{{ old('address') }}">
+                    </div>
+
+                    <div class="form-group">
                         <label for="rooms_n">Numero di stanze</label>
                         <input type="text" name="rooms_n" class="form-control" id="rooms_n" placeholder="..." value="{{ old('rooms_n') }}">
                     </div>
