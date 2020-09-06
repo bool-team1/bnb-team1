@@ -16224,19 +16224,6 @@ readers do not read off random characters that represent icons */
   padding-left: 10px;
 }
 
-.footer {
-  padding-bottom: 10px;
-  margin-left: 50px;
-  margin-top: 20px;
-  background-color: #1c1c1c;
-  color: white;
-}
-.footer a {
-  color: white;
-  text-decoration: none;
-  padding-left: 10px;
-}
-
 .fixed-top {
   background-color: #1C1C1C;
   background-color: #1c1c1c;
@@ -16422,4 +16409,80 @@ a {
 
 ol, ul {
   list-style-type: none;
+}
+
+.custom-auth-form {
+  margin-top: 100px;
+}
+
+.custom-auth-form-header {
+  background-color: #FF6633;
+}
+
+.custom-auth-form-body {
+  background-color: #616161;
+}
+.custom-auth-form-body .btn-primary {
+  background-color: #FF6633;
+}
+.custom-auth-form-body .btn-link {
+  color: white;
+}
+
+.messages-list-wrapper {
+  width: 700px;
+  margin: 100px auto;
+  background-color: #616161;
+  border: 2px solid #FF6633;
+  border-radius: 5px;
+  color: white;
+}
+.messages-list-wrapper .messages-list-header {
+  background-color: #FF6633;
+  color: black;
+  padding: 8px;
+}
+
+.message-read-wrapper {
+  width: 700px;
+  margin: 100px auto;
+  background-color: #616161;
+  border: 2px solid #FF6633;
+  border-radius: 5px;
+  color: white;
+}
+.message-read-wrapper .message-read-header {
+  background-color: #FF6633;
+  color: black;
+  padding: 8px;
+}
+.message-read-wrapper .message-read-apartment-ref {
+  padding: 4px 8px;
+  background-color: lightgray;
+  color: black;
+}
+.message-read-wrapper .message-read-body {
+  padding: 8px;
+}
+
+.message-create-wrapper {
+  width: 700px;
+  margin: 300px auto;
+  background-color: #616161;
+  border: 2px solid #FF6633;
+  border-radius: 5px;
+  color: white;
+}
+.message-create-wrapper .message-create-header {
+  background-color: #FF6633;
+  color: black;
+  padding: 8px;
+}
+.message-create-wrapper .message-create-apartment-ref {
+  padding: 4px 8px;
+  background-color: lightgray;
+  color: black;
+}
+.message-create-wrapper .message-create-body {
+  padding: 8px;
 }
