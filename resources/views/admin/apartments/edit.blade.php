@@ -23,10 +23,38 @@
                         <label for="titolo">Titolo</label>
                         <input type="text" name="title" class="form-control" id="titolo" placeholder="..." value="{{ old('title', $apartment->title) }}">
                     </div>
-                    {{-- <div class="form-group">
-                        <label for="testo">Descrizione</label>
-                        <textarea type="text" name="content" class="form-control" id="testo" placeholder="Scrivi qualcosa...">{{ old('content', $apartment->content) }}</textarea>
-                    </div> --}}
+                    <div class="form-group">
+                        <label for="rooms_n">Numero di stanze</label>
+                        <input type="text" name="rooms_n" class="form-control" id="rooms_n" placeholder="..." value="{{ old('rooms_n') }}">
+                    </div>
+                    <div class="form-group">
+                        <label for="bathrooms_n">Numero di bagni</label>
+                        <input type="text" name="bathrooms_n" class="form-control" id="bathrooms_n" placeholder="..." value="{{ old('bathrooms_n') }}">
+                    </div>
+                    <div class="form-group">
+                        <label for="square_mt">Metri quadri</label>
+                        <input type="text" name="square_mt" class="form-control" id="square_mt" placeholder="..." value="{{ old('square_mt') }}">
+                    </div>
+                    <div class="form-group">
+                        Facilities:
+                        @foreach ($facilities as $facility)
+                            <div class="form-check">
+                                <label class="form-check-label">
+                                    <input
+                                        @if($errors->any())
+                                            {{ in_array($facility->id, old('facilities', [])) ? 'checked' : '' }}
+                                        @else
+                                            {{ $apartments->facilities->contains($facility) ? 'checked' : '' }}
+                                        @endif
+                                        class="form-check-input"
+                                        name="facilities[]"
+                                        type="checkbox"
+                                        value="{{ $facility->id }}">
+                                    {{ $facility->type }}
+                                </label>
+                            </div>
+                        @endforeach
+                    </div>
                     <div class="form-group">
                         <label for="img">Immagine</label>
                         <input type="file" name="image" class="form-control-file">
