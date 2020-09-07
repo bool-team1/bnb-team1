@@ -20,3 +20,9 @@ $fa-font-path: 'fonts';
 @import 'menu';
 @import 'homepage';
 @import 'std_rules';
+
+//CSS Authentication
+@import 'auth/registration';
+
+//CSS Messages
+@import 'messages';

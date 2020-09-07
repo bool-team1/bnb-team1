@@ -1,4 +1,4 @@
-<div class="footer">
+<div class="footer fixed-bottom">
     <div class="col-7">
         <small>
             © 2020 BoolBnb, Inc. All rights reserved

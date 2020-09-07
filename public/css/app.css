@@ -16057,12 +16057,6 @@ readers do not read off random characters that represent icons */
   font-weight: 900;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 .main-ctn {
   margin: 0;
   height: 100vh;
@@ -16070,10 +16064,28 @@ readers do not read off random characters that represent icons */
   padding-top: 85px;
 }
 .main-ctn .sidebar {
-  background-color: #333333;
-  height: calc(100vh - 85px);
+  background-color: #2B2929;
+  height: calc(100vh - 118px);
   position: fixed;
   z-index: 9;
+  width: 245px;
+}
+.main-ctn .sidebar .user_info {
+  padding-top: 15px;
+  display: flex;
+  align-items: baseline;
+}
+.main-ctn .sidebar .user_info .prof_pic_wrapper {
+  width: 60px;
+}
+.main-ctn .sidebar .user_info .prof_pic_wrapper img {
+  width: 100%;
+  border-radius: 50%;
+}
+.main-ctn .sidebar .user_info p {
+  color: white;
+  margin-left: 10px;
+  font-size: 20px;
 }
 .main-ctn .sidebar ul {
   list-style-type: none;
@@ -16081,65 +16093,127 @@ readers do not read off random characters that represent icons */
 }
 .main-ctn .sidebar ul li {
   color: white;
-  padding: 20px 10px;
-  font-size: 24px;
+  padding: 20px 0;
+  padding-left: 5px;
+  border-radius: 3px;
+  font-size: 18px;
+}
+.main-ctn .sidebar ul li:hover {
+  background-color: #353333;
+  border-left: 2px solid #FF6633;
+  cursor: pointer;
 }
 .main-ctn .sidebar ul li a {
   text-decoration: none;
   color: white;
   padding: 5px 15px;
 }
-.main-ctn .sidebar ul li a.active {
-  border-left: 5px solid #FF6633;
-}
-.main-ctn .sidebar ul li a:hover {
-  border-left: 5px solid #FF6633;
+.main-ctn footer {
+  margin-left: 0;
 }
 
-main {
-  background-color: #434343;
+#main {
+  background-color: #1c1c1c;
   padding-top: 20px;
+  padding: 15px;
+  margin-left: 245px;
+  width: 100%;
 }
-main .apt_card {
+#main .apt_card {
   padding-top: 20px;
   padding-bottom: 20px;
-  background-color: white;
+  background-color: #353333;
   border-radius: 6px;
   margin-bottom: 20px;
+  color: rgba(255, 255, 255, 0.9);
 }
-main .apt_card ul {
+#main .apt_card .apt_title {
+  color: #FF6633;
+}
+#main .apt_card:first-child {
+  margin-top: 65px;
+}
+#main .apt_card ul {
   list-style-type: none;
   font-size: 18px;
 }
-main .apt_card ul li {
-  padding: 10px 0;
+#main .apt_card ul li {
+  padding: 5px 0;
 }
-main .apt_card ul li i {
+#main .apt_card ul li i {
   padding-left: 4px;
   color: #FF6633;
   font-size: 20px;
 }
-main .apt_card .buttons {
-  margin-top: 10px;
+#main .apt_card ul li:first-child {
+  color: #FF6633;
 }
-main .apt_card .buttons button, main .apt_card .buttons .btn-info {
+#main .apt_card .buttons {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+}
+#main .apt_card .buttons button, #main .apt_card .buttons .btn-info {
   margin: 0 20px;
   color: white;
 }
-main .apt_info p {
+#main .apt_info p {
   text-align: center;
   font-size: 23px;
 }
-main h2 {
-  color: #FF6633;
-}
-main .poster_wrapper img {
+#main .poster_wrapper img {
   padding: 0;
+  border-radius: 5px;
 }
 
+.dashboard_header {
+  background: #2B2929;
+  padding: 25px 5px;
+  position: absolute;
+  top: 85px;
+  left: 245px;
+  width: 100%;
+}
+.dashboard_header + .apt_card {
+  margin-top: 80px;
+}
+.dashboard_header h2 {
+  color: white;
+  font-size: 20px;
+  margin-bottom: 0;
+}
+
+@media screen and (max-width: 800px) {
+  .sidebar {
+    width: 80px !important;
+  }
+  .sidebar ul {
+    text-align: center;
+  }
+  .sidebar ul li a {
+    display: none;
+  }
+  .sidebar .user_info p {
+    display: none;
+  }
+  .sidebar .user_info .prof_pic_wrapper {
+    padding-left: 5px;
+  }
+  .sidebar .side_wrap {
+    padding: 0;
+  }
+
+  .dashboard_header {
+    left: 80px;
+  }
+
+  #main {
+    margin-left: 80px;
+  }
+}
 .footer {
   padding-bottom: 10px;
-  margin-left: 50px;
+  padding-top: 5px;
   margin-top: 20px;
   background-color: #1c1c1c;
   color: white;
@@ -16318,6 +16392,11 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  overflow-x: hidden;
 }
 
 i {
@@ -16330,4 +16409,80 @@ a {
 
 ol, ul {
   list-style-type: none;
+}
+
+.custom-auth-form {
+  margin-top: 100px;
+}
+
+.custom-auth-form-header {
+  background-color: #FF6633;
+}
+
+.custom-auth-form-body {
+  background-color: #616161;
+}
+.custom-auth-form-body .btn-primary {
+  background-color: #FF6633;
+}
+.custom-auth-form-body .btn-link {
+  color: white;
+}
+
+.messages-list-wrapper {
+  width: 700px;
+  margin: 100px auto;
+  background-color: #616161;
+  border: 2px solid #FF6633;
+  border-radius: 5px;
+  color: white;
+}
+.messages-list-wrapper .messages-list-header {
+  background-color: #FF6633;
+  color: black;
+  padding: 8px;
+}
+
+.message-read-wrapper {
+  width: 700px;
+  margin: 100px auto;
+  background-color: #616161;
+  border: 2px solid #FF6633;
+  border-radius: 5px;
+  color: white;
+}
+.message-read-wrapper .message-read-header {
+  background-color: #FF6633;
+  color: black;
+  padding: 8px;
+}
+.message-read-wrapper .message-read-apartment-ref {
+  padding: 4px 8px;
+  background-color: lightgray;
+  color: black;
+}
+.message-read-wrapper .message-read-body {
+  padding: 8px;
+}
+
+.message-create-wrapper {
+  width: 700px;
+  margin: 300px auto;
+  background-color: #616161;
+  border: 2px solid #FF6633;
+  border-radius: 5px;
+  color: white;
+}
+.message-create-wrapper .message-create-header {
+  background-color: #FF6633;
+  color: black;
+  padding: 8px;
+}
+.message-create-wrapper .message-create-apartment-ref {
+  padding: 4px 8px;
+  background-color: lightgray;
+  color: black;
+}
+.message-create-wrapper .message-create-body {
+  padding: 8px;
 }
