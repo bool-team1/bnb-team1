@@ -6,7 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Statistic extends Model
 {
-    public function show() {
-        return $this->belongsToMany('App\Apartment');
+    public function apartment() {
+
+        return $this->belongsTo('App\Apartment');
     }
 }
