@@ -86,10 +86,17 @@
 /************************************************************************/
 /******/ ({
 
+<<<<<<< HEAD
 /***/ "./node_modules/axios/index.js":
 /*!*************************************!*\
   !*** ./node_modules/axios/index.js ***!
   \*************************************/
+=======
+/***/ "./node_modules/algoliasearch/node_modules/debug/src/browser.js":
+/*!**********************************************************************!*\
+  !*** ./node_modules/algoliasearch/node_modules/debug/src/browser.js ***!
+  \**********************************************************************/
+>>>>>>> algolia
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -37268,6 +37275,7 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js"); //Jquery 
 
 
 var $ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
+<<<<<<< HEAD
 /* var places = require('places.js');
 var placesAutocomplete = places({
   appId: 'plNNICPWC6MP',
@@ -37286,6 +37294,16 @@ $(document).ready(function () {
     } else {
       email.setCustomValidity("");
     }
+=======
+
+$(document).ready(function () {
+  var places = __webpack_require__(/*! places.js */ "./node_modules/places.js/index.js");
+
+  var placesAutocomplete = places({
+    appId: 'plNNICPWC6MP',
+    apiKey: 'b7a397b2d5106c810a38e7f10cdd967a',
+    container: document.querySelector('#address-input')
+>>>>>>> algolia
   });
 });
 
@@ -37354,8 +37372,23 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
+<<<<<<< HEAD
 __webpack_require__(/*! D:\MAMP\htdocs\boolean\bnb-team1\resources\js\app.js */"./resources/js/app.js");
 module.exports = __webpack_require__(/*! D:\MAMP\htdocs\boolean\bnb-team1\resources\sass\app.scss */"./resources/sass/app.scss");
+=======
+__webpack_require__(/*! C:\MAMP\htdocs\boolean\bnb-team1\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\MAMP\htdocs\boolean\bnb-team1\resources\sass\app.scss */"./resources/sass/app.scss");
+
+
+/***/ }),
+
+/***/ 1:
+/*!****************************!*\
+  !*** ./nextTick (ignored) ***!
+  \****************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+>>>>>>> algolia
 
 
 /***/ })
