@@ -2,7 +2,6 @@ require('./bootstrap');
 
 //Jquery dependency
 var $ = require( "jquery" );
-var places = require('places.js');
 
 
 /* var places = require('places.js');

@@ -37275,6 +37275,7 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js"); //Jquery 
 
 
 var $ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
+<<<<<<< refs/remotes/origin/master
 /* var places = require('places.js');
 var placesAutocomplete = places({
   appId: 'plNNICPWC6MP',
@@ -37293,6 +37294,16 @@ $(document).ready(function () {
     } else {
       email.setCustomValidity("");
     }
+=======
+
+$(document).ready(function () {
+  var places = __webpack_require__(/*! places.js */ "./node_modules/places.js/index.js");
+
+  var placesAutocomplete = places({
+    appId: 'plNNICPWC6MP',
+    apiKey: 'b7a397b2d5106c810a38e7f10cdd967a',
+    container: document.querySelector('#address-input')
+>>>>>>> 
   });
 });
 
