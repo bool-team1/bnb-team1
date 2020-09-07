@@ -97,13 +97,14 @@ Route::get('/', 'HomeController@index')->name('home');
 
 
 
+});
 Route::prefix('admin')->namespace('Admin')->name('admin.')->middleware('auth')->group(function() {
 //queste rotte iniziano con admin , sono le pagine della dashboard, navigabili solo con l'autenticazione
     Route::get('/', 'HomeController@index')->name('home');
     Route::get('/sponsor', 'SponsorController@index')->name('sponsor/sponsor');
     Route::get('/', 'HomeController@index')->name('index');
+    Route::get('/views', 'ViewController@index');
     Route::resource('/apartments', 'ApartmentController');
-
     //Route to manage messages on the admin side
     Route::get('/messages', 'MessageController@index')->name("message.index");
     Route::get('/messages/{message_id}', 'MessageController@show')->name("message.show");
