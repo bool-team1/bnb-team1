@@ -21,7 +21,7 @@
                             <th>Nr.bagni</th>
                             <th>Mt quadri</th>
                             <th>Slug</th>
-                            <th>Pubblico</th>
+                            <th>Facilities</th>
                             <th>Immagine</th>
                         </tr>
                     </thead>
@@ -31,6 +31,13 @@
                                 <td>{{ $apartment->id }}</td>
                                 <td>{{ $apartment->title }}</td>
                                 <td>{{ $apartment->slug }}</td>
+                                <td>
+                                    @forelse ($apartment->facilities as $facility)
+                                        {{ $facility->type }}{{ $loop->last ? '' : ', '}}
+                                    @empty
+                                        -
+                                    @endforelse
+                                </td>
                                 <td>
                                     <a class="btn btn-small btn-info"
                                     href="{{ route('admin.apartments.show', ['apartment' => $apartment->id]) }}">

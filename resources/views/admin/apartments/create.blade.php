@@ -40,6 +40,22 @@
                         <label for="square_mt">Metri quadri</label>
                         <input type="text" name="square_mt" class="form-control" id="square_mt" placeholder="..." value="{{ old('square_mt') }}">
                     </div>
+                    {{-- <div class="form-group">
+                       Facilities:
+                       @foreach ($facilities ?? '' as $facility)
+                           <div class="form-check">
+                               <label class="form-check-label">
+                                   <input
+                                       {{ in_array($facility->id, old('facilities', [])) ? 'checked' : '' }}
+                                       class="form-check-input"
+                                       name="facilities[]"
+                                       type="checkbox"
+                                       value="{{ $facility->id }}">
+                                   {{ $facility->type }}
+                               </label>
+                           </div>
+                       @endforeach
+                   </div> --}}
                     <div class="form-group">
                         <label for="img">Immagine</label>
                         <input type="file" name="image" class="form-control-file" id="img">

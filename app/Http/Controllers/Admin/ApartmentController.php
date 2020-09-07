@@ -1,11 +1,11 @@
 <?php
 
 namespace App\Http\Controllers\Admin;
-
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Apartment;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Storage;
 
 class ApartmentController extends Controller
 {
