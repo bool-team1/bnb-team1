@@ -1,11 +1,12 @@
 <?php
 
 namespace App\Http\Controllers\Admin;
+
 use App\Http\Controllers\Controller;
-use App\Apartment;
+use App\View;
 use Illuminate\Http\Request;
 
-class StatisticController extends Controller
+class ViewController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +15,6 @@ class StatisticController extends Controller
      */
     public function index()
     {
-        //recupero le le statistiche delle visualizzazioni
-        $statistics = Statistic::with('apartments')->get();
-        return view('admin.statistics.index', compact('statistics'));
+        return view('admin.views');
     }
 }
