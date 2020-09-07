@@ -26,7 +26,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
 Route::prefix('admin')->namespace('Admin')->name('admin.')->middleware('auth')->group(function() {
 //queste rotte iniziano con admin , sono le pagine della dashboard, navigabili solo con l'autenticazione
     Route::get('/', 'HomeController@index')->name('home');
-    Route::get('/views', 'ViewController@index');
+    Route::get('/views', 'ViewController@index')->name('view.index');
     Route::resource('/apartments', 'ApartmentController');
     //Route to manage messages on the admin side
     Route::get('/messages', 'MessageController@index')->name("message.index");

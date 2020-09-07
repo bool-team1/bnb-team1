@@ -2,9 +2,13 @@
 
 namespace App\Http\Controllers\Admin;
 
+use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\View;
-use Illuminate\Http\Request;
+use App\Apartment;
+use App\User;
+use Auth;
+
 
 class ViewController extends Controller
 {
@@ -15,6 +19,32 @@ class ViewController extends Controller
      */
     public function index()
     {
-        return view('admin.views');
+        $user = Auth::User();
+        $views = $user->apartments()->with('views')->get();
+
+        $data = [
+                'views' => $views,
+                'user' => $user
+                ];
+
+        return view('admin.views.index', $data);
+    }
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
+    {
+        $view = View::find($id);
+        $apartment = Apartment::find($view->apartment_id);
+
+        $data = [
+            "view" => $view,
+            "apartment" => $apartment
+        ];
+
+        return view("admin.views.show", $data);
     }
 }
