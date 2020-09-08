@@ -17,7 +17,7 @@
                                 <ul>
                                     <li>
                                         <i class="far fa-building"></i>
-                                        <a href="#" class="">
+                                        <a href="{{ route('admin.apartments.index') }}" class="">
                                             APPARTAMENTI
                                         </a>
                                     </li>
@@ -36,8 +36,9 @@
                                     <li>
                                         <i class="fas fa-sign-out-alt"></i>
                                         <a href="#">
+                                            {{-- modificare per il logout serve il metodo post --}}
                                             LOG OUT
-                                        </a>
+                                        </a> 
                                     </li>
                                 </ul>
                             </div>
