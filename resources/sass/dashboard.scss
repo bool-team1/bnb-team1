@@ -127,6 +127,58 @@
         }
 }
 
+.plans {
+            p {
+                font-size: 25px;
+                text-align: center;
+            }
+            .plans_wrap {
+                display: flex;
+                justify-content: space-around;
+                width: 100%;
+                flex-wrap: wrap;
+                margin-top: -30px;
+                .plan_card {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: space-between;
+                    background: #ece4e1;
+                    color: $mainOrange;
+                    padding: 15px;
+                    border-radius: 10px;
+                    width: 250px;
+                    margin-top: 30px;
+                        .price {
+                            font-size: 30px;
+                            font-style: italic;
+                        }
+                        h3 {
+                            font-weight: bold;
+                        }
+                        h2 {
+                            font-size: 24px;
+                            color: $specialdark;
+                        }
+                        a {
+                            background-color: $mainOrange;
+                            color: white;
+                            padding: 6px;
+                            border-radius: 5px;
+                            margin-top: 25px;
+                            width: 145px;
+                            text-align: center;
+                                &:hover {
+                                    background-color: $specialdark;
+                                    color: $mainOrange;
+                                    text-decoration: none;
+                                    transition-duration: .2s;
+                                }
+                        }
+                }
+            }
+
+        }
 @media screen and (max-width: 800px) {
     .sidebar {
         width: 80px !important;
