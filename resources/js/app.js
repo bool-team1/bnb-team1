@@ -2,7 +2,8 @@ require('./bootstrap');
 
 //Jquery dependency
 var $ = require( "jquery" );
-
+// Chart js
+var Chart = require('chart.js');
 
 /* var places = require('places.js');
 var placesAutocomplete = places({
@@ -17,20 +18,22 @@ $(document).ready(function(){
     //Validation for registration form email
     var registration_form_email = document.getElementById("email");
 
-    registration_form_email.addEventListener("input", function (event) {
+    if (registration_form_email) {
+      registration_form_email.addEventListener("input", function (event) {
         if (email.validity.typeMismatch) {
           email.setCustomValidity("Inserisci un indirizzo email valido");
         } else {
           email.setCustomValidity("");
         }
-    });
+      });
+    };
 
     var visualizzazioni_appartamenti = {
             'appartamenti': ['Jimmie Ranch', 'Clifton Rest', 'Everett Centers'],
             'visualizzazioni': [1, 5, 10]
         };
 
-    var myChart = new Chart($('#visualizzazioni_appartamenti')[0].getContext('2d'), {
+    var myChart = new Chart($('#myChart')[0].getContext('2d'), {
         type: 'line',
         data: {
             labels: visualizzazioni_appartamenti['appartamenti'],
