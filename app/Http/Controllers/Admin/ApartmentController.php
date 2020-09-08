@@ -3,10 +3,11 @@
 namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Apartment;
-use App\Facility;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Auth;
+use App\Apartment;
+use App\Facility;
 
 class ApartmentController extends Controller
 {
@@ -17,8 +18,11 @@ class ApartmentController extends Controller
      */
     public function index()
     {
+
         //recupero tutti gli appartamenti e li passo alla view
         $apartments = Apartment::with('facilities')->get();
+
+
         return view('admin.apartments.index', compact('apartments'));
     }
 
@@ -29,8 +33,10 @@ class ApartmentController extends Controller
      */
     public function create()
     {
+        $user = Auth::user();
         $facilities = Facility::all();
         $data = [
+            'user' => $user,
             'facilities' => $facilities
         ];
         return view('admin.apartments.create', $data);

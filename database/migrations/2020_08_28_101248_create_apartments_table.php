@@ -15,7 +15,6 @@ class CreateApartmentsTable extends Migration
     {
         Schema::create('apartments', function (Blueprint $table) {
             $table->id();
-
             $table->unsignedBigInteger('user_id');
             //Set user_id as foreign key
             $table->foreign('user_id')->references('id')->on('users');

@@ -43,6 +43,7 @@
                         <label for="img">Immagine</label>
                         <input type="file" name="image" class="form-control-file" id="img">
                     </div>
+                    
                     <div class="form-group">
                        Facilities:
                        @foreach ($facilities ?? '' as $facility)
