@@ -12,9 +12,9 @@ var placesAutocomplete = places({
 }); */
 
 $(document).ready(function(){
-    
-    //CLIENT SIDE VALIDATION
-    //Validation for registration form email
+
+    // CLIENT SIDE VALIDATION
+    // Validation for registration form email
     var registration_form_email = document.getElementById("email");
 
     registration_form_email.addEventListener("input", function (event) {
@@ -25,4 +25,46 @@ $(document).ready(function(){
         }
     });
 
+    var visualizzazioni_appartamenti = [
+        {
+            'appartamenti': 'Jimmie Ranch',
+            'visualizzazioni': 1
+        },
+        {
+            'appartamenti': 'Clifton Rest',
+            'visualizzazioni': 5
+        },
+        {
+            'appartamenti': 'Everett Centers',
+            'visualizzazioni': 10
+        },
+    ]
+
+
+    var myChart = new Chart($('#visualizzazioni_appartamenti')[0].getContext('2d'), {
+        type: 'line',
+        data: {
+            labels: 'appartamenti',
+            datasets: [{
+                label: 'numero visualizzazioni',
+                data: 'visualizzazioni',
+                backgroundColor: [
+                    'rgb(255, 99, 132)',
+                ],
+                borderColor: [
+                    'rgb(255, 99, 132)',
+                ],
+                borderWidth: 3
+            }]
+            },
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                }
+            }
+        });
 });

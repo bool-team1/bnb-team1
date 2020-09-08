@@ -86,17 +86,10 @@
 /************************************************************************/
 /******/ ({
 
-<<<<<<< HEAD
 /***/ "./node_modules/axios/index.js":
 /*!*************************************!*\
   !*** ./node_modules/axios/index.js ***!
   \*************************************/
-=======
-/***/ "./node_modules/algoliasearch/node_modules/debug/src/browser.js":
-/*!**********************************************************************!*\
-  !*** ./node_modules/algoliasearch/node_modules/debug/src/browser.js ***!
-  \**********************************************************************/
->>>>>>> algolia
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -37275,7 +37268,6 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js"); //Jquery 
 
 
 var $ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
-<<<<<<< HEAD
 /* var places = require('places.js');
 var placesAutocomplete = places({
   appId: 'plNNICPWC6MP',
@@ -37285,8 +37277,8 @@ var placesAutocomplete = places({
 
 
 $(document).ready(function () {
-  //CLIENT SIDE VALIDATION
-  //Validation for registration form email
+  // CLIENT SIDE VALIDATION
+  // Validation for registration form email
   var registration_form_email = document.getElementById("email");
   registration_form_email.addEventListener("input", function (event) {
     if (email.validity.typeMismatch) {
@@ -37294,16 +37286,38 @@ $(document).ready(function () {
     } else {
       email.setCustomValidity("");
     }
-=======
-
-$(document).ready(function () {
-  var places = __webpack_require__(/*! places.js */ "./node_modules/places.js/index.js");
-
-  var placesAutocomplete = places({
-    appId: 'plNNICPWC6MP',
-    apiKey: 'b7a397b2d5106c810a38e7f10cdd967a',
-    container: document.querySelector('#address-input')
->>>>>>> algolia
+  });
+  var visualizzazioni_appartamenti = [{
+    'appartamenti': 'Jimmie Ranch',
+    'visualizzazioni': 1
+  }, {
+    'appartamenti': 'Clifton Rest',
+    'visualizzazioni': 5
+  }, {
+    'appartamenti': 'Everett Centers',
+    'visualizzazioni': 10
+  }];
+  var myChart = new Chart($('#visualizzazioni_appartamenti')[0].getContext('2d'), {
+    type: 'line',
+    data: {
+      labels: 'appartamenti',
+      datasets: [{
+        label: 'numero visualizzazioni',
+        data: 'visualizzazioni',
+        backgroundColor: ['rgb(255, 99, 132)'],
+        borderColor: ['rgb(255, 99, 132)'],
+        borderWidth: 3
+      }]
+    },
+    options: {
+      scales: {
+        yAxes: [{
+          ticks: {
+            beginAtZero: true
+          }
+        }]
+      }
+    }
   });
 });
 
@@ -37372,23 +37386,8 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-<<<<<<< HEAD
-__webpack_require__(/*! D:\MAMP\htdocs\boolean\bnb-team1\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! D:\MAMP\htdocs\boolean\bnb-team1\resources\sass\app.scss */"./resources/sass/app.scss");
-=======
 __webpack_require__(/*! C:\MAMP\htdocs\boolean\bnb-team1\resources\js\app.js */"./resources/js/app.js");
 module.exports = __webpack_require__(/*! C:\MAMP\htdocs\boolean\bnb-team1\resources\sass\app.scss */"./resources/sass/app.scss");
-
-
-/***/ }),
-
-/***/ 1:
-/*!****************************!*\
-  !*** ./nextTick (ignored) ***!
-  \****************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
->>>>>>> algolia
 
 
 /***/ })
