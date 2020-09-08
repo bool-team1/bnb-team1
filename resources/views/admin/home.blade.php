@@ -60,32 +60,60 @@
                 <button class="btn btn-info" type="button" name="button">Edit Apartment</button>
                 <button class="btn btn-danger"type="button" name="button">Delete</button>
             </div>
-            <div class="plans row mt-5">
-                <p class="col-12">Sponsor this apartment and get more clients!</p>
-                <div class="plans_wrap">
-                    <div class="plan_card">
-                        <h3>Base Plan</h3>
-                        <h2>24 Hours</h2>
-                        <span class="price">$2.99</span>
-                        <a href="{{route('admin.sponsor/sponsor', ['plan_id' => '1', 'apt_id' => $apartment->id])}}">Buy Now</a>
-                    </div>
-                    <div class="plan_card">
-                        <h3>Expert Plan</h3>
-                        <h2>72 Hours</h2>
-                        <span class="price">$5.99</span>
-                        <a href="{{route('admin.sponsor/sponsor', ['plan_id' => '2', 'apt_id' => $apartment->id])}}">Buy Now</a>
-                    </div>
-                    <div class="plan_card">
-                        <h3>Business Plan</h3>
-                        <h2>144 Hours</h2>
-                        <span class="price">$9.99</span>
-                        <a href="{{route('admin.sponsor/sponsor', ['plan_id' => '3', 'apt_id' => $apartment->id])}}">Buy Now</a>
+
+{{-- Check if apt has already an active sponsor --}}
+            @php
+
+                $data = $ads->where('apartment_id', $apartment->id);
+                date_default_timezone_set('Europe/Rome');
+                $isActive = false;
+            @endphp
+            @foreach ($data as $ad)
+
+                @php
+                $end_date = new DateTime($ad->end);
+                $now_date = new DateTime('now');
+                $difference = $now_date->diff($end_date);
+                if ($difference->invert == 0) {
+                    $isActive = true;
+                }
+                @endphp
+
+
+            @endforeach
+            @if (!$isActive)
+                <div class="plans row mt-5">
+                    <p class="col-12">Sponsor this apartment and get more clients!</p>
+                    <div class="plans_wrap">
+                        <div class="plan_card">
+                            <h3>Base Plan</h3>
+                            <h2>24 Hours</h2>
+                            <span class="price">$2.99</span>
+                            <a href="{{route('admin.sponsor/sponsor', ['plan_id' => '1', 'apt_id' => $apartment->id])}}">Buy Now</a>
+                        </div>
+                        <div class="plan_card">
+                            <h3>Expert Plan</h3>
+                            <h2>72 Hours</h2>
+                            <span class="price">$5.99</span>
+                            <a href="{{route('admin.sponsor/sponsor', ['plan_id' => '2', 'apt_id' => $apartment->id])}}">Buy Now</a>
+                        </div>
+                        <div class="plan_card">
+                            <h3>Business Plan</h3>
+                            <h2>144 Hours</h2>
+                            <span class="price">$9.99</span>
+                            <a href="{{route('admin.sponsor/sponsor', ['plan_id' => '3', 'apt_id' => $apartment->id])}}">Buy Now</a>
+                        </div>
                     </div>
                 </div>
-            </div>
+            @else
+                <div class="plans row mt-5">
+                    <p class="col-12">This apartment has an active sponsorship until {{$end_date->format('Y-m-d H:i:m')}}</p>
+                </div>
+            @endif
         </div>
     @endforeach
 
 </main>
+
 
 @endsection

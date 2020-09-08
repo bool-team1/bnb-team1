@@ -22,12 +22,6 @@
                                         </a>
                                     </li>
                                     <li>
-                                        <i class="fas fa-book-open"></i>
-                                        <a href="#">
-                                            PRENOTAZIONI
-                                        </a>
-                                    </li>
-                                    <li>
                                         <i class="far fa-chart-bar"></i>
                                         <a href="#">
                                             STATISTICHE
