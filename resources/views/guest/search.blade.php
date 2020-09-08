@@ -4,8 +4,8 @@
     <div class="search-wrapper">
         <div class="search-header">
             <div>
-                <label for="adress-input">Dove vuoi cercare?</label>
-                <input type="search" name="adress-input" id="address-input" placeholder="Es. Firenze"/>
+                <label for="address-input">Dove vuoi cercare?</label>
+                <input type="search" name="address-input" id="address-input" placeholder="Es. Firenze"/>
                 <input type="hidden" id="search-lat"/>
                 <input type="hidden" id="search-lng"/>  
             </div>
