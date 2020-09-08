@@ -37287,23 +37287,17 @@ $(document).ready(function () {
       email.setCustomValidity("");
     }
   });
-  var visualizzazioni_appartamenti = [{
-    'appartamenti': 'Jimmie Ranch',
-    'visualizzazioni': 1
-  }, {
-    'appartamenti': 'Clifton Rest',
-    'visualizzazioni': 5
-  }, {
-    'appartamenti': 'Everett Centers',
-    'visualizzazioni': 10
-  }];
+  var visualizzazioni_appartamenti = {
+    'appartamenti': ['Jimmie Ranch', 'Clifton Rest', 'Everett Centers'],
+    'visualizzazioni': [1, 5, 10]
+  };
   var myChart = new Chart($('#visualizzazioni_appartamenti')[0].getContext('2d'), {
     type: 'line',
     data: {
-      labels: 'appartamenti',
+      labels: visualizzazioni_appartamenti['appartamenti'],
       datasets: [{
-        label: 'numero visualizzazioni',
-        data: 'visualizzazioni',
+        label: 'visualizzazioni',
+        data: visualizzazioni_appartamenti['visualizzazioni'],
         backgroundColor: ['rgb(255, 99, 132)'],
         borderColor: ['rgb(255, 99, 132)'],
         borderWidth: 3
