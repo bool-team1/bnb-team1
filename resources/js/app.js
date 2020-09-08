@@ -5,12 +5,13 @@ var $ = require( "jquery" );
 // Chart js
 var Chart = require('chart.js');
 
-/* var places = require('places.js');
+//Algolia references
+var places = require('places.js');
 var placesAutocomplete = places({
   appId: 'plNNICPWC6MP',
   apiKey: 'b7a397b2d5106c810a38e7f10cdd967a',
   container: document.querySelector('#address-input')
-}); */
+});
 
 $(document).ready(function(){
 
@@ -73,16 +74,51 @@ var placesAutocomplete = places({
         e.suggestion.latlng.lat || "";
       document.querySelector("#lng").value =
       e.suggestion.latlng.lng || "";
+      });
+    };
+    
+    //SEARCH APARTMENT
+    //Updating latitude and longitude with Algolia
+    placesAutocomplete.on("change", function resultSelected(e) {
+      document.querySelector("#search-lat").value =
+        e.suggestion.latlng.lat || "";
+      document.querySelector("#search-lng").value =
+      e.suggestion.latlng.lng || "";
     });
 
-    $("#submit").on("click", function(){
+    //Apartment search with Ajax
+    $("#search-submit").on("click", function(){
       //Retrieve data for latitude, longitude and range
-      $latitude = $("#lat").val();
-      $longitude = $("#lng").val();
+      $latitude = $("#search-lat").val();
+      $longitude = $("#search-lng").val();
       $range = $("#range-field").val();
       $filters = [];
       $("#filters-list input:checked").each(function(index) {
         $filters.push($(this).val());
       });
       console.log($filters);
-}
+
+      //AJAX call to API for apartment results
+      $.ajax({
+        url : "http://localhost:8000/api/apartments",
+        method : "GET",
+        data : {
+            lat : $latitude,
+            lng: $longitude,
+            range: $range
+            },
+        success: function(data) {
+                //Utilizzo la risposta dell'ajax per stampare in serie i generi come checkbox
+                console.log(data);
+            },
+        error : function() {
+            alert("Error: API Apartment");
+            }
+    });
+
+
+      $address = placesAutocomplete.getVal();
+      console.log($latitude, $longitude );
+    });
+
+});
