@@ -1,0 +1,46 @@
+.search-wrapper {
+    background-color: lightgrey;
+    margin: 200px auto;
+    width: 95%;
+    
+
+    .search-header {
+        background-color: orange;
+        padding: 8px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: black;
+
+        #search-submit {
+            padding: 8px;
+            background-color: #333333;
+            color: orange;
+        }
+    }
+
+    .search-body {
+        display: flex;
+        justify-content: space-between;
+
+        .search-results-filters {
+            padding: 8px;
+            background-color: darkslategray;
+            color: white;
+            width: 20%;
+
+            #filters-list {
+
+                label {
+                    display: block;
+                }
+            }
+        }
+    
+        .search-results-details {
+            background-color: darkslategray;
+            color: white;
+            width: 70%;
+        }
+    }   
+}

@@ -13,26 +13,23 @@ class ApartmentController extends Controller
    
 
    public function index(Request $request) {
-       $longitude =  $request->input('lon');
+       $longitude =  $request->input('lng');
        $latitude = $request->input('lat');
        $range = $request->input('range');
-
-       $apartments = Apartment::with('facilities')->get();
 
        $search = ApartmentController::findNearestApartments($latitude, $longitude, $range);
        
        return response()->json([
            'success' => true,
-           'count' => $apartments->count(),
-           'data'=> $apartments,
-           'data2'=> $longitude,  
-           'data3' => $search
+           'count' => $search->count(),
+           'data'=> $search
        ]);    
    }
 
    
    public static function findNearestApartments($latitude, $longitude, $radius)
    {
+       $current_date = new \DateTime();
        /*
         * using eloquent approach, make sure to replace the "Restaurant" with your actual model name
         * replace 6371000 with 6371 for kilometer and 3956 for miles
@@ -48,8 +45,8 @@ class ApartmentController extends Controller
            ->having("distance", "<", $radius)
            ->orderBy("distance",'asc')
            ->with('facilities')
-           ->get()
-           ->flatten();
+           ->with('ads')
+           ->get();
 
        return $apartments;
    }

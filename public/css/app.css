@@ -16486,3 +16486,40 @@ ol, ul {
 .message-create-wrapper .message-create-body {
   padding: 8px;
 }
+
+.search-wrapper {
+  background-color: lightgrey;
+  margin: 200px auto;
+  width: 95%;
+}
+.search-wrapper .search-header {
+  background-color: orange;
+  padding: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: black;
+}
+.search-wrapper .search-header #search-submit {
+  padding: 8px;
+  background-color: #333333;
+  color: orange;
+}
+.search-wrapper .search-body {
+  display: flex;
+  justify-content: space-between;
+}
+.search-wrapper .search-body .search-results-filters {
+  padding: 8px;
+  background-color: darkslategray;
+  color: white;
+  width: 20%;
+}
+.search-wrapper .search-body .search-results-filters #filters-list label {
+  display: block;
+}
+.search-wrapper .search-body .search-results-details {
+  background-color: darkslategray;
+  color: white;
+  width: 70%;
+}

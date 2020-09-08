@@ -23,6 +23,9 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
     //Route to write and send messages to apartment owners
     Route::get('{apartment_id}/send-message', 'MessageController@create')->name("message.create");
     Route::post('{apartment_id}/send-message', 'MessageController@store')->name("message.store");
+
+    //Route to search apartments
+    Route::get('/search', "SearchController@index")->name('search');
 });
 
 
