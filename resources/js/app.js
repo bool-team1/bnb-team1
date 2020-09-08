@@ -93,7 +93,7 @@ var placesAutocomplete = places({
       $longitude = $("#search-lng").val();
       $range = $("#range-field").val();
       $filters = [];
-      $("#filters-list input:checked").each(function(index) {
+      $("#filters-list input:checked").each(function() {
         $filters.push($(this).val());
       });
       console.log($filters);

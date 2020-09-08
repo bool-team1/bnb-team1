@@ -20,36 +20,59 @@ class ApartmentController extends Controller
 
        $search = ApartmentController::findNearestApartments($latitude, $longitude, $range);
 
-       $index = 0;
+       $sponsored_index = 0;
+       $normal_index = 0;
+       $sponsored_results = array ();
+       $normal_results = array ();
+
+       $current_date = date('Y-m-d');
 
        foreach ($search as $element) {
-        $current_apartment = array(
-            'id' => $element->id,
-            'title' => $element->title,
-            'address' => $element->address,
-            'rooms_n' => $element->rooms_n,
-            'square_mt' => $element->square_mt,
-            'latitude' => $element->latitude,
-            'longitude' => $element->longitude,
-            'distance' => $element->distance,
-            'slug' => $element->slug,
-            'main_pic' => $element->main_pic,
-            'facilities' => $element->facilities->pluck('type'),
-            'ad_start' => $element->ads->last()->start,
-            'ad_end' => $element->ads->last()->end
-        );
+            $current_apartment = array(
+                'id' => $element->id,
+                'title' => $element->title,
+                'address' => $element->address,
+                'rooms_n' => $element->rooms_n,
+                'square_mt' => $element->square_mt,
+                'latitude' => $element->latitude,
+                'longitude' => $element->longitude,
+                'distance' => $element->distance,
+                'slug' => $element->slug,
+                'main_pic' => $element->main_pic,
+                'facilities' => $element->facilities->pluck('type'),
+                'ad_start' => $element->ads->last()->start,
+                'ad_end' => $element->ads->last()->end
+            );
 
-        $search_results[$index] = $current_apartment; 
-        
-        $index++;
+            //Creating empty array for filters if not specified in Ajax call
+            if (!$filters) {
+                $filters = array();
+            }
+
+            $filter_check = array_intersect($current_apartment['facilities']->toArray(), $filters);
+
+            if (count($filters) == count($filter_check)) {    
+                if (($current_apartment['ad_start'] < $current_date) && ($current_apartment['ad_end'] < $current_date)) {
+
+                    $sponsored_results[$sponsored_index] = $current_apartment;
+
+                    $sponsored_index++;
+                } 
+                else {
+                    $normal_results[$normal_index] = $current_apartment; 
+
+                    $normal_index++;
+                };               
+            };              
        };
 
        
        return response()->json([
            'success' => true,
-           'count' => $search->count(),
-           'filters'=> $filters,
-           'results'=> $search_results
+           'tot_count' => $search->count(),
+           'filtered_count' => count($sponsored_results) + count($normal_results),
+           'sponsored_results'=> $sponsored_results,
+           'normal_results'=> $normal_results
        ]);    
    }
 
