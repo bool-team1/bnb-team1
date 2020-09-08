@@ -18,11 +18,8 @@ class ApartmentController extends Controller
      */
     public function index()
     {
-
-        //recupero tutti gli appartamenti e li passo alla view
-        $apartments = Apartment::with('facilities')->get();
-
-
+        $apartments = Apartment::where('user_id', Auth::id())->get();
+        $apartments= Apartment::with('facilities')->get();
         return view('admin.apartments.index', compact('apartments'));
     }
 
@@ -33,13 +30,14 @@ class ApartmentController extends Controller
      */
     public function create()
     {
-        $user = Auth::user();
-        $facilities = Facility::all();
-        $data = [
-            'user' => $user,
-            'facilities' => $facilities
-        ];
-        return view('admin.apartments.create', $data);
+        // if (Auth::check()) {
+            $facilities = Facility::all();
+            $data = [
+                'facilities' => $facilities
+            ];
+            return view('admin.apartments.create', $data);
+        // }
+
     }
 
     /**
@@ -51,6 +49,8 @@ class ApartmentController extends Controller
     public function store(Request $request)
     {
         $request->validate([
+
+                'user_id' => 'unique:users',
                 'title' => 'required|max:30',
                 'address' => 'required|max:100|unique:apartments',
                 'rooms_n' => 'required|numeric|min:1',
@@ -133,6 +133,7 @@ class ApartmentController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
+                'user_id' => 'unique:users',
                 'title' => 'required|max:30',
                 'address' => 'required|max:100|unique:apartments',
                 'rooms_n' => 'required|numeric|min:1',
