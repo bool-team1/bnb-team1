@@ -32,8 +32,10 @@ class ApartmentController extends Controller
     {
         // if (Auth::check()) {
             $facilities = Facility::all();
+            $user_id = Auth::id();
             $data = [
-                'facilities' => $facilities
+                'facilities' => $facilities,
+                'user_id' => $user_id,
             ];
             return view('admin.apartments.create', $data);
         // }
@@ -50,13 +52,15 @@ class ApartmentController extends Controller
     {
         $request->validate([
 
-                'user_id' => 'unique:users',
+                'user_id' => 'required',
                 'title' => 'required|max:30',
                 'address' => 'required|max:100|unique:apartments',
                 'rooms_n' => 'required|numeric|min:1',
                 'bathrooms_n' => 'required|numeric|min:1',
                 'square_mt' => 'required|numeric|min:1',
-                'main_pic' => 'image|max:1024'
+                'main_pic' => 'image|max:1024',
+                'longitude' => 'required',
+                'latitude' => 'required',
        ]);
         $data = $request->all();
        //generazione dello slug dal titolo
@@ -133,7 +137,7 @@ class ApartmentController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-                'user_id' => 'unique:users',
+                'user_id' => 'required',
                 'title' => 'required|max:30',
                 'address' => 'required|max:100|unique:apartments',
                 'rooms_n' => 'required|numeric|min:1',

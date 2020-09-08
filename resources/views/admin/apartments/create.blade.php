@@ -43,6 +43,7 @@
                         <label for="img">Immagine</label>
                         <input type="file" name="image" class="form-control-file" id="img">
                     </div>
+                    <input type="hidden" name="user_id" class="form-control-file" id="user_id" value= "{{$user_id}}">
                 <div>
                         <label for="adress-input">Dove vuoi cercare?</label>
                         <input type="search" name="adress-input" id="address-input" placeholder="Es. Firenze"/>

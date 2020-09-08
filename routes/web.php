@@ -16,8 +16,6 @@ use App\Plan;
 |
 */
 
-<<<<<<< HEAD
-
 Route::group(['prefix' => LaravelLocalization::setLocale()], function()
 {
 
@@ -68,16 +66,14 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
             return back()->withErrors('An error occured: ' . $result->message);
         }
     });
-=======
-//
 // Route::group(['prefix' => LaravelLocalization::setLocale()], function()
 // {
->>>>>>> master
+
 	/** ADD ALL LOCALIZED ROUTES INSIDE THIS GROUP **/
     Route::get('/', 'HomeController@index')->name('home');
     Auth::routes();
 
-<<<<<<< HEAD
+
     //queste sono le rotte pubbliche
     Route::get('/', 'HomeController@index')->name('home');
 
@@ -85,7 +81,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
     Route::get('{apartment_id}/send-message', 'MessageController@create')->name("message.create");
     Route::post('{apartment_id}/send-message', 'MessageController@store')->name("message.store");
 });
-=======
+
 Auth::routes();
 //queste sono le rotte pubbliche
 Route::get('/', 'HomeController@index')->name('home');
@@ -99,17 +95,13 @@ Route::get('/', 'HomeController@index')->name('home');
     Route::post('{apartment_id}/send-message', 'MessageController@store')->name("message.store");
 // });
 
->>>>>>> master
 
 
 Route::prefix('admin')->namespace('Admin')->name('admin.')->middleware('auth')->group(function() {
 //queste rotte iniziano con admin , sono le pagine della dashboard, navigabili solo con l'autenticazione
-<<<<<<< HEAD
     Route::get('/', 'HomeController@index')->name('home');
     Route::get('/sponsor', 'SponsorController@index')->name('sponsor/sponsor');
-=======
     Route::get('/', 'HomeController@index')->name('index');
->>>>>>> master
     Route::resource('/apartments', 'ApartmentController');
 
     //Route to manage messages on the admin side
