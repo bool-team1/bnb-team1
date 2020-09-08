@@ -1,13 +1,12 @@
 @extends('layouts.app_admin');
 
 @section('content')
-    {{-- <div class="container"> --}}
-        {{-- <div class="row">
-            <div class="col-12"> --}}
-                {{-- <div class="d-flex align-items-center">
+    {{-- <div class="container">
+         <div class="row"> --}}
+            {{-- <div class="col-12"> --}}
+                <div class="d-flex align-items-center">
                     <h1>Inserisci un nuovo appartamento</h1>
-                </div> --}}
-                <h1 class="text-center">Inserisci un nuovo appartamento</h1>
+                </div>
                 @if ($errors->any())
                     <div class="alert alert-danger">
                         <ul>
@@ -40,7 +39,11 @@
                         <label for="square_mt">Metri quadri</label>
                         <input type="text" name="square_mt" class="form-control" id="square_mt" placeholder="..." value="{{ old('square_mt') }}">
                     </div>
-                    {{-- <div class="form-group">
+                    <div class="form-group">
+                        <label for="img">Immagine</label>
+                        <input type="file" name="image" class="form-control-file" id="img">
+                    </div>
+                    <div class="form-group">
                        Facilities:
                        @foreach ($facilities ?? '' as $facility)
                            <div class="form-check">
@@ -55,14 +58,10 @@
                                </label>
                            </div>
                        @endforeach
-                   </div> --}}
-                    <div class="form-group">
-                        <label for="img">Immagine</label>
-                        <input type="file" name="image" class="form-control-file" id="img">
-                    </div>
+                   </div>
                     <button type="submit" class="btn btn-primary">Salva</button>
                 </form>
-            {{-- </div>
-        </div> --}}
-    {{-- </div> --}}
+             {{-- </div>
+        </div>
+    </div> --}}
 @endsection

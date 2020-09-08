@@ -21,8 +21,9 @@
                             <th>Nr.bagni</th>
                             <th>Mt quadri</th>
                             <th>Slug</th>
-                            <th>Facilities</th>
+                            <th>Post pubblico</th>
                             <th>Immagine</th>
+                            <th>Facilities</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -30,7 +31,13 @@
                             <tr>
                                 <td>{{ $apartment->id }}</td>
                                 <td>{{ $apartment->title }}</td>
+                                <td>{{ $apartment->address }}</td>
+                                <td>{{ $apartment->rooms_n }}</td>
+                                <td>{{ $apartment->bathrooms_n }}</td>
+                                <td>{{ $apartment->square_mt }}</td>
                                 <td>{{ $apartment->slug }}</td>
+                                <td>{{ $apartment->isPublic }}</td>
+                                <td>{{ $apartment->main_pic }}</td>
                                 <td>
                                     @forelse ($apartment->facilities as $facility)
                                         {{ $facility->type }}{{ $loop->last ? '' : ', '}}
@@ -38,6 +45,7 @@
                                         -
                                     @endforelse
                                 </td>
+
                                 <td>
                                     <a class="btn btn-small btn-info"
                                     href="{{ route('admin.apartments.show', ['apartment' => $apartment->id]) }}">

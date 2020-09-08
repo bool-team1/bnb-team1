@@ -36,5 +36,5 @@ class Apartment extends Model
         return $this->hasMany('App\Message');
     }
 
-    protected $fillable = ['title','address', 'rooms_n', 'bathrooms_n', 'square_mt', 'slug'];
+    protected $fillable = ['title','address', 'rooms_n', 'bathrooms_n', 'square_mt', 'slug', 'main_pic'];
 }
