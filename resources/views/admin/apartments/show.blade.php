@@ -39,6 +39,14 @@
                     {{ $apartment->isPublic }}
                 </p> --}}
                 <p>
+                    <strong>Facilities: </strong>
+                    @forelse ($apartment->facilties as $facility)
+                        {{ $facility->type }}{{ $loop->last ? '' : ', '}}
+                    @empty
+                        -
+                    @endforelse
+                </p>
+                <p>
                     <strong>URL Immagine: </strong>
                     {{ $apartment->main_pic }}
                 </p>

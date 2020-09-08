@@ -3,10 +3,11 @@
 namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Apartment;
-use App\Facility;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Auth;
+use App\Apartment;
+use App\Facility;
 
 class ApartmentController extends Controller
 {
@@ -17,8 +18,8 @@ class ApartmentController extends Controller
      */
     public function index()
     {
-        //recupero tutti gli appartamenti e li passo alla view
-        $apartments = Apartment::with('facilities')->get();
+        $apartments = Apartment::where('user_id', Auth::id())->get();
+        $apartments= Apartment::with('facilities')->get();
         return view('admin.apartments.index', compact('apartments'));
     }
 
@@ -29,11 +30,14 @@ class ApartmentController extends Controller
      */
     public function create()
     {
-        $facilities = Facility::all();
-        $data = [
-            'facilities' => $facilities
-        ];
-        return view('admin.apartments.create', $data);
+        // if (Auth::check()) {
+            $facilities = Facility::all();
+            $data = [
+                'facilities' => $facilities
+            ];
+            return view('admin.apartments.create', $data);
+        // }
+
     }
 
     /**
@@ -45,17 +49,30 @@ class ApartmentController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'title' => 'required|max:30',
-            'address' => 'required|max:100|unique:apartments',
-            'rooms_n' => 'required|numeric|min:1',
-            'bathrooms_n' => 'required|numeric|min:1',
-            'square_mt' => 'required|numeric|min:1',
-            'main_pic' => 'image|max:1024'
-        ]);
 
+                'user_id' => 'unique:users',
+                'title' => 'required|max:30',
+                'address' => 'required|max:100|unique:apartments',
+                'rooms_n' => 'required|numeric|min:1',
+                'bathrooms_n' => 'required|numeric|min:1',
+                'square_mt' => 'required|numeric|min:1',
+                'main_pic' => 'image|max:1024'
+       ]);
         $data = $request->all();
-        $slug = Str::of($data['title'])->slug('-')->__toString();
-        $data['slug'] = $slug;
+       //generazione dello slug dal titolo
+       $slug = Str::of($data['title'])->slug('-');
+       $original_slug = $slug;
+       //verifico se lo slug esiste già nella tabella ('slug' nome colonna $slug valore)
+       $apartment_exists = Apartment::where('slug', $slug)->first(); //get = collection di oggetti, first = un oggetto
+
+       $counter = 0;
+       while($apartment_exists) {
+           $counter++;
+           $slug = $original_slug . '-' . $counter;
+           $apartment_exists = Apartment::where('slug', $slug)->first();
+       }
+       //in questo modo lo slug sarà unico
+
         $new_apartment = new Apartment();
         $new_apartment->fill($data);
         $new_apartment->save();
@@ -116,16 +133,15 @@ class ApartmentController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'title' => 'required|max:30',
-            'address' => 'required|max:100|unique:apartments,' .$id,
-            'rooms_n' => 'required|numeric|min:1',
-            'bathrooms_n' => 'required|numeric|min:1',
-            'square_mt' => 'required|numeric|min:1',
-            'main_pic' => 'image|max:1024'
-        ]);
+                'user_id' => 'unique:users',
+                'title' => 'required|max:30',
+                'address' => 'required|max:100|unique:apartments',
+                'rooms_n' => 'required|numeric|min:1',
+                'bathrooms_n' => 'required|numeric|min:1',
+                'square_mt' => 'required|numeric|min:1',
+                'main_pic' => 'image|max:1024'
+       ]);
         $data = $request->all();
-        //modificare la funzione per lo slug
-        $slug = Str::of($data['title'])->slug('-');
 
         $apartment = Apartment::find($id);
         $apartment->update($data);
@@ -134,8 +150,6 @@ class ApartmentController extends Controller
         } else {
             $apartment->facilities()->sync([]);
         }
-        $apartment->save();
-
         return redirect()->route('admin.apartments.index');
     }
 
@@ -155,4 +169,5 @@ class ApartmentController extends Controller
             return abort('404');
         }
     }
+
 }
