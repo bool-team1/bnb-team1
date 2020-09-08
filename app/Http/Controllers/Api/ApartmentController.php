@@ -16,13 +16,40 @@ class ApartmentController extends Controller
        $longitude =  $request->input('lng');
        $latitude = $request->input('lat');
        $range = $request->input('range');
+       $filters = $request->input('filters');
 
        $search = ApartmentController::findNearestApartments($latitude, $longitude, $range);
+
+       $index = 0;
+
+       foreach ($search as $element) {
+        $current_apartment = array(
+            'id' => $element->id,
+            'title' => $element->title,
+            'address' => $element->address,
+            'rooms_n' => $element->rooms_n,
+            'square_mt' => $element->square_mt,
+            'latitude' => $element->latitude,
+            'longitude' => $element->longitude,
+            'distance' => $element->distance,
+            'slug' => $element->slug,
+            'main_pic' => $element->main_pic,
+            'facilities' => $element->facilities->pluck('type'),
+            'ad_start' => $element->ads->last()->start,
+            'ad_end' => $element->ads->last()->end
+        );
+
+        $search_results[$index] = $current_apartment; 
+        
+        $index++;
+       };
+
        
        return response()->json([
            'success' => true,
            'count' => $search->count(),
-           'data'=> $search
+           'filters'=> $filters,
+           'results'=> $search_results
        ]);    
    }
 

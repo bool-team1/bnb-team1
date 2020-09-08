@@ -105,7 +105,8 @@ var placesAutocomplete = places({
         data : {
             lat : $latitude,
             lng: $longitude,
-            range: $range
+            range: $range,
+            filters: $filters
             },
         success: function(data) {
                 //Utilizzo la risposta dell'ajax per stampare in serie i generi come checkbox

@@ -47815,7 +47815,8 @@ $(document).ready(function () {
       data: {
         lat: $latitude,
         lng: $longitude,
-        range: $range
+        range: $range,
+        filters: $filters
       },
       success: function success(data) {
         //Utilizzo la risposta dell'ajax per stampare in serie i generi come checkbox
