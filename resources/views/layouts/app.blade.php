@@ -1,14 +1,14 @@
-{{-- menu + HEAD  --}}
+<!-- menu + HEAD   -->
 @include("partials.menu")
-{{-- fine menu --}}
+ <!-- fine menu  -->
 <body>
 
-    {{-- main --}}
+     <!-- main  -->
     @yield('content')
-    {{-- fine main --}}
+    <!-- fine main  -->
 
-    {{-- footer --}}
+    <!-- footer  -->
     @include('partials.footer')
-    {{-- fine footer --}}
+     <!-- fine footer  -->
 </body>
 </html>

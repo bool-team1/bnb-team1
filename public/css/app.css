@@ -16057,132 +16057,79 @@ readers do not read off random characters that represent icons */
   font-weight: 900;
 }
 
-.main-ctn {
-  margin: 0;
-  height: 100vh;
-  max-width: 100%;
-  padding-top: 85px;
+main {
+  background-color: white;
 }
-.main-ctn .sidebar {
-  background-color: #2B2929;
-  height: calc(100vh - 118px);
+
+.profile_image {
+  height: 50px;
+  border-radius: 90px;
+}
+
+.sidebar {
+  color: #ccc;
+  padding-top: 10px;
+  background: #1c1c1c;
   position: fixed;
-  z-index: 9;
+  left: 0;
   width: 245px;
+  height: 100%;
 }
-.main-ctn .sidebar .user_info {
+.sidebar h4 {
   padding-top: 15px;
-  display: flex;
-  align-items: baseline;
+  margin-bottom: 50px;
 }
-.main-ctn .sidebar .user_info .prof_pic_wrapper {
-  width: 60px;
-}
-.main-ctn .sidebar .user_info .prof_pic_wrapper img {
+.sidebar a {
+  color: white;
+  display: block;
   width: 100%;
-  border-radius: 50%;
-}
-.main-ctn .sidebar .user_info p {
-  color: white;
-  margin-left: 10px;
-  font-size: 20px;
-}
-.main-ctn .sidebar ul {
-  list-style-type: none;
-  padding-top: 30px;
-}
-.main-ctn .sidebar ul li {
-  color: white;
-  padding: 20px 0;
-  padding-left: 5px;
-  border-radius: 3px;
-  font-size: 18px;
-}
-.main-ctn .sidebar ul li:hover {
-  background-color: #353333;
-  border-left: 2px solid #FF6633;
-  cursor: pointer;
-}
-.main-ctn .sidebar ul li a {
+  line-height: 60px;
   text-decoration: none;
-  color: white;
-  padding: 5px 15px;
+  padding-left: 40px;
+  box-sizing: border-box;
+  transition: 0.2s;
+  transition-property: background;
 }
-.main-ctn footer {
-  margin-left: 0;
+.sidebar a:hover {
+  border-left: 2px solid #f56837;
+  background: grey;
+}
+.sidebar i {
+  padding-right: 10px;
 }
 
-#main {
-  background-color: #1c1c1c;
-  padding-top: 20px;
-  padding: 15px;
-  margin-left: 245px;
-  width: 100%;
+label #sidebar_btn {
+  z-index: 1;
+  color: white;
+  position: fixed;
+  cursor: pointer;
+  left: 250px;
+<<<<<<< HEAD
+  font-size: 20px;
+  margin: 5px 0;
+  transition: 0.2s;
+  transition-property: color;
 }
-#main .apt_card {
-  padding-top: 20px;
-  padding-bottom: 20px;
-  background-color: #353333;
-  border-radius: 6px;
+label #sidebar_btn:hover {
+  color: #f56837;
+}
+
+#check:checked ~ .sidebar {
+  left: -190px;
+}
+#check:checked ~ .sidebar a span {
+  display: none;
+}
+#check:checked ~ .sidebar a {
+  font-size: 20px;
+  margin-left: 165px;
+  width: 80px;
+  padding-top: 10px;
+  padding-bottom: 10px;
   margin-bottom: 20px;
-  color: rgba(255, 255, 255, 0.9);
-}
-#main .apt_card .apt_title {
-  color: #FF6633;
-}
-#main .apt_card:first-child {
-  margin-top: 65px;
-}
-#main .apt_card ul {
-  list-style-type: none;
-  font-size: 18px;
-}
-#main .apt_card ul li {
-  padding: 5px 0;
-}
-#main .apt_card ul li i {
-  padding-left: 4px;
-  color: #FF6633;
-  font-size: 20px;
-}
-#main .apt_card ul li:first-child {
-  color: #FF6633;
-}
-#main .apt_card .buttons {
-  margin-top: 10px;
-  display: flex;
-  justify-content: center;
-}
-#main .apt_card .buttons button, #main .apt_card .buttons .btn-info {
-  margin: 0 20px;
-  color: white;
-}
-#main .apt_info p {
-  text-align: center;
-  font-size: 23px;
-}
-#main .poster_wrapper img {
-  padding: 0;
-  border-radius: 5px;
 }
 
-.dashboard_header {
-  background: #2B2929;
-  padding: 25px 5px;
-  position: absolute;
-  top: 85px;
-  left: 245px;
-  width: 100%;
-}
-.dashboard_header + .apt_card {
-  margin-top: 80px;
-}
-.dashboard_header h2 {
-  color: white;
-  font-size: 20px;
-  margin-bottom: 0;
-}
-
+<<<<<<< refs/remotes/origin/master
 .plans p {
   font-size: 25px;
   text-align: center;
@@ -16261,6 +16208,34 @@ readers do not read off random characters that represent icons */
     margin-left: 80px;
   }
 }
+=======
+>>>>>>> Fix_view
+=======
+  font-size: 20px;
+  margin: 5px 0;
+  transition: 0.2s;
+  transition-property: color;
+}
+label #sidebar_btn:hover {
+  color: #f56837;
+}
+
+#check:checked ~ .sidebar {
+  left: -190px;
+}
+#check:checked ~ .sidebar a span {
+  display: none;
+}
+#check:checked ~ .sidebar a {
+  font-size: 20px;
+  margin-left: 165px;
+  width: 80px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+>>>>>>> FixView
 .footer {
   padding-bottom: 10px;
   padding-top: 5px;
@@ -16274,138 +16249,82 @@ readers do not read off random characters that represent icons */
   padding-left: 10px;
 }
 
-.fixed-top {
-  background-color: #1C1C1C;
-  background-color: #1c1c1c;
-}
-
-.navbar-light .navbar-nav .nav-link {
-  color: white;
-  float: left;
-}
-.navbar-light .navbar-nav .nav-link:hover {
-  color: white;
-  border-bottom: 2px solid #F56837;
-  border-bottom: 2px solid #f56837;
-}
-
-.navbar-brand {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.navbar-brand img {
-  margin-top: -1px;
-  width: 80px;
-}
-
-.active {
-  color: white;
-}
-
-.navbar {
-  color: dimgrey;
-  height: 85px;
-}
-
-.button {
-  padding-left: 10px;
-  padding-right: 10px;
-  font-size: 13px;
-  color: white;
-  background-color: #F56837;
-  background-color: #f56837;
-  border-radius: 8px;
-  border: none;
-}
-
-.fa-globe {
-  font-weight: 900;
-  color: white;
-  padding-left: 20px;
-  font-size: 20px;
-}
-
-.menu-link {
-  margin-right: 20px;
-}
-.menu-link .fa-angle-down {
-  margin-top: 11px;
-}
-
-.fa-angle-down {
-  color: white;
-  font-size: medium;
-  padding-left: 3px;
-}
-
-.fa-user-circle {
-  color: white;
-  padding-left: 20px;
-  font-size: 22px;
-  margin-top: 1px;
-  cursor: pointer;
-}
-
 .language {
   cursor: pointer;
   margin-top: 3px;
+  color: grey;
+  padding-top: 5px;
+  padding-right: 10px;
+}
+.language:hover {
+  color: lightgrey;
 }
 
-.avatar {
-  margin-right: 50px;
+.navbar-dark {
+  background-color: #1c1c1c;
 }
 
-.menu {
-  margin-left: 50px;
+.navbar-brand img {
+  height: 60px;
+}
+
+.button {
+  border: none;
+  padding: 10px;
+  margin-right: 20px;
+  border-radius: 8px;
+  color: white;
+  background-color: #f56837;
+<<<<<<< HEAD
+}
+.button p {
+  margin-bottom: 0px;
+}
+=======
+}
+.button p {
+  margin-bottom: 0px;
+}
+>>>>>>> FixView
+.button:hover {
+  color: white;
+}
+
+.dropdown-menu-lg-lang {
+  position: absolute;
+  margin-right: 70px;
+  top: 75%;
 }
 
 body {
   background-color: #1c1c1c;
 }
+body h1 {
+  margin-bottom: 3px;
+}
 
-.bg-img {
-  background-image: url("https://i.postimg.cc/NfZFxf4L/jumbotron.jpg");
-  height: 500px;
+.bg-cover {
+  background-image: url("https://i.postimg.cc/sxJPjXKP/Untitled-1.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
   background-size: cover;
+  height: 560px;
 }
 
-.jumbotron {
-  margin-top: 85px;
-  background-color: inherit;
-}
-.jumbotron .box-cta p {
-  float: left;
-  padding: 5px;
-  padding-left: 20px;
-  padding-right: 35px;
-  border-radius: 8px;
-  background-color: ghostwhite;
-  color: grey;
-}
-.jumbotron .box-cta i {
-  color: grey;
-  margin-top: 9px;
-  margin-left: -22px;
-  float: left;
-  margin-right: 30px;
-}
-.jumbotron button {
-  padding-left: 15px;
-  padding-right: 15px;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  font-size: 15px;
-}
-.jumbotron .cta {
-  margin-top: 170px;
-  width: 76%;
+.card {
   background-color: #1c1c1c;
-  padding-left: 31px;
-  padding-top: 24px;
-  padding-bottom: 9px;
+  border: 1px solid rgba(28, 28, 28, 0.125);
+  color: white;
   border-radius: 8px;
+}
+
+.btn-danger {
+  background-color: #f56837;
+  border-color: #f56837;
+}
+.btn-danger:hover {
+  background-color: #f56837;
+  border-color: #f56837;
 }
 
 .container {
@@ -16436,6 +16355,62 @@ body {
 .main {
   background-color: #1c1c1c;
   padding-top: 0px;
+}
+
+.app-ev {
+  background-color: #2B2929;
+  border-radius: 8px;
+}
+
+.card-deck {
+  margin-top: 50px;
+  margin-bottom: 60px;
+}
+
+.title-1 {
+  padding-top: 20px;
+  color: white;
+}
+
+.bg-specialdark {
+  height: 47px;
+  margin-left: 25%;
+  border-radius: 8px;
+  padding-left: 5px;
+  padding-top: 5px;
+  padding-right: 5px;
+  padding-bottom: 5px;
+  background-color: #1c1c1c;
+  width: 50%;
+}
+
+.s-bar {
+  padding-top: 200px;
+}
+
+.btn-search {
+  height: 37px;
+  width: 31%;
+}
+
+.form-search {
+  margin-right: 6px;
+  width: 68%;
+}
+
+.button a {
+  color: white;
+  text-decoration: none;
+}
+
+.fix-container {
+  color: white;
+}
+.fix-container .table th, .fix-container td {
+  color: white;
+}
+.fix-container .align-items-center h1 {
+  margin-bottom: 50px;
 }
 
 * {

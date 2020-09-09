@@ -1,10 +1,10 @@
 @extends('layouts.app_admin');
 
 @section('content')
-    {{-- <div class="container">
-         <div class="row"> --}}
-            {{-- <div class="col-12"> --}}
-                <div class="d-flex align-items-center">
+     <div class="container">
+         <div class="row fix-container">
+            <div class="col-9 offset-2">
+                 <div class="d-flex align-items-center">
                     <h1>Inserisci un nuovo appartamento</h1>
                 </div>
                 @if ($errors->any())
@@ -69,9 +69,13 @@
                            </div>
                        @endforeach
                    </div>
+                    <div class="form-group">
+                        <label for="img">Immagine</label>
+                        <input type="file" name="image" class="form-control-file" id="img">
+                    </div>
                     <button type="submit" class="btn btn-primary">Salva</button>
                 </form>
-             {{-- </div>
+             </div>
         </div>
-    </div> --}}
+     </div>
 @endsection

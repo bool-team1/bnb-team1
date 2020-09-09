@@ -1,132 +1,162 @@
-.main-ctn {
-    margin: 0;
-    height: 100vh;
-    max-width: 100%;
-    padding-top: 85px;
-        .sidebar {
-            background-color: #2B2929;
-            height: calc(100vh - 118px);
-            position: fixed;
-            z-index: 9;
-            width: 245px;
-                .user_info {
-                    padding-top: 15px;
-                    display: flex;
-                    align-items: baseline;
-                        .prof_pic_wrapper {
-                            width: 60px;
-                            img {
-                                width: 100%;
-                                border-radius: 50%;
-                            }
-                        }
-                        p {
-                            color: white;
-                            margin-left: 10px;
-                            font-size: 20px;
-                        }
-                    }
-                ul {
-                    list-style-type: none;
-                    padding-top: 30px;
-                        li {
-                            color: white;
-                            padding: 20px 0;
-                            padding-left: 5px;
-                            border-radius: 3px;
-                            font-size: 18px;
-                                &:hover {
-                                    background-color: #353333;
-                                    border-left: 2px solid $mainOrange;
-                                    cursor: pointer;
-                                }
-                                a {
-                                    text-decoration: none;
-                                    color: white;
-                                    padding: 5px 15px;
-                                }
-                        }
-                }
-        }
-    footer {
-        margin-left: 0;
-    }
+// .main-ctn {
+//     margin: 0;
+//     height: 100vh;
+//     max-width: 100%;
+//         .sidebar {
+//             background-color: #2B2929;
+//             height: calc(100vh - 118px);
+//             position: fixed;
+//             z-index: 9;
+//             width: 245px;
+//                 .user_info {
+//                     padding-top: 15px;
+//                     display: flex;
+//                     align-items: baseline;
+//                         .prof_pic_wrapper {
+//                             width: 60px;
+//                             img {
+//                                 width: 100%;
+//                                 border-radius: 50%;
+//                             }
+//                         }
+//                         p {
+//                             color: white;
+//                             margin-left: 10px;
+//                             font-size: 20px;
+//                         }
+//                     }
+//                 ul {
+//                     list-style-type: none;
+//                     padding-top: 30px;
+//                         li {
+//                             color: white;
+//                             padding: 20px 0;
+//                             padding-left: 5px;
+//                             border-radius: 3px;
+//                             font-size: 18px;
+//                                 &:hover {
+//                                     background-color: #353333;
+//                                     border-left: 2px solid $mainOrange;
+//                                     cursor: pointer;
+//                                 }
+//                                 a {
+//                                     text-decoration: none;
+//                                     color: white;
+//                                     padding: 5px 15px;
+//                                 }
+//                         }
+//                 }
+//         }
+//     footer {
+//         margin-left: 0;
+//     }
+// }
+// #main {
+//     background-color: $specialdark;
+//     padding-top: 20px;
+//     padding: 15px;
+//     margin-left: 245px;
+//     width: 100%;
+//         .apt_card {
+//             padding-top: 20px;
+//             padding-bottom: 20px;
+//             background-color: #353333;
+//             border-radius: 6px;
+//             margin-bottom: 20px;
+//             color: rgba(255, 255, 255, .9);
+//                 .apt_title {
+//                     color: $mainOrange;
+//                 }
+//                 &:first-child {
+//                     margin-top: 65px;
+//                 }
+//                 ul {
+//                     list-style-type: none;
+//                     font-size: 18px;
+//                         li {
+//                             padding: 5px 0;
+//                                 i {
+//                                     padding-left: 4px;
+//                                     color: $mainOrange;
+//                                     font-size: 20px;
+//                                 }
+//                             &:first-child {
+//                                 color: $mainOrange;
+//                             }
+//                         }
+//                 }
+//                 .buttons {
+//                     margin-top: 10px;
+//                     display: flex;
+//                     justify-content: center;
+//                         button, .btn-info {
+//                             margin: 0 20px;
+//                             color: white;
+//                         }
+//                 }
+//         }
+//         .apt_info {
+//                 p {
+//                     text-align: center;
+//                     font-size: 23px;
+//                 }
+//         }
+//         h2 {
+//
+//         }
+//         .poster_wrapper img {
+//             padding: 0;
+//             border-radius: 5px;
+//         }
+// }
+// .dashboard_header {
+//     background: #2B2929;
+//     padding: 25px 5px;
+//     position: absolute;
+//     top: 85px;
+//     left: 245px;
+//     width: 100%;
+//         &+ .apt_card {
+//             margin-top: 80px;
+//         }
+//         h2 {
+//             color: white;
+//             font-size: 20px;
+//             margin-bottom: 0;
+//         }
+// }
+//
+// @media screen and (max-width: 800px) {
+//     .sidebar {
+//         width: 80px !important;
+//             ul {
+//                 text-align: center;
+//                     li a {
+//                         display: none;
+//                     }
+//             }
+//             .user_info {
+//                 p {
+//                     display: none;
+//                 }
+//                 .prof_pic_wrapper {
+//                     padding-left: 5px;
+//                 }
+//             }
+//             .side_wrap {
+//                 padding: 0;
+//             }
+//   }
+//   .dashboard_header {
+//       left: 80px;
+//   }
+//   #main {
+//       margin-left: 80px;
+//   }
+// }
+main {
+  background-color: white;
 }
-#main {
-    background-color: $specialdark;
-    padding-top: 20px;
-    padding: 15px;
-    margin-left: 245px;
-    width: 100%;
-        .apt_card {
-            padding-top: 20px;
-            padding-bottom: 20px;
-            background-color: #353333;
-            border-radius: 6px;
-            margin-bottom: 20px;
-            color: rgba(255, 255, 255, .9);
-                .apt_title {
-                    color: $mainOrange;
-                }
-                &:first-child {
-                    margin-top: 65px;
-                }
-                ul {
-                    list-style-type: none;
-                    font-size: 18px;
-                        li {
-                            padding: 5px 0;
-                                i {
-                                    padding-left: 4px;
-                                    color: $mainOrange;
-                                    font-size: 20px;
-                                }
-                            &:first-child {
-                                color: $mainOrange;
-                            }
-                        }
-                }
-                .buttons {
-                    margin-top: 10px;
-                    display: flex;
-                    justify-content: center;
-                        button, .btn-info {
-                            margin: 0 20px;
-                            color: white;
-                        }
-                }
-        }
-        .apt_info {
-                p {
-                    text-align: center;
-                    font-size: 23px;
-                }
-        }
-        h2 {
-
-        }
-        .poster_wrapper img {
-            padding: 0;
-            border-radius: 5px;
-        }
-}
-.dashboard_header {
-    background: #2B2929;
-    padding: 25px 5px;
-    position: absolute;
-    top: 85px;
-    left: 245px;
-    width: 100%;
-        &+ .apt_card {
-            margin-top: 80px;
-        }
-        h2 {
-            color: white;
-            font-size: 20px;
-            margin-bottom: 0;
-        }
-}
-
 .plans {
             p {
                 font-size: 25px;
@@ -134,20 +164,20 @@
             }
             .plans_wrap {
                 display: flex;
-                justify-content: space-around;
                 width: 100%;
+                justify-content: space-around;
                 flex-wrap: wrap;
                 margin-top: -30px;
                 .plan_card {
-                    display: flex;
                     flex-direction: column;
+                    display: flex;
                     align-items: center;
                     justify-content: space-between;
                     background: #ece4e1;
                     color: $mainOrange;
                     padding: 15px;
-                    border-radius: 10px;
                     width: 250px;
+                    border-radius: 10px;
                     margin-top: 30px;
                         .price {
                             font-size: 30px;
@@ -167,43 +197,79 @@
                             border-radius: 5px;
                             margin-top: 25px;
                             width: 145px;
-                            text-align: center;
                                 &:hover {
+                            text-align: center;
                                     background-color: $specialdark;
                                     color: $mainOrange;
                                     text-decoration: none;
                                     transition-duration: .2s;
                                 }
-                        }
                 }
+                        }
             }
 
-        }
-@media screen and (max-width: 800px) {
-    .sidebar {
-        width: 80px !important;
-            ul {
-                text-align: center;
-                    li a {
-                        display: none;
-                    }
-            }
-            .user_info {
-                p {
-                    display: none;
-                }
-                .prof_pic_wrapper {
-                    padding-left: 5px;
-                }
-            }
-            .side_wrap {
-                padding: 0;
-            }
+.profile_image {
+  height: 50px;
+  border-radius: 90px;
+}
+.sidebar {
+  color: #ccc;
+  padding-top: 10px;
+  background: $specialdark;
+  position: fixed;
+  left: 0;
+  width: 245px;
+  height: 100%;
+  h4 {
+    padding-top: 15px;
+    margin-bottom: 50px;
   }
-  .dashboard_header {
-      left: 80px;
+  a {
+    color: white;
+    display: block;
+    width: 100%;
+    line-height: 60px;
+    text-decoration: none;
+    padding-left: 40px;
+    box-sizing: border-box;
+    transition: 0.2s;
+    transition-property: background;
+    &:hover{
+      border-left: 2px solid $specialorange;
+      background: grey;
+    }
   }
-  #main {
-      margin-left: 80px;
+  i {
+    padding-right: 10px;
+  }
+}
+
+label #sidebar_btn{
+  z-index: 1;
+  color: white;
+  position: fixed;
+  cursor: pointer;
+  left: 250px;
+  font-size: 20px;
+  margin: 5px 0;
+  transition: 0.2s;
+  transition-property: color;
+  &:hover {
+    color: $specialorange;
+  }
+}
+
+#check:checked ~ .sidebar {
+  left: -190px;
+  a span {
+    display: none;
+  }
+  a {
+    font-size: 20px;
+    margin-left: 165px;
+    width: 80px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
   }
 }
