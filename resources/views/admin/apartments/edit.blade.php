@@ -2,8 +2,8 @@
 
 @section('content')
     <div class="container-fluid">
-        <div class="row">
-            <div class="col-12">
+        <div class="row fix-container">
+            <div class="col-9 offset-2">
                 <div class="d-flex align-items-center">
                     <h1 class="mt-3 mb-3">Modifica</h1>
                 </div>

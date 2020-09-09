@@ -1,58 +1,28 @@
-{{-- menu + HEAD  --}}
+<input type="checkbox" id="check">
+<!-- menu + HEAD   -->
 @include("partials.menu")
-{{-- fine menu --}}
+ <!-- fine menu  -->
 <body>
-    <div class="container main-ctn">
-            <div class="row">
-                <div class="sidebar">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-12 side_wrap">
-                                <div class="user_info">
-                                    <div class="prof_pic_wrapper">
-                                        <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png" alt="Profile Picture">
-                                    </div>
-                                    <p>USER NAME</p>
-                                </div>
-                                <ul>
-                                    <li>
-                                        <i class="far fa-building"></i>
-                                        <a href="{{ route('admin.apartments.index') }}" class="">
-                                            APPARTAMENTI
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <i class="far fa-chart-bar"></i>
-                                        <a href="#">
-                                            STATISTICHE
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <i class="far fa-envelope"></i>
-                                        <a href="#">
-                                            MESSAGGI
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <i class="fas fa-sign-out-alt"></i>
-                                        <a href="#">
-                                            {{-- modificare per il logout serve il metodo post --}}
-                                            LOG OUT
-                                        </a> 
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                @yield('content')
-                {{-- footer --}}
-                @include('partials.footer')
-                {{-- fine footer --}}
-            </div>
-        </div>
+  <label for="check">
+    <i class="fas fa-bars" id="sidebar_btn"></i>
+  </label>
+  <div class="sidebar">
+    <center>
+      <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png" alt="Profile Picture" class="profile_image">
+      <h4>USER NAME</h4>
+    </center>
+    <a href="#"><i class="far fa-building"></i><span>APPARTAMENTI</span></a>
+    <a href="#"><i class="fas fa-book-open"></i></i><span>PRENOTAZIONI</span></a>
+    <a href="#"><i class="far fa-chart-bar"></i></i><span>STATISTICHE</span></a>
+    <a href="#"><i class="far fa-envelope"></i></i><span>MESSAGGI</span></a>
+    <a href="#"><i class="fas fa-sign-out-alt"></i></i><span>LOG OUT</span></a>
+  </div>
 
+  @yield('content')
 
+  <!-- footer  -->
+   @include('partials.footer')
+  <!-- fine footer  -->
 
         @yield('script')
     <script src="{{("js/app.js")}}" charset="utf-8"></script>
