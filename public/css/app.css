@@ -16551,3 +16551,88 @@ ol, ul {
 .message-create-wrapper .message-create-body {
   padding: 8px;
 }
+
+.search-wrapper {
+  background-color: lightgrey;
+  margin: 200px auto;
+  width: 95%;
+}
+.search-wrapper .search-header {
+  background-color: orange;
+  padding: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: black;
+}
+.search-wrapper .search-header #search-submit {
+  padding: 8px;
+  background-color: #333333;
+  color: orange;
+}
+.search-wrapper .search-body {
+  display: flex;
+  justify-content: space-between;
+}
+.search-wrapper .search-body .search-results-filters {
+  padding: 8px;
+  background-color: darkslategray;
+  color: white;
+  width: 20%;
+}
+.search-wrapper .search-body .search-results-filters #filters-list label {
+  display: block;
+}
+.search-wrapper .search-body .search-results-details {
+  background-color: darkslategray;
+  color: white;
+  width: 70%;
+}
+.search-wrapper .search-body .search-results-details #sponsored-header {
+  background-color: orange;
+}
+.search-wrapper .search-body .search-results-details #sponsored-results {
+  border: 3px solid orange;
+}
+.search-wrapper .search-body .search-results-details .result-item {
+  margin: 10px 0px;
+  background-color: darkgrey;
+  padding: 8px;
+}
+.search-wrapper .search-body .search-results-details .result-item .result-item-body {
+  display: flex;
+  justify-content: space-between;
+}
+.search-wrapper .search-body .search-results-details .result-item .result-item-body img {
+  width: 150px;
+  height: 150px;
+}
+.search-wrapper .search-body .search-results-details .result-item .result-item-body .result-item-details {
+  background-color: black;
+}
+.search-wrapper .search-body .search-results-details .result-item .result-view {
+  text-align: right;
+}
+
+.apartment-detail-wrapper {
+  background-color: lightgrey;
+  color: black;
+  margin: 200px auto;
+  width: 90%;
+  padding: 15px;
+}
+.apartment-detail-wrapper img {
+  width: 100%;
+}
+.apartment-detail-wrapper .apartment-info-wrapper {
+  margin-top: 10px;
+}
+.apartment-detail-wrapper .apartment-info-wrapper .apartment-map {
+  float: left;
+  width: 50%;
+}
+.apartment-detail-wrapper .apartment-info-wrapper .apartment-info {
+  padding: 10px;
+  display: inline-block;
+  border-left: 2px solid black;
+}
