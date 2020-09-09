@@ -9,12 +9,18 @@ use App\Apartment;
 
 class SearchController extends Controller
 {
-    public function index() {
+    public function index(Request $request) {
+        $longitude =  $request->input('lng');
+        $latitude = $request->input('lat');
+        $range = $request->input('range');
 
         $facilities = Facility::all();
 
         $data = [
-            'facilities' => $facilities
+            'facilities' => $facilities,
+            'latitude' => $latitude,
+            'longitude' => $longitude,
+            'range' => $range
         ];
 
         return view('guest.search', $data);
