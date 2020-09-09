@@ -41,6 +41,68 @@
             background-color: darkslategray;
             color: white;
             width: 70%;
+
+            #sponsored-header {
+                background-color: orange;
+            }
+
+            #sponsored-results {
+                border: 3px solid orange;
+            }
+
+
+            .result-item {
+                margin: 10px 0px;
+                background-color: darkgrey;
+                padding: 8px;
+                
+                .result-item-body {
+                    display: flex;
+                    justify-content: space-between;
+
+                    img {
+                        width: 150px;
+                        height: 150px;
+                    }
+
+                    .result-item-details {
+                        background-color: black;
+                    }
+                }
+
+                .result-view {
+                   text-align: right;
+                }
+            }
         }
     }   
+}
+
+.apartment-detail-wrapper {
+    background-color: lightgrey;
+    color: black;
+    margin: 200px auto;
+    width: 90%;
+    padding: 15px;
+
+    img {
+        width: 100%;
+    }
+
+    .apartment-info-wrapper {
+        margin-top: 10px;
+        
+
+        .apartment-map {
+            float: left;
+            width: 50%;
+            
+        }
+
+        .apartment-info {
+            padding: 10px;
+            display: inline-block;
+            border-left: 2px solid black;
+        }
+    }
 }

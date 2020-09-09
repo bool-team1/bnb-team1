@@ -29,7 +29,19 @@
                 
             </div>
             <div class="search-results-details">
-                <h3>Ricerca appartamenti</h3>
+                <div id="results-count">
+                    
+                </div>
+                <div id="sponsored-results">
+                    <div id="sponsored-header"></div>
+                    <div id="sponsored-body">
+                        
+                                     
+                    </div>
+                </div>
+                <div id="normal-results">
+                
+                </div>
             </div>    
         </div>         
     </div>
