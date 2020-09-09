@@ -19,7 +19,6 @@ class ApartmentController extends Controller
     public function index()
     {
         $apartments = Apartment::where('user_id', Auth::id())->get();
-        $apartments= Apartment::with('facilities')->get();
         return view('admin.apartments.index', compact('apartments'));
     }
 
@@ -60,7 +59,7 @@ class ApartmentController extends Controller
                 'square_mt' => 'required|numeric|min:1',
                 'main_pic' => 'image|max:1024',
                 'longitude' => 'required',
-                'latitude' => 'required',
+                'latitude' => 'required'
        ]);
         $data = $request->all();
        //generazione dello slug dal titolo
@@ -143,7 +142,9 @@ class ApartmentController extends Controller
                 'rooms_n' => 'required|numeric|min:1',
                 'bathrooms_n' => 'required|numeric|min:1',
                 'square_mt' => 'required|numeric|min:1',
-                'main_pic' => 'image|max:1024'
+                'main_pic' => 'image|max:1024',
+                'longitude' => 'required',
+                'latitude' => 'required'
        ]);
         $data = $request->all();
 

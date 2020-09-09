@@ -44,13 +44,14 @@
                         <input type="file" name="image" class="form-control-file" id="img">
                     </div>
                     <input type="hidden" name="user_id" class="form-control-file" id="user_id" value= "{{$user_id}}">
+                    {{-- input per la ricerca --}}
                 <div>
-                        <label for="adress-input">Dove vuoi cercare?</label>
-                        <input type="search" name="adress-input" id="address-input" placeholder="Es. Firenze"/>
-                        <input type="hidden" id="search-lat"/>
-                        <input type="hidden" id="search-lng"/>
+                        <label for="address">Dove vuoi cercare?</label>
+                        <input type="search" name="address" id="address" placeholder="Es. Firenze"/>
+                        <input type="hidden" id="lat"/>
+                        <input type="hidden" id="lng"/>
                 </div>
-                <button id="search-submit">Inizia la ricerca</button>
+                <button id="submit">Inizia la ricerca</button>
 
                     <div class="form-group">
                        Facilities:

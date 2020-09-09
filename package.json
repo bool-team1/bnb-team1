@@ -24,6 +24,7 @@
     },
     "dependencies": {
         "@fortawesome/fontawesome-free": "^5.14.0",
+        "chart.js": "^2.9.3",
         "places.js": "^1.19.0"
     }
 }
