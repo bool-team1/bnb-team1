@@ -19,13 +19,13 @@ class CreateAdsTable extends Migration
            $table->unsignedBigInteger('apartment_id');
            //Set apartment_id as foreign key
            $table->foreign('apartment_id')->references('id')->on('apartments');
-           
-           
+
+
            //Set plan_id as foreign key
            $table->foreignId('plan_id')->constrained('plans');
 
-           $table->date('start');
-           $table->date('end');
+           $table->timestamp('start');
+           $table->timestamp('end');
            $table->timestamps();
         });
 
