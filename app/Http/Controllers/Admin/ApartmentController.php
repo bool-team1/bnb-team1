@@ -29,7 +29,6 @@ class ApartmentController extends Controller
      */
     public function create()
     {
-        // if (Auth::check()) {
             $facilities = Facility::all();
             $user_id = Auth::id();
             $data = [
@@ -37,7 +36,6 @@ class ApartmentController extends Controller
                 'user_id' => $user_id,
             ];
             return view('admin.apartments.create', $data);
-        // }
 
     }
 
@@ -49,6 +47,7 @@ class ApartmentController extends Controller
      */
     public function store(Request $request)
     {
+        // dd($request->files['main_pic']);
         $request->validate([
 
                 'user_id' => 'required',
@@ -57,7 +56,6 @@ class ApartmentController extends Controller
                 'rooms_n' => 'required|numeric|min:1',
                 'bathrooms_n' => 'required|numeric|min:1',
                 'square_mt' => 'required|numeric|min:1',
-                'main_pic' => 'image|max:1024',
                 'longitude' => 'required',
                 'latitude' => 'required'
        ]);
@@ -73,8 +71,10 @@ class ApartmentController extends Controller
            $counter++;
            $slug = $original_slug . '-' . $counter;
            $apartment_exists = Apartment::where('slug', $slug)->first();
-       }
+       };
+
        //in questo modo lo slug sarà unico
+       $data['slug'] = $slug;
 
         $new_apartment = new Apartment();
         $new_apartment->fill($data);
@@ -82,7 +82,7 @@ class ApartmentController extends Controller
         if (!empty($data['facilities'])) {
             $new_apartment->facilities()->sync($data['facilities']);
         }
-        return redirect()->route('admin.apartments.index');
+        return redirect()->route('admin.home');
 
     }
 
@@ -119,7 +119,7 @@ class ApartmentController extends Controller
                 'facilities' => $facilities
             ];
 
-            return view('admin.apartments.edit', compact('apartment'));
+            return view('admin.apartments.edit', $data);
         } else {
             return abort('404');
         }
@@ -155,7 +155,7 @@ class ApartmentController extends Controller
         } else {
             $apartment->facilities()->sync([]);
         }
-        return redirect()->route('admin.apartments.index');
+        return redirect()->route('admin.home');
     }
 
     /**
@@ -169,7 +169,7 @@ class ApartmentController extends Controller
         $apartment = Apartment::find($id);
         if($apartment) {
             $apartment->delete();
-            return redirect()->route('admin.apartments.index');
+            return redirect()->route('admin.home');
         } else {
             return abort('404');
         }

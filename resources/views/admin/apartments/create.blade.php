@@ -22,10 +22,6 @@
                         <label for="titolo">Titolo</label>
                         <input type="text" name="title" class="form-control" id="titolo" placeholder="..." value="{{ old('title') }}">
                     </div>
-                    <div class="form-group">
-                        <label for="address">Indirizzo</label>
-                        <input type="text" name="address" class="form-control" id="address" placeholder="..." value="{{ old('address') }}">
-                    </div>
 
                     <div class="form-group">
                         <label for="rooms_n">Numero di stanze</label>
@@ -40,18 +36,17 @@
                         <input type="text" name="square_mt" class="form-control" id="square_mt" placeholder="..." value="{{ old('square_mt') }}">
                     </div>
                     <div class="form-group">
-                        <label for="img">Immagine</label>
-                        <input type="file" name="image" class="form-control-file" id="img">
+                        <label for="main_pic">Immagine</label>
+                        <input type="file" name="main_pic" class="form-control-file" id="main_pic">
                     </div>
                     <input type="hidden" name="user_id" class="form-control-file" id="user_id" value= "{{$user_id}}">
                     {{-- input per la ricerca --}}
-                <div>
-                        <label for="address">Dove vuoi cercare?</label>
-                        <input type="search" name="address" id="address" placeholder="Es. Firenze"/>
-                        <input type="hidden" id="lat"/>
-                        <input type="hidden" id="lng"/>
+                <div class="form-group">
+                        <label for="address">Inserisci l'indirizzo</label>
+                        <input type="search" name="address" id="address-input" placeholder="Es. Firenze"/>
+                        <input type="hidden" id="search-lat" name="latitude"/>
+                        <input type="hidden" id="search-lng" name="longitude"/>
                 </div>
-                <button id="submit">Inizia la ricerca</button>
 
                     <div class="form-group">
                        Facilities:
@@ -70,8 +65,8 @@
                        @endforeach
                    </div>
                     <div class="form-group">
-                        <label for="img">Immagine</label>
-                        <input type="file" name="image" class="form-control-file" id="img">
+                        <input type="hidden" name="isPublic" value="0">
+                        <input type="checkbox" name="isPublic" class="switch-input" value="1" {{ old('isPublic') ? 'checked="checked"' : '' }}/>
                     </div>
                     <button type="submit" class="btn btn-primary">Salva</button>
                 </form>

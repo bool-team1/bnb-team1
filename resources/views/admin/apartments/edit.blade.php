@@ -25,36 +25,38 @@
                     </div>
                     <div class="form-group">
                         <label for="rooms_n">Numero di stanze</label>
-                        <input type="text" name="rooms_n" class="form-control" id="rooms_n" placeholder="..." value="{{ old('rooms_n') }}">
+                        <input type="text" name="rooms_n" class="form-control" id="rooms_n" placeholder="..." value="{{ old('rooms_n', $apartment->rooms_n) }}">
                     </div>
                     <div class="form-group">
                         <label for="bathrooms_n">Numero di bagni</label>
-                        <input type="text" name="bathrooms_n" class="form-control" id="bathrooms_n" placeholder="..." value="{{ old('bathrooms_n') }}">
+                        <input type="text" name="bathrooms_n" class="form-control" id="bathrooms_n" placeholder="..." value="{{ old('bathrooms_n', $apartment->bathrooms_n) }}">
                     </div>
                     <div class="form-group">
                         <label for="square_mt">Metri quadri</label>
-                        <input type="text" name="square_mt" class="form-control" id="square_mt" placeholder="..." value="{{ old('square_mt') }}">
+                        <input type="text" name="square_mt" class="form-control" id="square_mt" placeholder="..." value="{{ old('square_mt', $apartment->square_mt) }}">
                     </div>
                     <div class="form-group">
-                        Facilities:
-                        @foreach ($facilities as $facility)
-                            <div class="form-check">
-                                <label class="form-check-label">
-                                    <input
-                                        @if($errors->any())
-                                            {{ in_array($facility->id, old('facilities', [])) ? 'checked' : '' }}
-                                        @else
-                                            {{ $apartments->facilities->contains($facility) ? 'checked' : '' }}
-                                        @endif
-                                        class="form-check-input"
-                                        name="facilities[]"
-                                        type="checkbox"
-                                        value="{{ $facility->id }}">
-                                    {{ $facility->type }}
-                                </label>
-                            </div>
-                        @endforeach
+                            <label for="address">Inserisci l'Indirizzo</label>
+                            <input type="search" name="address" id="address-input" placeholder="Es. Firenze" value="{{ old('address', $apartment->address) }}"/>
+                            <input type="hidden" id="lat" name="latitude"/>
+                            <input type="hidden" id="lng" name="longitude"/>
                     </div>
+                    <div class="form-group">
+                                           Facilities:
+                                           @foreach ($facilities  as $facility)
+                                               <div class="form-check">
+                                                   <label class="form-check-label">
+                                                       <input
+                                                           {{ in_array($facility->id, old('facilities', [])) ? 'checked' : '' }}
+                                                           class="form-check-input"
+                                                           name="facilities[]"
+                                                           type="checkbox"
+                                                           value="{{ $facility->id }}">
+                                                       {{ $facility->type }}
+                                                   </label>
+                                               </div>
+                                           @endforeach
+                                       </div>
                     <div class="form-group">
                         <label for="img">Immagine</label>
                         <input type="file" name="image" class="form-control-file">
@@ -63,6 +65,10 @@
                             @else
                                 <p>Immagine non disponibile</p>
                         @endif
+                    </div>
+                    <div class="form-group">
+                        <input type="hidden" name="isPublic" value="0">
+                        <input type="checkbox" name="isPublic" class="switch-input" value="1" {{ old('isPublic') ? 'checked="checked"' : '' }}/>
                     </div>
                     <button type="submit" class="btn btn-primary">Salva</button>
                 </form>

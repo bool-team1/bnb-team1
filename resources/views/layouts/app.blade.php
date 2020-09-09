@@ -1,8 +1,10 @@
-<!-- menu + HEAD   -->
-@include("partials.menu")
- <!-- fine menu  -->
+<!-- HEAD   -->
+@include("partials.head")
+ <!-- HEAD  -->
 <body>
 
+    @include("partials.menu")
+    
      <!-- main  -->
     @yield('content')
     <!-- fine main  -->

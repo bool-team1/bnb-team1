@@ -16061,6 +16061,56 @@ main {
   background-color: white;
 }
 
+.plans p {
+  font-size: 25px;
+  text-align: center;
+}
+.plans .plans_wrap {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-top: -30px;
+}
+.plans .plans_wrap .plan_card {
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #ece4e1;
+  color: #FF6633;
+  padding: 15px;
+  width: 250px;
+  border-radius: 10px;
+  margin-top: 30px;
+}
+.plans .plans_wrap .plan_card .price {
+  font-size: 30px;
+  font-style: italic;
+}
+.plans .plans_wrap .plan_card h3 {
+  font-weight: bold;
+}
+.plans .plans_wrap .plan_card h2 {
+  font-size: 24px;
+  color: #1c1c1c;
+}
+.plans .plans_wrap .plan_card a {
+  background-color: #FF6633;
+  color: white;
+  padding: 6px;
+  border-radius: 5px;
+  margin-top: 25px;
+  width: 145px;
+}
+.plans .plans_wrap .plan_card a:hover {
+  text-align: center;
+  background-color: #1c1c1c;
+  color: #FF6633;
+  text-decoration: none;
+  transition-duration: 0.2s;
+}
+
 .profile_image {
   height: 50px;
   border-radius: 90px;
@@ -16104,7 +16154,6 @@ label #sidebar_btn {
   position: fixed;
   cursor: pointer;
   left: 250px;
-<<<<<<< HEAD
   font-size: 20px;
   margin: 5px 0;
   transition: 0.2s;
@@ -16129,113 +16178,6 @@ label #sidebar_btn:hover {
   margin-bottom: 20px;
 }
 
-<<<<<<< refs/remotes/origin/master
-.plans p {
-  font-size: 25px;
-  text-align: center;
-}
-.plans .plans_wrap {
-  display: flex;
-  justify-content: space-around;
-  width: 100%;
-  flex-wrap: wrap;
-  margin-top: -30px;
-}
-.plans .plans_wrap .plan_card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  background: #ece4e1;
-  color: #FF6633;
-  padding: 15px;
-  border-radius: 10px;
-  width: 250px;
-  margin-top: 30px;
-}
-.plans .plans_wrap .plan_card .price {
-  font-size: 30px;
-  font-style: italic;
-}
-.plans .plans_wrap .plan_card h3 {
-  font-weight: bold;
-}
-.plans .plans_wrap .plan_card h2 {
-  font-size: 24px;
-  color: #1c1c1c;
-}
-.plans .plans_wrap .plan_card a {
-  background-color: #FF6633;
-  color: white;
-  padding: 6px;
-  border-radius: 5px;
-  margin-top: 25px;
-  width: 145px;
-  text-align: center;
-}
-.plans .plans_wrap .plan_card a:hover {
-  background-color: #1c1c1c;
-  color: #FF6633;
-  text-decoration: none;
-  transition-duration: 0.2s;
-}
-
-@media screen and (max-width: 800px) {
-  .sidebar {
-    width: 80px !important;
-  }
-  .sidebar ul {
-    text-align: center;
-  }
-  .sidebar ul li a {
-    display: none;
-  }
-  .sidebar .user_info p {
-    display: none;
-  }
-  .sidebar .user_info .prof_pic_wrapper {
-    padding-left: 5px;
-  }
-  .sidebar .side_wrap {
-    padding: 0;
-  }
-
-  .dashboard_header {
-    left: 80px;
-  }
-
-  #main {
-    margin-left: 80px;
-  }
-}
-=======
->>>>>>> Fix_view
-=======
-  font-size: 20px;
-  margin: 5px 0;
-  transition: 0.2s;
-  transition-property: color;
-}
-label #sidebar_btn:hover {
-  color: #f56837;
-}
-
-#check:checked ~ .sidebar {
-  left: -190px;
-}
-#check:checked ~ .sidebar a span {
-  display: none;
-}
-#check:checked ~ .sidebar a {
-  font-size: 20px;
-  margin-left: 165px;
-  width: 80px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  margin-bottom: 20px;
-}
-
->>>>>>> FixView
 .footer {
   padding-bottom: 10px;
   padding-top: 5px;
@@ -16275,17 +16217,10 @@ label #sidebar_btn:hover {
   border-radius: 8px;
   color: white;
   background-color: #f56837;
-<<<<<<< HEAD
 }
 .button p {
   margin-bottom: 0px;
 }
-=======
-}
-.button p {
-  margin-bottom: 0px;
-}
->>>>>>> FixView
 .button:hover {
   color: white;
 }

@@ -56,9 +56,14 @@
                  </div>
             </div>{{--//Row Info--}}
             <div class="row buttons">
-                <button class="btn btn-info" type="button" name="button">Visit Apartment page</button>
-                <button class="btn btn-info" type="button" name="button">Edit Apartment</button>
-                <button class="btn btn-danger"type="button" name="button">Delete</button>
+                <button class="btn btn-info" type="button" name="button"><a href="{{route('admin.apartments.create')}}">Create Apartment</a> </button>
+                <button class="btn btn-info" type="button" name="button"><a href="{{route('detail', ['apartment_id'=>$apartment->id])}}">Visit Apartment page</a> </button>
+                <button class="btn btn-info" type="button" name="button"><a href="{{route('admin.apartments.edit', ['apartment'=>$apartment->id])}}">Edit Apartment</a> </button>
+                <form class="d-inline" action="{{ route('admin.apartments.destroy', ['apartment' => $apartment->id]) }}" method="post">
+                    @csrf
+                    @method('DELETE')
+                    <input type="submit" class="btn btn-small btn-danger" value="Delete">
+                </form>
             </div>
 
 {{-- Check if apt has already an active sponsor --}}

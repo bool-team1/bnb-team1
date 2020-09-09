@@ -28,11 +28,12 @@
                     <label for="body">Messaggio</label>
                     <textarea type="text" name="body" rows="4" cols="50" class="form-control" required id="body" placeholder="Scrivi il tuo messaggio"  value="{{ old('content') }}"></textarea>
                 </div>
-                
+
                 <button type="submit" class="btn btn-primary">Invia</button>
                 <p>Tutti i campi sono obbligatori</p>
                 <a href="" class="btn btn-link">Torna alla pagina dell'appartamento</a>
             </form>
+
         </div>
     </div>
 @endsection
