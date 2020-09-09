@@ -31,20 +31,20 @@ var places = require('places.js');
 var placesAutocomplete = places({
   appId: 'plNNICPWC6MP',
   apiKey: 'b7a397b2d5106c810a38e7f10cdd967a',
-  container: document.querySelector('#address-input')
+  container: document.querySelector('#address')
 });
 //Updating latitude and longitude with Algolia
     placesAutocomplete.on("change", function resultSelected(e) {
-      document.querySelector("#search-lat").value =
+      document.querySelector("#lat").value =
         e.suggestion.latlng.lat || "";
-      document.querySelector("#search-lng").value =
+      document.querySelector("#lng").value =
       e.suggestion.latlng.lng || "";
     });
 
-    $("#search-submit").on("click", function(){
+    $("#submit").on("click", function(){
       //Retrieve data for latitude, longitude and range
-      $latitude = $("#search-lat").val();
-      $longitude = $("#search-lng").val();
+      $latitude = $("#lat").val();
+      $longitude = $("#lng").val();
       $range = $("#range-field").val();
       $filters = [];
       $("#filters-list input:checked").each(function(index) {
