@@ -2,6 +2,13 @@
 
 @section('content')
     <div class="search-wrapper">
+        @if ($latitude) 
+            <div id="phantom-search">
+                <input type="hidden" id="phantom-lat" value="{{ $latitude }}"/>
+                <input type="hidden" id="phantom-lng"  value="{{ $longitude }}"/>  
+                <input type="hidden" id="phantom-range"  value="{{ $range }}"/>
+            </div>
+        @endif
         <div class="search-header">
             <div>
                 <label for="address-input">Dove vuoi cercare?</label>
