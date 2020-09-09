@@ -23,7 +23,6 @@
   <!-- footer  -->
    @include('partials.footer')
   <!-- fine footer  -->
-
         @yield('script')
     <script src="{{("js/app.js")}}" charset="utf-8"></script>
 </body>

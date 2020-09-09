@@ -16104,6 +16104,7 @@ label #sidebar_btn {
   position: fixed;
   cursor: pointer;
   left: 250px;
+<<<<<<< HEAD
   font-size: 20px;
   margin: 5px 0;
   transition: 0.2s;
@@ -16209,6 +16210,32 @@ label #sidebar_btn:hover {
 }
 =======
 >>>>>>> Fix_view
+=======
+  font-size: 20px;
+  margin: 5px 0;
+  transition: 0.2s;
+  transition-property: color;
+}
+label #sidebar_btn:hover {
+  color: #f56837;
+}
+
+#check:checked ~ .sidebar {
+  left: -190px;
+}
+#check:checked ~ .sidebar a span {
+  display: none;
+}
+#check:checked ~ .sidebar a {
+  font-size: 20px;
+  margin-left: 165px;
+  width: 80px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+>>>>>>> FixView
 .footer {
   padding-bottom: 10px;
   padding-top: 5px;
@@ -16248,10 +16275,17 @@ label #sidebar_btn:hover {
   border-radius: 8px;
   color: white;
   background-color: #f56837;
+<<<<<<< HEAD
 }
 .button p {
   margin-bottom: 0px;
 }
+=======
+}
+.button p {
+  margin-bottom: 0px;
+}
+>>>>>>> FixView
 .button:hover {
   color: white;
 }
