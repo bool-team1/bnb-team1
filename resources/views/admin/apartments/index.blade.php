@@ -1,7 +1,7 @@
 @extends('layouts.app_admin')
 
 @section('content')
-    <div class="container-fluid">
+    <div class="container-sm fix-container">
         <div class="row">
             <div class="col-12">
                 <div class="d-flex justify-content-between align-items-center">
@@ -11,18 +11,18 @@
                         Nuovo appartamento
                     </a>
                 </div>
-                <table class="table">
+                <table class="table table-striped">
                     <thead>
                         <tr>
-                            <th>ID</th>
-                            <th>Titolo</th>
-                            <th>Indirizzo</th>
-                            <th>Nr.stanze</th>
-                            <th>Nr.bagni</th>
-                            <th>Mt quadri</th>
-                            <th>Slug</th>
-                            <th>Facilities</th>
-                            <th>Immagine</th>
+                            <th scope="col">ID</th>
+                            <th scope="col">Titolo</th>
+                            <th scope="col">Indirizzo</th>
+                            <th scope="col">Nr.stanze</th>
+                            <th scope="col">Nr.bagni</th>
+                            <th scope="col">Mt quadri</th>
+                            <th scope="col">Slug</th>
+                            <th scope="col">Facilities</th>
+                            <th scope="col">Immagine</th>
                         </tr>
                     </thead>
                     <tbody>
