@@ -7,7 +7,9 @@
 
   <div class="sidebar">
       <label for="check">
-        <i class="fas fa-bars" id="sidebar_btn"></i>
+        <i class="fas fa-arrow-alt-circle-left" id="sidebar_btn"></i>
+        <i class="fas fa-arrow-alt-circle-right" id="sidebar_btn_2"></i>
+        <p class="admin_p">Pannello Admin</p>
       </label>
     <!-- <center> -->
       <!-- <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png" alt="Profile Picture" class="profile_image"> -->

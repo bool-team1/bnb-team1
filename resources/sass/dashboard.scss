@@ -225,6 +225,12 @@ main {
     padding-top: 50px;
     margin-bottom: 50px;
   }
+  p {
+    float: right;
+    margin-top: 20px;
+    margin-left: 2px;
+    cursor: pointer;
+  }
   a {
     color: white;
     display: block;
@@ -233,7 +239,7 @@ main {
     text-decoration: none;
     padding-left: 40px;
     box-sizing: border-box;
-    transition: 0.2s;
+    transition: 0.5s;
     transition-property: background;
     &:hover{
       border-left: 2px solid $specialorange;
@@ -245,13 +251,13 @@ main {
   }
 }
 
-label #sidebar_btn{
+label #sidebar_btn {
   padding-top: 12px;
   padding-bottom: 30px;
   padding-left: 37px;
   color: white;
   cursor: pointer;
-  font-size: 31px;
+  font-size: 25px;
   margin: 5px 0;
   transition: 0.5s;
   transition-property: color;
@@ -260,22 +266,37 @@ label #sidebar_btn{
   }
 }
 
+label #sidebar_btn_2 {
+  display: none;
+}
+
 #check:checked ~ .sidebar {
   left: -190px;
   a span {
     display: none;
   }
+  label #sidebar_btn {
+    display: none;
+  }
+  .admin_p {
+    display: none;
+  }
   a {
     font-size: 20px;
-    margin-left: 165px;
+    margin-left: 170px;
     width: 80px;
-    margin-bottom: 20px;
+    // margin-bottom: 5px;
   }
-  label #sidebar_btn{
-    padding-left: 205px;
+  label #sidebar_btn_2 {
+    display: block;
+    padding-left: 211px;
     font-size: 20px;
-    margin-top: 10px;
-    margin-bottom: 12px;
+    margin-top: 25px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    &:hover {
+      color: $specialorange;
+    }
   }
 }
 .content {
