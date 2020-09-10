@@ -5,7 +5,7 @@
       <h4>APPARTAMENTI</h4>
   </div>
   @foreach ($apartments as $apartment)
-      <div class="container apt_card">
+      <div class="container apt_card col-lg-6 col-md-12 col-sm-4">
           <div class="row">
               <h2 class="col-12 apt_title">{{$apartment->title}}</h2>
           </div>
@@ -62,7 +62,7 @@
               <form class="d-inline" action="{{ route('admin.apartments.destroy', ['apartment' => $apartment->id]) }}" method="post">
                   @csrf
                   @method('DELETE')
-                  <input type="submit" class="btn btn-small btn-danger" value="Delete">
+                  <input type="submit" class="btn btn-small btn-danger btn-delete" value="Delete">
               </form>
           </div>
 

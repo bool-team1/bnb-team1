@@ -11,9 +11,11 @@
         <div class="container s-bar d-flex justify-content-center">
             <div class="bg-specialdark col-lg-8 col-md-9 col-sm-6">
                 <div class="d-flex ">
-                    <input type="email" class="form-control form-search" id="locationInput" aria-describedby="locationInputHelp" placeholder="Ovunque">
+                    <input type="search" class="form-control form-search" id="address-input" aria-describedby="locationInputHelp" placeholder="Dove vuoi cercare?">
+                    <input type="hidden" id="search-lat"/>
+                    <input type="hidden" id="search-lng"/>
                     <small id="locationInputHelp" class="form-text text-muted sr-only">Si prega di digitare la destinazione desiderata.</small>
-                    <a href="#" class="btn btn-danger btn-block btn-search">CERCA</a>
+                    <a href="#" class="btn btn-danger btn-block btn-search" id="home-search">CERCA</a>
                 </div>
             </div>
         </div>
