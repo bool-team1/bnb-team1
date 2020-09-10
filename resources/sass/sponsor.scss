@@ -1,6 +1,6 @@
 .form_wrap {
 
-    width: 100%;
+    width: calc(100% - 80px);
     margin: auto;
     margin-left: 80px;
         h1 {
@@ -33,7 +33,7 @@
 @media screen and (min-width: 800px) {
     .form_wrap {
         margin-left: 245px;
-        width: 100%;
+        width: calc(100% - 245px);
             form {
                 width: 60%;
             }

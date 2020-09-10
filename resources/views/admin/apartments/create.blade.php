@@ -66,7 +66,8 @@
                    </div>
                     <div class="form-group">
                         <input type="hidden" name="isPublic" value="0">
-                        <input type="checkbox" name="isPublic" class="switch-input" value="1" {{ old('isPublic') ? 'checked="checked"' : '' }}/>
+                        <label for="isPublic">Vuoi rendere l'appartamento visibile a tutti?</label>
+                        <input id="isPublic" type="checkbox" name="isPublic" class="switch-input" value="1" {{ old('isPublic') ? 'checked="checked"' : '' }}/>
                     </div>
                     <button type="submit" class="btn btn-primary">Salva</button>
                 </form>

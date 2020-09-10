@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Facility;
 use App\Apartment;
+use App\View;
 
 
 class SearchController extends Controller
@@ -30,6 +31,10 @@ class SearchController extends Controller
 
         $apartment = Apartment::find($id);
         $facilities = Apartment::find($id)->facilities()->get()->pluck("type");
+
+        $new_view = new View();
+        $new_view->apartment_id = $apartment->id;
+        $new_view->save();
 
         $data = [
             'apartment' => $apartment,

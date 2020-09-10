@@ -11,7 +11,7 @@
           </div>
           <div class="row apt_info">
               <div class="poster_wrapper col-lg-6 col-md-10">
-                  <img class="col-12" src="https://cf.bstatic.com/images/hotel/max1024x768/992/99231880.jpg" alt="">
+                  <img class="col-12" src="{{$apartment->main_pic}}" alt="">
               </div>
               <div class="info_wrap col-lg-6 col-md-12">
                   <div class="row">
@@ -56,7 +56,6 @@
                </div>
           </div>{{--//Row Info--}}
           <div class="row buttons">
-              <button class="btn btn-info" type="button" name="button"><a href="{{route('admin.apartments.create')}}">Create Apartment</a> </button>
               <button class="btn btn-info" type="button" name="button"><a href="{{route('detail', ['apartment_id'=>$apartment->id])}}">Visit Apartment page</a> </button>
               <button class="btn btn-info" type="button" name="button"><a href="{{route('admin.apartments.edit', ['apartment'=>$apartment->id])}}">Edit Apartment</a> </button>
               <form class="d-inline" action="{{ route('admin.apartments.destroy', ['apartment' => $apartment->id]) }}" method="post">
@@ -112,7 +111,7 @@
               </div>
           @else
               <div class="plans row mt-5">
-                  <p class="col-12">This apartment has an active sponsorship until {{$end_date->format('Y-m-d H:i:m')}}</p>
+                  <p class="col-12">This apartment has an active sponsorship until {{$end_date->format('Y-m-d H:i')}}</p>
               </div>
           @endif
       </div>

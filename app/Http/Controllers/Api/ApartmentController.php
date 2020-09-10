@@ -10,7 +10,7 @@ use App\Helper\Helper;
 
 class ApartmentController extends Controller
 {
-   
+
 
    public function index(Request $request) {
        $longitude =  $request->input('lng');
@@ -51,32 +51,32 @@ class ApartmentController extends Controller
 
             $filter_check = array_intersect($current_apartment['facilities']->toArray(), $filters);
 
-            if (count($filters) == count($filter_check)) {    
-                if (($current_apartment['ad_start'] < $current_date) && ($current_apartment['ad_end'] < $current_date)) {
+            if (count($filters) == count($filter_check)) {
+                if (($current_apartment['ad_start'] <= $current_date) && ($current_apartment['ad_end'] >= $current_date)) {
 
                     $sponsored_results[$sponsored_index] = $current_apartment;
 
                     $sponsored_index++;
-                } 
+                }
                 else {
-                    $normal_results[$normal_index] = $current_apartment; 
+                    $normal_results[$normal_index] = $current_apartment;
 
                     $normal_index++;
-                };               
-            };              
+                };
+            };
        };
 
-       
+
        return response()->json([
            'success' => true,
            'tot_count' => $search->count(),
            'filtered_count' => count($sponsored_results) + count($normal_results),
            'sponsored_results'=> $sponsored_results,
            'normal_results'=> $normal_results
-       ]);    
+       ]);
    }
 
-   
+
    public static function findNearestApartments($latitude, $longitude, $radius)
    {
        $current_date = new \DateTime();

@@ -85250,8 +85250,8 @@ $(document).ready(function () {
 
         ;
       },
-      error: function error() {
-        alert("Error: API Apartment");
+      error: function error(e) {
+        alert("Error: API Apartment" + e);
       }
     });
   }
@@ -85322,10 +85322,17 @@ $(document).ready(function () {
 
         ;
       },
-      error: function error() {
-        alert("Error: API Apartment");
+      error: function error(e) {
+        alert("Error: API Apartment" + e);
       }
     });
+  });
+  $("#home-search").on("click", function () {
+    //Retrieve data for latitude, longitude and range
+    $latitude = $("#search-lat").val();
+    $longitude = $("#search-lng").val();
+    console.log('ok');
+    window.location.replace('http://localhost:8000/search?lat=' + $latitude + '&lng=' + $longitude + '&range=30');
   });
 });
 

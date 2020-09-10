@@ -31,7 +31,7 @@
 
                 <button type="submit" class="btn btn-primary">Invia</button>
                 <p>Tutti i campi sono obbligatori</p>
-                <a href="" class="btn btn-link">Torna alla pagina dell'appartamento</a>
+                <a href="{{route('detail', ['apartment_id' => $apartment->id])}}" class="btn btn-link">Torna alla pagina dell'appartamento</a>
             </form>
 
         </div>

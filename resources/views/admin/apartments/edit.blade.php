@@ -38,8 +38,8 @@
                     <div class="form-group">
                             <label for="address">Inserisci l'Indirizzo</label>
                             <input type="search" name="address" id="address-input" placeholder="Es. Firenze" value="{{ old('address', $apartment->address) }}"/>
-                            <input type="hidden" id="lat" name="latitude"/>
-                            <input type="hidden" id="lng" name="longitude"/>
+                            <input type="hidden" id="search-lat" name="latitude"/>
+                            <input type="hidden" id="search-lng" name="longitude"/>
                     </div>
                     <div class="form-group">
                                            Facilities:
@@ -61,15 +61,17 @@
                         <label for="img">Immagine</label>
                         <input type="file" name="image" class="form-control-file">
                         @if ( $apartment->main_pic)
-                            <img src="{{ asset('storage/' . $apartment->main_pic)}}">
+                            <img src="{{ $apartment->main_pic }}">
                             @else
                                 <p>Immagine non disponibile</p>
                         @endif
                     </div>
                     <div class="form-group">
                         <input type="hidden" name="isPublic" value="0">
-                        <input type="checkbox" name="isPublic" class="switch-input" value="1" {{ old('isPublic') ? 'checked="checked"' : '' }}/>
+                        <label for="isPublic">Vuoi rendere l'appartamento visibile a tutti?</label>
+                        <input id="isPublic" type="checkbox" name="isPublic" class="switch-input" value="1" {{ old('isPublic') ? 'checked="checked"' : '' }}/>
                     </div>
+                    <input type="hidden" name="user_id" value="{{$user_id}}">
                     <button type="submit" class="btn btn-primary">Salva</button>
                 </form>
             </div>

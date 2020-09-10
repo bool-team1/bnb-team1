@@ -10,4 +10,7 @@ class View extends Model
     {
         return $this->belongsTo('App\Apartment');
     }
+
+    protected $fillable =["apartment_id"];
+
 }

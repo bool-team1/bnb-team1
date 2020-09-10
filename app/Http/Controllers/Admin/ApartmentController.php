@@ -1,5 +1,11 @@
 <?php
 
+//SE CAMBIEREMO MODO DI SALVARE IMGS
+// if(!empty($data['image'])) {
+//     $img_path =  Storage::put('uploads', $data['image']);
+//     $data['main_pic'] = $img_path;
+// }
+
 namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -60,21 +66,21 @@ class ApartmentController extends Controller
                 'latitude' => 'required'
        ]);
         $data = $request->all();
-       //generazione dello slug dal titolo
-       $slug = Str::of($data['title'])->slug('-');
-       $original_slug = $slug;
-       //verifico se lo slug esiste già nella tabella ('slug' nome colonna $slug valore)
-       $apartment_exists = Apartment::where('slug', $slug)->first(); //get = collection di oggetti, first = un oggetto
+        //generazione dello slug dal titolo
+        $slug = Str::of($data['title'])->slug('-');
+        $original_slug = $slug;
+        //verifico se lo slug esiste già nella tabella ('slug' nome colonna $slug  valore)
+        $apartment_exists = Apartment::where('slug', $slug)->first(); //get =  collection di oggetti, first = un oggetto
 
-       $counter = 0;
-       while($apartment_exists) {
+        $counter = 0;
+        while($apartment_exists) {
            $counter++;
            $slug = $original_slug . '-' . $counter;
            $apartment_exists = Apartment::where('slug', $slug)->first();
-       };
+        };
 
-       //in questo modo lo slug sarà unico
-       $data['slug'] = $slug;
+        //in questo modo lo slug sarà unico
+        $data['slug'] = $slug;
 
         $new_apartment = new Apartment();
         $new_apartment->fill($data);
@@ -112,11 +118,13 @@ class ApartmentController extends Controller
     public function edit($id)
     {
         $apartment = Apartment::find($id);
+        $user_id = Auth::id();
         if($apartment) {
             $facilities = Facility::all();
             $data = [
                 'apartment' => $apartment,
-                'facilities' => $facilities
+                'facilities' => $facilities,
+                'user_id' => $user_id
             ];
 
             return view('admin.apartments.edit', $data);

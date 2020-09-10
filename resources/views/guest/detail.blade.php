@@ -43,7 +43,7 @@
                         {{ ", " }}
                     @endif
                 @empty
-                    {{ Nessuno }}
+                    {{ 'Nessuno' }}
                 @endforelse
                 </p>
             </div>
@@ -51,7 +51,7 @@
         <div class="apartment-links">
             <a class="btn btn-link" href=" {{ route('search') }}">Prova una nuova ricerca</a>
             <a class="btn btn-primary" href=" {{ route('message.create',  ['apartment_id' => $apartment->id])}}">Contatta il proprietario</a>
-        </div>    
+        </div>
     </div>
-    
+
 @endsection

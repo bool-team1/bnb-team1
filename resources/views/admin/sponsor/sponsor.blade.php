@@ -6,7 +6,7 @@
 
         $apartment = Apartment::find($_GET['apt_id']);
         $plan = Plan::find($_GET['plan_id']);
-        $plans = [1 => 'Base Plan', 2 => 'Expert Plan', 3 => 'Business Plan']
+        $plans = [1 => 'Base Plan', 2 => 'Expert Plan', 3 => 'Business Plan'];
     @endphp
 
     <div class="form_wrap">

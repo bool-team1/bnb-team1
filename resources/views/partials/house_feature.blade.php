@@ -6,30 +6,18 @@
 
 <div class="container" id="house-feat">
     <div class="card-deck">
-        <div class="card mb-4 app-ev">
-            <img class="card-img-top img-fluid" src="{{ asset('img/app-1.jpg')}}" alt="">
-            <div class="card-body">
-                <h4 class="card-title">Appartamento 1</h4>
-                <p class="card-text">Descrizione Appartamento.</p>
-                <p class="card-text"><small class="text-muted">Inserito 3 min fa</small></p>
+        @foreach ($sponsored_results as $apt)
+            <div class="card mb-4 app-ev">
+                <a href="{{route('detail', ['apartment_id' => $apt['id']])}}" style="text-decoration: none;color: white;">
+                    <img class="card-img-top img-fluid" src="{{ $apt['main_pic'] }}" alt="">
+                    <div class="card-body">
+                        <h4 class="card-title">{{ $apt['title'] }}</h4>
+                        <p class="card-text">{{ $apt['address']}}</p>
+                        <p class="card-text"><small class="text-muted">{{ $apt['rooms_n'] . ' rooms'}}</small></p>
+                    </div>
+
+                </a>
             </div>
-        </div>
-        <div class="card mb-4 app-ev">
-            <img class="card-img-top img-fluid" src="{{ asset('img/app-2.jpg')}}" alt="">
-            <div class="card-body">
-                <h4 class="card-title">Appartamento 2</h4>
-                <p class="card-text">Descrizione Appartamento.</p>
-                <p class="card-text"><small class="text-muted">Inserito 15 min fa</small></p>
-            </div>
-        </div>
-        <div class="w-100 d-none d-sm-block d-md-none"><!-- wrap every 2 on sm--></div>
-        <div class="card mb-4 app-ev">
-            <img class="card-img-top img-fluid" src="{{ asset('img/app-3.jpg')}}" alt="">
-            <div class="card-body">
-                <h4 class="card-title">Appartamento 3</h4>
-                <p class="card-text">Descrizione Appartamento.</p>
-                <p class="card-text"><small class="text-muted">Inserito 30 min fa</small></p>
-            </div>
-        </div>
+        @endforeach
     </div>
 </div>
