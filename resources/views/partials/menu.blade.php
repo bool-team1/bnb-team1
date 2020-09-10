@@ -1,6 +1,6 @@
 <!--Navbar -->
 <nav class="mb-1 navbar navbar-expand-lg navbar-dark secondary-color lighten-1">
-  <a class="navbar-brand" href="#"> <img src="{{ asset('img/logo.png')}}" alt=""> </a>
+  <a class="navbar-brand" href="{{ url('/') }}"> <img src="{{ asset('img/logo.png')}}" alt=""> </a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-555"
     aria-controls="navbarSupportedContent-555" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -20,7 +20,7 @@
       @guest
         <button class="button" type="button" name="button"><a href="{{ route('register') }}">Diventa un Host</a></button>
       @endguest
-      <div class="language dropdown" class="nav-link dropdown-toggle" id="navbarDropdownlaguage" data-toggle="dropdown"
+      <!-- <div class="language dropdown" class="nav-link dropdown-toggle" id="navbarDropdownlaguage" data-toggle="dropdown"
         aria-haspopup="true" aria-expanded="false">
           <i class="fas fa-globe"></i>
           Lingua
@@ -30,7 +30,7 @@
         aria-labelledby="navbarDropdownlaguage">
         <a class="dropdown-item" href="#">Italiano</a>
         <a class="dropdown-item" href="#">Inglese</a>
-      </div>
+      </div> -->
       <li class="nav-item avatar dropdown">
         <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-55" data-toggle="dropdown"
           aria-haspopup="true" aria-expanded="false">
@@ -43,7 +43,12 @@
             <a class="dropdown-item" href="{{ route('login') }}">Login</a>
           @else
             <a class="dropdown-item" href="{{ url('/admin') }}">Dashboard</a>
-            <a class="dropdown-item" href="{{ route('logout') }}">Logout</a>
+            <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                Logout
+            </a>
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                {{ csrf_field() }}
+            </form>
           @endguest
         </div>
       </li>
