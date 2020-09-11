@@ -12,7 +12,9 @@ if (document.getElementById("address-input")) {
   var placesAutocomplete = places({
     appId: 'plNNICPWC6MP',
     apiKey: 'b7a397b2d5106c810a38e7f10cdd967a',
-    container: document.querySelector('#address-input')
+    container: document.querySelector('#address-input'),
+    useDeviceLocation: false,
+    aroundLatLngViaIP: false
   });
 };
 

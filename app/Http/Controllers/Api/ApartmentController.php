@@ -13,6 +13,7 @@ class ApartmentController extends Controller
 
 
    public function index(Request $request) {
+       date_default_timezone_set('Europe/Rome');
        $longitude =  $request->input('lng');
        $latitude = $request->input('lat');
        $range = $request->input('range');
@@ -25,7 +26,7 @@ class ApartmentController extends Controller
        $sponsored_results = array ();
        $normal_results = array ();
 
-       $current_date = date('Y-m-d');
+       $current_date = date('Y-m-d H:i:s');
 
        foreach ($search as $element) {
             $current_apartment = array(
@@ -40,10 +41,14 @@ class ApartmentController extends Controller
                 'slug' => $element->slug,
                 'main_pic' => $element->main_pic,
                 'facilities' => $element->facilities->pluck('type'),
-                'ad_start' => $element->ads->last()->start,
-                'ad_end' => $element->ads->last()->end
+                'ads' => false
             );
 
+            if (count($element->ads) > 0) {
+                $current_apartment['ad_start'] = $element->ads->last()->start;
+                $current_apartment['ad_end'] = $element->ads->last()->end;
+                $current_apartment['ads'] = true;
+            }
             //Creating empty array for filters if not specified in Ajax call
             if (!$filters) {
                 $filters = array();
@@ -51,19 +56,19 @@ class ApartmentController extends Controller
 
             $filter_check = array_intersect($current_apartment['facilities']->toArray(), $filters);
 
-            if (count($filters) == count($filter_check)) {
-                if (($current_apartment['ad_start'] <= $current_date) && ($current_apartment['ad_end'] >= $current_date)) {
+                if (count($filters) == count($filter_check)) {
+                    if (($current_apartment['ads'] == true) && ($current_apartment['ad_start'] <= $current_date) && ($current_apartment['ad_end'] >= $current_date)) {
 
-                    $sponsored_results[$sponsored_index] = $current_apartment;
+                        $sponsored_results[$sponsored_index] = $current_apartment;
 
-                    $sponsored_index++;
-                }
-                else {
-                    $normal_results[$normal_index] = $current_apartment;
+                        $sponsored_index++;
+                    }
+                    else {
+                        $normal_results[$normal_index] = $current_apartment;
 
-                    $normal_index++;
+                        $normal_index++;
+                    };
                 };
-            };
        };
 
 

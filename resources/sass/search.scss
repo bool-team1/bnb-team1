@@ -92,24 +92,53 @@
     }
 }
 .apartment-detail-wrapper {
-    background-color: lightgrey;
-    color: black;
-    margin: 200px auto;
-    width: 90%;
-    padding: 15px;
+    background-color: #313131;
+    color: White;
+    margin-bottom: 200px;
+    .apartment-detail-header {
+        background-color: #FF6633;
+        color: black;
+    }
     img {
         width: 100%;
+        border: 1px solid lightgrey;
+        border-top: none;
     }
     .apartment-info-wrapper {
         margin-top: 10px;
         .apartment-map {
-            float: left;
-            width: 50%;
+            margin-bottom: 20px;
         }
         .apartment-info {
-            padding: 10px;
             display: inline-block;
-            border-left: 2px solid black;
+            strong {
+                color: #FF6633;
+            }
+            i {
+                color: #FF6633;
+            }
+            .apartment-services {
+                display: inline-block;
+                background-color: black;
+                padding: 15px;
+                ul {
+                    li {
+                        padding: 8px;
+                        border: 1px solid lightgrey;
+                    }
+                }
+            }
+        }
+    }
+    .apartment-links {
+        padding: 20px;
+        .apartment-btn-main {
+            background-color: #FF6633;
+            color: white;
+        }
+        .apartment-btn-back {
+            background-color: inherit;
+            color: #FF6633;
         }
     }
 }

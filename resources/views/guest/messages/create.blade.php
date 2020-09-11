@@ -1,5 +1,4 @@
 @extends('layouts.app')
-
 @section('content')
     <div class="message-create-wrapper">
         <div class="message-create-header">
@@ -28,12 +27,12 @@
                     <label for="body">Messaggio</label>
                     <textarea type="text" name="body" rows="4" cols="50" class="form-control" required id="body" placeholder="Scrivi il tuo messaggio"  value="{{ old('content') }}"></textarea>
                 </div>
-
-                <button type="submit" class="btn btn-primary">Invia</button>
-                <p>Tutti i campi sono obbligatori</p>
-                <a href="{{route('detail', ['apartment_id' => $apartment->id])}}" class="btn btn-link">Torna alla pagina dell'appartamento</a>
+                <div class="message-footer text-center">
+                    <button type="submit" class="btn message-btn-main">Invia</button>
+                    <p>Tutti i campi sono obbligatori</p>
+                    <a href="{{route('detail', ['apartment_id' => $apartment->id])}}" class="btn message-btn-back">Torna alla pagina dell'appartamento</a>
+                </div>
             </form>
-
         </div>
     </div>
 @endsection

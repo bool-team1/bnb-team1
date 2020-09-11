@@ -16,3 +16,10 @@ a {
 ol, ul {
     list-style-type: none;
 }
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+.ap-icon-pin, .ap-icon-clear {
+    display: none;
+}

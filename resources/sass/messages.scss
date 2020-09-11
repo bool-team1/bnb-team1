@@ -1,64 +1,63 @@
 .messages-list-wrapper {
-    width: 700px;
+    width: 70%;
     margin: 100px auto;
     background-color: #616161;
     border: 2px solid #FF6633;
     border-radius: 5px;
     color: white;
-
     .messages-list-header {
         background-color:#FF6633;
         color: black;
         padding: 8px;
     }
 }
-
 .message-read-wrapper {
-    width: 700px;
+    width: 70%;
     margin: 100px auto;
     background-color: #616161;
     border: 2px solid #FF6633;
     border-radius: 5px;
     color: white;
-
     .message-read-header {
         background-color:#FF6633;
         color: black;
         padding: 8px;
     }
-
     .message-read-apartment-ref{
         padding: 4px 8px;
         background-color: lightgray;
         color: black;
     }
-
     .message-read-body {
         padding: 8px;
     }
 }
-
 .message-create-wrapper {
-    width: 700px;
-    margin: 300px auto;
+    width: 70%;
+    margin: 100px auto;
     background-color: #616161;
     border: 2px solid #FF6633;
     border-radius: 5px;
     color: white;
-
     .message-create-header {
         background-color:#FF6633;
         color: black;
         padding: 8px;
     }
-
     .message-create-apartment-ref{
         padding: 4px 8px;
         background-color: lightgray;
         color: black;
     }
-
     .message-create-body {
         padding: 8px;
+    }
+    .message-btn-main {
+        background-color: #FF6633;
+        color: white;
+    }
+    .message-btn-back {
+        background-color: inherit;
+        color: #FF6633;
     }
 }

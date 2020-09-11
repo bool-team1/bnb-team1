@@ -18,7 +18,7 @@ class CreateMessagesTable extends Migration
 
             $table->unsignedBigInteger('apartment_id');
             //Set apartment_id as foreign key
-            $table->foreign('apartment_id')->references('id')->on('apartments');
+            $table->foreign('apartment_id')->references('id')->on('apartments')->onDelete('cascade');
 
             $table->string('object', 80);
             $table->text('body');

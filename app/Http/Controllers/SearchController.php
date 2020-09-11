@@ -30,7 +30,7 @@ class SearchController extends Controller
     public function show($id) {
 
         $apartment = Apartment::find($id);
-        $facilities = Apartment::find($id)->facilities()->get()->pluck("type");
+        $facilities = Apartment::find($id)->facilities()->get();
 
         $new_view = new View();
         $new_view->apartment_id = $apartment->id;

@@ -18,7 +18,7 @@ class AdsTableSeeder extends Seeder
             $newAd->apartment_id = $i + 1;
             $newAd->plan_id = rand(1, 3);
             $newAd->start = $faker->dateTime('now');
-            $newAd->end = '2050-08-28 14:35:03';
+            $newAd->end = $faker->dateTime();
 
             $newAd->save();
         }

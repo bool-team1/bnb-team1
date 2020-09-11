@@ -16,7 +16,7 @@
       <h4>APPARTAMENTI</h4>
   </div>
   @foreach ($apartments as $apartment)
-      <div class="container apt_card col-lg-6 col-md-12 col-sm-4">
+      <div class="container apt_card col-lg-10 offset-lg-1 col-md-12 col-sm-4">
           <div class="row">
               <h2 class="col-12 apt_title">{{$apartment->title}}</h2>
           </div>
@@ -26,7 +26,7 @@
               </div>
               <div class="info_wrap col-lg-6 col-md-12">
                   <div class="row">
-                      <div class="col-6">
+                      <div class="col-6 col-xs-12">
                           <ul>
                               <li>
                                   <b>Info</b>
@@ -45,7 +45,7 @@
                               </li>
                           </ul>
                       </div>
-                      <div class="col-6">
+                      <div class="col-6 col-xs-12">
                           @php
                               $services = [
                                   1 => '<li>Wifi<i class="fas fa-wifi"></i></li>',
@@ -58,9 +58,14 @@
                           @endphp
                           <ul>
                               <li>Services</li>
-                          @foreach ($apartment->facilities as $facility)
+                              {{-- Check if apartment has any services --}}
+                            @if ($apartment->facilities->isEmpty())
+                                <li>Nessun servizio</li>
+                            @endif
+
+                            @foreach ($apartment->facilities as $facility)
                               {!! $services[$facility->id] !!}
-                          @endforeach
+                            @endforeach
                           </ul>
                       </div>
                   </div>
