@@ -15,3 +15,4 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get("/apartments","Api\ApartmentController@index");
+Route::get("/view","Api\ViewController@index");
