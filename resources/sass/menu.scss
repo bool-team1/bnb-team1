@@ -19,18 +19,87 @@
 }
 
 .button{
-  border: none;
-  padding: 10px;
+  // border: none;
+  // padding: 10px;
+  // margin-right: 20px;
+  // border-radius: 8px;
+  // color: white;
+  // background-color: $specialorange;
+  // p {
+  //   margin-bottom: 0px;
+  // }
+  // &:hover {
+  //   color: white;
+  // }
   margin-right: 20px;
+  position: relative;
+  display: inline-block;
+  padding: 9px 18px;
   border-radius: 8px;
-  color: white;
-  background-color: $specialorange;
-  p {
-    margin-bottom: 0px;
-  }
-  &:hover {
-    color: white;
-  }
+  color: rgba(255, 255, 255, 0.5);
+  // letter-spacing: 4px;
+  text-decoration: none;
+  // font-size: 24px;
+  overflow: hidden;
+  transition: 0.2s;
+    &:hover {
+      color: white;
+      text-decoration: none;
+      background-color: $specialorange;
+      box-shadow: 0 0 5px $specialorange,0 0 8px $specialorange,0 0 30px $specialorange;
+      transition-delay: 1s;
+    }
+    span {
+      position: absolute;
+      display: block;
+    }
+    span:nth-child(1) {
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(90deg,transparent,$specialorange);
+    }
+    &:hover span:nth-child(1){
+      left: 100%;
+      transition: 1s;
+    }
+    span:nth-child(3) {
+      bottom: 0;
+      right: -100%;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(270deg,transparent,$specialorange);
+    }
+    &:hover span:nth-child(3){
+      right: 100%;
+      transition: 1s;
+      transition-delay: 0.5s;
+    }
+    span:nth-child(2) {
+      top: -100%;
+      right: 0;
+      width: 2px;
+      height: 100%;
+      background: linear-gradient(180deg,transparent,$specialorange);
+    }
+    &:hover span:nth-child(2){
+      top: 100%;
+      transition: 1s;
+      transition-delay: 0.25s;
+    }
+    span:nth-child(4) {
+      bottom: -100%;
+      left: 0;
+      width: 2px;
+      height: 100%;
+      background: linear-gradient(360deg,transparent,$specialorange);
+    }
+    &:hover span:nth-child(4){
+      bottom: 100%;
+      transition: 1s;
+      transition-delay: 0.75s;
+    }
 }
 
 .dropdown-menu-lg-lang {
