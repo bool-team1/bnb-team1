@@ -18,7 +18,14 @@
     </ul>
     <ul class="navbar-nav ml-auto nav-flex-icons">
       @guest
-        <button class="button" type="button" name="button"><a href="{{ route('register') }}">Diventa un Host</a></button>
+        <!-- <button class="button" type="button" name="button"><a href="{{ route('register') }}">Diventa un Host</a></button> -->
+        <a class="button" href="{{ route('register') }}">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+          Diventa un Host
+        </a>
       @endguest
       <!-- <div class="language dropdown" class="nav-link dropdown-toggle" id="navbarDropdownlaguage" data-toggle="dropdown"
         aria-haspopup="true" aria-expanded="false">
