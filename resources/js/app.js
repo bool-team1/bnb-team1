@@ -1,4 +1,5 @@
 require('./bootstrap');
+require('./lightslider');
 
 //Jquery dependency
 var $ = require( "jquery" );
@@ -17,6 +18,21 @@ if (document.getElementById("address-input")) {
 
 
 $(document).ready(function(){
+
+    //Delete transaction success alert alert after 3 seconds
+    var alert_t = $('#alert-transaction');
+    if (alert_t.length > 0) {
+        setTimeout(function(){
+            alert_t.hide('swing');
+        }, 3000);
+    };
+    //Delete active sponsor alert alert after 4 seconds
+    var alert_s = $('#alert-active-sponsor');
+    if (alert_s.length > 0) {
+        setTimeout(function(){
+            alert_s.hide('swing');
+        }, 3000);
+    };
 
     //CLIENT SIDE VALIDATION
     //Validation for registration form email
@@ -113,7 +129,8 @@ if (document.getElementById('myChart')) {
                 $tot_sponsored = data['sponsored_results'].length;
                 if($tot_sponsored > 0) {
 
-                  $(".search-results-details #sponsored-header").text("Annunci sponsorizzati");
+                  $(".search-results-details #sponsored-header").append("<p>Annunci sponsorizzati</p>");
+                  $(".search-results-details #sponsored-results").addClass("sponsored-border");
 
                   for (i = 0; i < $tot_sponsored; i++) {
                     if (data['sponsored_results'][i]['facilities']) {
@@ -189,7 +206,8 @@ if (document.getElementById('myChart')) {
                 $tot_sponsored = data['sponsored_results'].length;
                 if($tot_sponsored > 0) {
 
-                  $(".search-results-details #sponsored-header").text("Annunci sponsorizzati");
+                    $(".search-results-details #sponsored-header").append("<p>Annunci sponsorizzati</p>");
+                    $(".search-results-details #sponsored-results").addClass("sponsored-border");
 
                   for (i = 0; i < $tot_sponsored; i++) {
                     if (data['sponsored_results'][i]['facilities']) {
@@ -236,4 +254,12 @@ if (document.getElementById('myChart')) {
 
         window.location.replace('http://localhost:8000/search?lat=' + $latitude + '&lng=' + $longitude + '&range=30');
     });
+
+    $('#autoWidth').lightSlider({
+    autoWidth:true,
+    loop:true,
+    onSliderLoad: function() {
+        $('#autoWidth').removeClass('cS-hidden');
+    }
+});
 });

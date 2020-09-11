@@ -37,10 +37,14 @@ class SponsorController extends Controller
             }
         }
 
-        // //Check if the Auth::user owns apt to sponsor
-        // $apartment = Apartment::where('id', $_GET['apt_id']);
-        if ($isActive) {
-            return redirect()->route('admin.home');
+        if (isset($_GET['success'])) {
+
+            return redirect()->route('admin.home', ['success' => 'true']);
+
+        } elseif ($isActive) {
+
+            return redirect()->route('admin.home', ['active_sponsor' => 'true']);
+
         } else {
             return view('admin.sponsor.sponsor', ['token' => $token]);
         }

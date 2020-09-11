@@ -52,7 +52,8 @@ Route::post('/checkout', function(Request $request) {
         $new_ad = new Ad();
         $new_ad->fill($data);
         $new_ad->save();
-        return back()->with('success_message', 'Transaction successful, transaction ID: '.$transaction->id);
+        // return back();
+        return redirect()->route('admin.sponsor', ['success' => 'true', 'apt_id' => $apartment_id]);
     } else {
         $errorString = "";
 
@@ -79,7 +80,7 @@ Route::get('/{apartment_id}/detail', "SearchController@show")->name('detail');
 Route::prefix('admin')->namespace('Admin')->name('admin.')->middleware('auth')->group(function() {
 //queste rotte iniziano con admin , sono le pagine della dashboard, navigabili solo con l'autenticazione
     Route::get('/', 'HomeController@index')->name('home');
-    Route::get('/sponsor', 'SponsorController@index')->name('sponsor/sponsor');
+    Route::get('/sponsor', 'SponsorController@index')->name('sponsor');
     Route::get('/views', 'ViewController@index')->name('views');
     Route::resource('/apartments', 'ApartmentController');
     //Route to manage messages on the admin side

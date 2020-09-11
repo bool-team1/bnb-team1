@@ -362,3 +362,24 @@ label #sidebar_btn_2 {
     color: $specialorange;
   }
 }
+
+#alert-transaction, #alert-active-sponsor {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 90;
+    top: 0;
+    width: 100%;
+    background: #299a29bf;
+    color: #ededed;
+    font-size: 18px;
+    height: 70px;
+        p {
+            margin-bottom: 0;
+        }
+}
+
+#alert-active-sponsor {
+    background: #c5bc47ba;
+}

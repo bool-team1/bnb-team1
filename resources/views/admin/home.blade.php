@@ -1,5 +1,16 @@
 @extends('layouts.app_admin')
 @section('content')
+
+@if (isset($_GET['success']) && $_GET['success'] == 'true')
+    <div id="alert-transaction">
+        <p>Transazione andata a buon fine! La tua sponsorizzazione è ora attiva.</p>
+    </div>
+@endif
+@if (isset($_GET['active_sponsor']) && $_GET['active_sponsor'] == 'true')
+    <div id="alert-active-sponsor">
+        <p>Hai già una sponsorizzazione attiva per questo appartamento.</p>
+    </div>
+@endif
 <main class="content col-lg-12 col-md-10 col-sm-4">
   <div class="dashboard_header">
       <h4>APPARTAMENTI</h4>
@@ -93,19 +104,19 @@
                           <h3>Base Plan</h3>
                           <h2>24 Hours</h2>
                           <span class="price">$2.99</span>
-                          <a href="{{route('admin.sponsor/sponsor', ['plan_id' => '1', 'apt_id' => $apartment->id])}}">Buy Now</a>
+                          <a href="{{route('admin.sponsor', ['plan_id' => '1', 'apt_id' => $apartment->id])}}">Buy Now</a>
                       </div>
                       <div class="plan_card">
                           <h3>Expert Plan</h3>
                           <h2>72 Hours</h2>
                           <span class="price">$5.99</span>
-                          <a href="{{route('admin.sponsor/sponsor', ['plan_id' => '2', 'apt_id' => $apartment->id])}}">Buy Now</a>
+                          <a href="{{route('admin.sponsor', ['plan_id' => '2', 'apt_id' => $apartment->id])}}">Buy Now</a>
                       </div>
                       <div class="plan_card">
                           <h3>Business Plan</h3>
                           <h2>144 Hours</h2>
                           <span class="price">$9.99</span>
-                          <a href="{{route('admin.sponsor/sponsor', ['plan_id' => '3', 'apt_id' => $apartment->id])}}">Buy Now</a>
+                          <a href="{{route('admin.sponsor', ['plan_id' => '3', 'apt_id' => $apartment->id])}}">Buy Now</a>
                       </div>
                   </div>
               </div>

@@ -1,9 +1,6 @@
 .search-wrapper {
     background-color: lightgrey;
-    margin: 200px auto;
-    width: 95%;
-    
-
+    padding-bottom: 200px;
     .search-header {
         background-color: orange;
         padding: 8px;
@@ -11,94 +8,104 @@
         justify-content: space-between;
         align-items: center;
         color: black;
-
         #search-submit {
             padding: 8px;
             background-color: #333333;
             color: orange;
         }
     }
-
     .search-body {
-        display: flex;
-        justify-content: space-between;
-
         .search-results-filters {
             padding: 8px;
-            background-color: darkslategray;
+            background-color: #616161;
             color: white;
-            width: 20%;
-
+            h4 {
+                padding-left: 10px;
+            }
             #filters-list {
-
-                label {
-                    display: block;
+                display: flex;
+                flex-wrap: wrap;
+                div {
+                    padding: 10px;
                 }
             }
         }
-    
         .search-results-details {
-            background-color: darkslategray;
+            background-color: #F1F1F1;
             color: white;
-            width: 70%;
-
-            #sponsored-header {
-                background-color: orange;
+            #results-count {
+                padding: 8px 15px;
+                color: black;
+                p {
+                    text-transform: uppercase;
+                    text-align: center;
+                }
             }
-
             #sponsored-results {
+                padding: 0px;
+                #sponsored-header {
+                    p {
+                        padding: 10px;
+                        color: black;
+                        font-weight: bold;
+                    }
+                    background-color: orange;
+                    text-align: center;
+                }
+            }
+            .sponsored-border {
                 border: 3px solid orange;
             }
-
-
             .result-item {
+                text-align: center;
                 margin: 10px 0px;
-                background-color: darkgrey;
-                padding: 8px;
-                
+                background-color: #313131;
+                h6 {
+                    background-color: black;
+                    font-size: 25px;
+                    text-align: center;
+                    padding: 8px;
+                }
                 .result-item-body {
+                    padding: 8px;
                     display: flex;
-                    justify-content: space-between;
-
+                    flex-wrap: wrap;
+                    justify-content: space-around;
                     img {
-                        width: 150px;
-                        height: 150px;
+                        border: 1px solid lightgrey;
+                        width: 250px;
+                        height: 200px;
+                        margin-bottom: 20px;
                     }
-
                     .result-item-details {
-                        background-color: black;
+                        padding: 8px;
                     }
                 }
-
                 .result-view {
-                   text-align: right;
+                    padding: 8px;
+                    color: black;
+                    background-color: orange;
+                    margin: 10px auto;
                 }
             }
         }
-    }   
+    }
 }
-
 .apartment-detail-wrapper {
     background-color: lightgrey;
     color: black;
     margin: 200px auto;
     width: 90%;
     padding: 15px;
-
     img {
         width: 100%;
     }
-
     .apartment-info-wrapper {
         margin-top: 10px;
-        
-
         .apartment-map {
             float: left;
             width: 50%;
-            
         }
-
         .apartment-info {
             padding: 10px;
             display: inline-block;
