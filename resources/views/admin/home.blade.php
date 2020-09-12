@@ -1,6 +1,13 @@
 @extends('layouts.app_admin')
 @section('content')
+{{-- Page content --}}
 
+
+@if(Auth::check())
+    <script>
+        var userID = "{{ Auth::user()->id }}";
+    </script>
+@endif
 @if (isset($_GET['success']) && $_GET['success'] == 'true')
     <div id="alert-transaction">
         <p>Transazione andata a buon fine! La tua sponsorizzazione è ora attiva.</p>
@@ -11,11 +18,12 @@
         <p>Hai già una sponsorizzazione attiva per questo appartamento.</p>
     </div>
 @endif
-<main class="content col-lg-12 col-md-10 col-sm-4">
+<main class="content col-lg-12 col-md-10 col-sm-4 ">
   <div class="dashboard_header">
       <h4>APPARTAMENTI</h4>
   </div>
-  @foreach ($apartments as $apartment)
+  @forelse ($apartments as $apartment)
+
       <div class="container apt_card col-lg-10 offset-lg-1 col-md-12 col-sm-4">
           <div class="row">
               <h2 class="col-12 apt_title">{{$apartment->title}}</h2>
@@ -58,14 +66,12 @@
                           @endphp
                           <ul>
                               <li>Services</li>
-                              {{-- Check if apartment has any services --}}
-                            @if ($apartment->facilities->isEmpty())
-                                <li>Nessun servizio</li>
-                            @endif
 
-                            @foreach ($apartment->facilities as $facility)
-                              {!! $services[$facility->id] !!}
-                            @endforeach
+                            @forelse ($apartment->facilities as $facility)
+                                {!! $services[$facility->id] !!}
+                            @empty
+                                <li>Nessun servizio</li>
+                            @endforelse
                           </ul>
                       </div>
                   </div>
@@ -131,7 +137,12 @@
               </div>
           @endif
       </div>
-  @endforeach
+      @empty
+          <div class="create_btn">
+              <h3>Non hai ancora registrato nessun appartamento</h3>
+              <a class="create" href="{{route('admin.apartments.create')}}">DIVENTA UN HOST</a>
+          </div>
+  @endforelse
 
 </main>
 @endsection

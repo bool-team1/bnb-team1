@@ -12,9 +12,10 @@ class ViewsTableSeeder extends Seeder
      */
     public function run()
     {
-        for ($i=0; $i < 100; $i++) {
+        for ($i=0; $i < 13; $i++) {
             $newView = new View();
-            $newView->apartment_id = rand(1, 10);
+            $newView->apartment_id = 15;
+            $newView->created_at = date('2020-' . $i . '-01 00:00:00');
 
             $newView->save();
         }

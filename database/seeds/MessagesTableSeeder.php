@@ -13,13 +13,14 @@ class MessagesTableSeeder extends Seeder
      */
      public function run(Faker $faker)
      {
-         for ($i = 0; $i < 10; $i++){
+         for ($i = 1; $i < 4; $i++){
              $newMessage = new Message();
-             $newMessage->apartment_id = $faker->numberBetween(1, 10);
+             $newMessage->apartment_id = 15;
              $newMessage->object = $faker->catchPhrase();
              $newMessage->body = $faker->realText(500);
              $newMessage->sender = $faker->name();
              $newMessage->sender_email = $faker->email();
+             $newMessage->created_at = date('2020-' . $i . '-01 00:00:00');
 
              $newMessage->save();
          }

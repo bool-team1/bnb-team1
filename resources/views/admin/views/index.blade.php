@@ -1,6 +1,11 @@
 @extends('layouts.app_admin')
 
 @section('content')
+@if(Auth::check())
+    <script>
+        var userID = "{{ Auth::user()->id }}";
+    </script>
+@endif
     <div class="container-fluid">
         <div class="row">
             <div class="col-12">

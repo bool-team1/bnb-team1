@@ -1,7 +1,7 @@
 @extends('layouts.app_admin');
 
 @section('content')
-     <div class="container">
+     <div class="container create_ctn mb-5">
          <div class="row fix-container">
             <div class="col-9 offset-2">
                  <div class="d-flex align-items-center">
@@ -20,36 +20,42 @@
                     @csrf
                     <div class="form-group">
                         <label for="titolo">Titolo</label>
-                        <input type="text" name="title" class="form-control" id="titolo" placeholder="..." value="{{ old('title') }}">
+                        <input type="text" name="title" class="form-control" id="titolo" placeholder="..." value="{{ old('title') }}" max-length="30" size="35">
                     </div>
-
+                    {{-- input per la ricerca --}}
+                    <div class="form-group">
+                            <label for="address">Inserisci l'indirizzo</label>
+                            <input type="search" name="address" id="address-input" placeholder="Es. Firenze" max-length="100"/>
+                            <input type="hidden" id="search-lat" name="latitude"/>
+                            <input type="hidden" id="search-lng" name="longitude"/>
+                    </div>
                     <div class="form-group">
                         <label for="rooms_n">Numero di stanze</label>
-                        <input type="text" name="rooms_n" class="form-control" id="rooms_n" placeholder="..." value="{{ old('rooms_n') }}">
+                        <input type="text" name="rooms_n" class="form-control text-center" id="rooms_n" placeholder="..." value="{{ old('rooms_n') }}" size="1">
                     </div>
                     <div class="form-group">
                         <label for="bathrooms_n">Numero di bagni</label>
-                        <input type="text" name="bathrooms_n" class="form-control" id="bathrooms_n" placeholder="..." value="{{ old('bathrooms_n') }}">
+                        <input type="text" name="bathrooms_n" class="form-control text-center" id="bathrooms_n" placeholder="..." value="{{ old('bathrooms_n') }}" size="1">
                     </div>
                     <div class="form-group">
                         <label for="square_mt">Metri quadri</label>
-                        <input type="text" name="square_mt" class="form-control" id="square_mt" placeholder="..." value="{{ old('square_mt') }}">
-                    </div>
-                    <div class="form-group">
-                        <label for="main_pic">Immagine</label>
-                        <input type="file" name="main_pic" class="form-control-file" id="main_pic">
+                        <input type="text" name="square_mt" class="form-control text-center" id="square_mt" placeholder="..." value="{{ old('square_mt') }}" size="2">
                     </div>
                     <input type="hidden" name="user_id" class="form-control-file" id="user_id" value= "{{$user_id}}">
-                    {{-- input per la ricerca --}}
-                <div class="form-group">
-                        <label for="address">Inserisci l'indirizzo</label>
-                        <input type="search" name="address" id="address-input" placeholder="Es. Firenze"/>
-                        <input type="hidden" id="search-lat" name="latitude"/>
-                        <input type="hidden" id="search-lng" name="longitude"/>
-                </div>
 
-                    <div class="form-group">
-                       Facilities:
+
+                    <div class="form-group mt-3">
+                       Servizi:
+                       @php
+                           $services = [
+                               1 => 'Wifi<i class="fas fa-wifi"></i></li>',
+                               2 => 'Swimming pool<i class="fas fa-swimming-pool"></i>',
+                               3 => 'Turkish Bath<i class="fas fa-hot-tub"></i>',
+                               4 => 'Car Spot<i class="fas fa-parking"></i>',
+                               5 => 'Reception<i class="fas fa-concierge-bell"></i>',
+                               6 => 'Sea sight<i class="fas fa-water"></i>',
+                           ];
+                       @endphp
                        @foreach ($facilities ?? '' as $facility)
                            <div class="form-check">
                                <label class="form-check-label">
@@ -59,10 +65,15 @@
                                        name="facilities[]"
                                        type="checkbox"
                                        value="{{ $facility->id }}">
-                                   {{ $facility->type }}
+                                   {!! $services[$facility->id] !!}
                                </label>
                            </div>
                        @endforeach
+                   </div>
+                   <div class="form-group">
+                       <label for="main_pic" class="input-file-label"><i class="fas fa-camera"></i><p>CARICA IMMAGINE PROFILO</p></label>
+                       <p class="img_file_name"></p>
+                       <input type="file" name="main_pic" class="form-control-file" id="main_pic">
                    </div>
                     <div class="form-group">
                         <input type="hidden" name="isPublic" value="0">
