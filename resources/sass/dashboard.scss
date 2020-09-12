@@ -193,7 +193,7 @@ main {
                     }
                     a {
                         background-color: $mainOrange;
-                        color: white;
+                        color: $specialdark;
                         padding: 6px;
                         border-radius: 5px;
                         margin-top: 25px;
@@ -201,7 +201,7 @@ main {
                         text-align: center;
                             &:hover {
                                 text-align: center;
-                                background-color: $specialdark;
+                                background-color: white;
                                 color: $mainOrange;
                                 text-decoration: none;
                                 transition-duration: .2s;
@@ -391,4 +391,31 @@ label #sidebar_btn_2 {
 
 #alert-active-sponsor {
     background: #c5bc47ba;
+}
+
+.create_btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 50px;
+    .create {
+        background-color: $mainOrange;
+        color: #616161;
+        padding: 6px 20px;
+        border-radius: 5px;
+        margin-top: 25px;
+        text-align: center;
+        font-size: large;
+        font-weight: bolder;
+        &:hover {
+            text-align: center;
+            background-color: rgba(255, 255, 255, .8);
+            color: $mainOrange;
+            text-decoration: none;
+            transition-duration: .3s;
+        }
+    }
+    h3 {
+        font-size: 18px;
+    }
 }

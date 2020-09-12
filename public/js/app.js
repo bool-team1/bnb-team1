@@ -85134,7 +85134,15 @@ if (document.getElementById("address-input")) {
 
 ;
 $(document).ready(function () {
-  //Delete transaction success alert alert after 3 seconds
+  $('.create_ctn #main_pic').on('click touchstart', function () {
+    $(this).val('');
+  });
+  $(".create_ctn #main_pic").change(function (e) {
+    var file_name = e.target.files[0]['name'];
+    $('.input-file-label').html('<p><i class="fas fa-camera"></i></p>' + file_name);
+    console.log(e.target.files[0]);
+  }); //Delete transaction success alert alert after 3 seconds
+
   var alert_t = $('#alert-transaction');
 
   if (alert_t.length > 0) {
@@ -85359,15 +85367,46 @@ $(document).ready(function () {
     $longitude = $("#search-lng").val();
     console.log('ok');
     window.location.replace('http://localhost:8000/search?lat=' + $latitude + '&lng=' + $longitude + '&range=30');
-  });
+  }); //-------------- HOMEPAGE SLIDER -----------------
+
   $('#autoWidth').lightSlider({
     autoWidth: true,
     loop: true,
     onSliderLoad: function onSliderLoad() {
       $('#autoWidth').removeClass('cS-hidden');
     }
+  }); //-------------- HOMEPAGE SLIDER END-----------------
+
+  $('.navbar').on("click", function () {
+    $.ajax({
+      url: "http://localhost:8000/api/views",
+      method: "GET",
+      data: {
+        user_id: userID
+      },
+      success: function success(data) {
+        var data = data.apts_array;
+        console.log(data); //Cicla gli appartamenti restituiti dal json
+
+        data.forEach(function (apartment) {
+          console.log(apartment.apt_title);
+          var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']; //Cicla msg_per_month e views_per_month che sono indicizzati per mese
+
+          for (var i = 0; i < months.length; i++) {
+            var key = i + 1; // ---msg/views_per_month restituiscono UNDEFINED se non ci sono records per quel mese---
+
+            console.log('Messages of ' + months[i] + ': ' + apartment.msg_per_month[key] + '\n' + 'Views of ' + months[i] + ': ' + apartment.views_per_month[key]);
+          }
+
+          console.log('\n');
+        });
+      },
+      error: function error(e) {
+        alert("Error:" + e);
+      }
+    }); //END statistics api call
   });
-});
+}); //END Document.ready
 
 /***/ }),
 
