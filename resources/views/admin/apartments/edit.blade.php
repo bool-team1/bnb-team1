@@ -1,7 +1,7 @@
 @extends('layouts.app_admin')
 
 @section('content')
-    <div class="container-fluid">
+    <div class="container-fluid create_ctn mb-5">
         <div class="row fix-container">
             <div class="col-9 offset-2">
                 <div class="d-flex align-items-center">
@@ -24,44 +24,54 @@
                         <input type="text" name="title" class="form-control" id="titolo" placeholder="..." value="{{ old('title', $apartment->title) }}">
                     </div>
                     <div class="form-group">
-                        <label for="rooms_n">Numero di stanze</label>
-                        <input type="text" name="rooms_n" class="form-control" id="rooms_n" placeholder="..." value="{{ old('rooms_n', $apartment->rooms_n) }}">
-                    </div>
-                    <div class="form-group">
-                        <label for="bathrooms_n">Numero di bagni</label>
-                        <input type="text" name="bathrooms_n" class="form-control" id="bathrooms_n" placeholder="..." value="{{ old('bathrooms_n', $apartment->bathrooms_n) }}">
-                    </div>
-                    <div class="form-group">
-                        <label for="square_mt">Metri quadri</label>
-                        <input type="text" name="square_mt" class="form-control" id="square_mt" placeholder="..." value="{{ old('square_mt', $apartment->square_mt) }}">
-                    </div>
-                    <div class="form-group">
                             <label for="address">Inserisci l'Indirizzo</label>
                             <input type="search" name="address" id="address-input" placeholder="Es. Firenze" value="{{ old('address', $apartment->address) }}"/>
                             <input type="hidden" id="search-lat" name="latitude"/>
                             <input type="hidden" id="search-lng" name="longitude"/>
                     </div>
                     <div class="form-group">
-                                           Facilities:
-                                           @foreach ($facilities  as $facility)
-                                               <div class="form-check">
-                                                   <label class="form-check-label">
-                                                       <input
-                                                           {{ in_array($facility->id, old('facilities', [])) ? 'checked' : '' }}
-                                                           class="form-check-input"
-                                                           name="facilities[]"
-                                                           type="checkbox"
-                                                           value="{{ $facility->id }}">
-                                                       {{ $facility->type }}
-                                                   </label>
-                                               </div>
-                                           @endforeach
-                                       </div>
+                        <label for="rooms_n">Numero di stanze</label>
+                        <input type="text" name="rooms_n" class="form-control text-center" id="rooms_n" placeholder="..." size="1" value="{{ old('rooms_n', $apartment->rooms_n) }}">
+                    </div>
+                    <div class="form-group">
+                        <label for="bathrooms_n">Numero di bagni</label>
+                        <input type="text" name="bathrooms_n" class="form-control text-center" id="bathrooms_n" placeholder="..." size="1" value="{{ old('bathrooms_n', $apartment->bathrooms_n) }}">
+                    </div>
+                    <div class="form-group">
+                        <label for="square_mt">Metri quadri</label>
+                        <input type="text" name="square_mt" class="form-control text-center" id="square_mt" placeholder="..." size="2" value="{{ old('square_mt', $apartment->square_mt) }}">
+                    </div>
+                    <div class="form-group mt-3">
+                       Servizi:
+                       @php
+                           $services = [
+                               1 => 'Wifi<i class="fas fa-wifi"></i></li>',
+                               2 => 'Swimming pool<i class="fas fa-swimming-pool"></i>',
+                               3 => 'Turkish Bath<i class="fas fa-hot-tub"></i>',
+                               4 => 'Car Spot<i class="fas fa-parking"></i>',
+                               5 => 'Reception<i class="fas fa-concierge-bell"></i>',
+                               6 => 'Sea sight<i class="fas fa-water"></i>',
+                           ];
+                       @endphp
+                       @foreach ($facilities  as $facility)
+                           <div class="form-check">
+                               <label class="form-check-label">
+                                   <input
+                                       {{ in_array($facility->id, old('facilities', [])) ? 'checked' : '' }}
+                                       class="form-check-input"
+                                       name="facilities[]"
+                                       type="checkbox"
+                                       value="{{ $facility->id }}">
+                                   {!! $services[$facility->id] !!}
+                               </label>
+                           </div>
+                       @endforeach
+                   </div>
                     <div class="form-group">
                         <label for="img">Immagine</label>
-                        <input type="file" name="image" class="form-control-file">
+                        <input type="file" name="image" class="form-control-file pb-4" style="display:block;">
                         @if ( $apartment->main_pic)
-                            <img src="{{ $apartment->main_pic }}">
+                            <img class="rounded" src="{{ $apartment->main_pic }}">
                             @else
                                 <p>Immagine non disponibile</p>
                         @endif
