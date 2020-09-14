@@ -17,20 +17,21 @@
 .navbar-brand img{
   height: 60px;
 }
-
-.button{
-  // border: none;
-  // padding: 10px;
-  // margin-right: 20px;
-  // border-radius: 8px;
-  // color: white;
-  // background-color: $specialorange;
-  // p {
-  //   margin-bottom: 0px;
-  // }
-  // &:hover {
-  //   color: white;
-  // }
+.button-h {
+  border: none;
+  padding: 10px;
+  margin-right: 20px;
+  border-radius: 8px;
+  color: white;
+  background-color: $specialorange;
+  p {
+    margin-bottom: 0px;
+  }
+  &:hover {
+    color: white;
+  }
+}
+.button {
   margin-right: 20px;
   position: relative;
   display: inline-block;

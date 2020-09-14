@@ -1,12 +1,14 @@
-@extends('layouts.app_admin');
+@extends('layouts.app_admin')
 
 @section('content')
+
+<main class="content col-lg-12 col-md-10 col-sm-4 new-apartament-cont">
+  <div class="dashboard_header">
+      <h4>NUOVO APPARTAMENTO</h4>
+  </div>
      <div class="container">
          <div class="row fix-container">
-            <div class="col-9 offset-2">
-                 <div class="d-flex align-items-center">
-                    <h1>Inserisci un nuovo appartamento</h1>
-                </div>
+            <div class="col-9 offset-2 new-apartament">
                 @if ($errors->any())
                     <div class="alert alert-danger">
                         <ul>
@@ -74,4 +76,6 @@
              </div>
         </div>
      </div>
+</main>
+
 @endsection
