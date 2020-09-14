@@ -1,6 +1,10 @@
 @extends('layouts.app_admin')
 @section('content')
-    <div class="messages-list-wrapper">
+<main class="content col-lg-12 col-md-10 col-sm-4">
+  <div class="dashboard_header">
+      <h4>MESSAGGI</h4>
+  </div>
+    <div class="messages-list-wrapper col-lg-6 col-md-10 col-sm-4">
         <div class="messages-list-header">
             <h3>Elenco messaggi</h1>
         </div>
@@ -18,7 +22,7 @@
                                 <td>{{ $message->sender }}</td>
                                 <td>{{ $message->object }}</td>
                                 <td>
-                                    <a class="btn btn-info" href="{{ route('admin.message.show', ['message_id' => $message->id])}}">Dettagli</a>
+                                    <a class="btn btn-info btn-message" href="{{ route('admin.message.show', ['message_id' => $message->id])}}">Dettagli</a>
                                     <form class="" action="{{ route("admin.message.destroy", ["message_id" => $message->id]) }}"method="post">
                                         @csrf
                                         @method("DELETE")
@@ -36,5 +40,5 @@
                     </tbody>
                 </table>
     </div>
-    
+</main>
 @endsection

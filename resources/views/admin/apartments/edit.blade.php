@@ -1,9 +1,13 @@
 @extends('layouts.app_admin')
 
 @section('content')
-    <div class="container-fluid create_ctn mb-5">
-        <div class="row fix-container">
-            <div class="col-9 offset-2">
+<main class="content col-lg-12 col-md-10 col-sm-4 new-apartament-cont">
+  <div class="dashboard_header">
+      <h4>MODIFICA APPARTAMENTO</h4>
+  </div>
+    <div class="">
+        <div class="row">
+            <div class="col-9 offset-2 new-apartament">
                 <div class="d-flex align-items-center">
                     <h1 class="mt-3 mb-3">Modifica</h1>
                 </div>
@@ -69,7 +73,7 @@
                    </div>
                     <div class="form-group">
                         <label for="img">Immagine</label>
-                        <input type="file" name="image" class="form-control-file pb-4" style="display:block;">
+                        <input type="file" name="image" class="form-control-file ">
                         @if ( $apartment->main_pic)
                             <img class="rounded" src="{{ $apartment->main_pic }}">
                             @else
@@ -87,4 +91,5 @@
             </div>
         </div>
     </div>
+</main>
 @endsection

@@ -13,7 +13,7 @@
         <ul id="autoWidth" class="cs-hidden">
             @foreach ($sponsored_results as $apt)
                 <li class="item-{{$alph[$i]}}">
-                    <div class="card mb-4 app-ev">
+                    <div class="card mb-4 app-ev card-apartment">
                         <a href="{{route('detail', ['apartment_id' => $apt['id']])}}" style="text-decoration: none;color: white;">
                             <img class="card-img-top img-fluid" src="{{ $apt['main_pic'] }}" alt="">
                             <div class="card-body">

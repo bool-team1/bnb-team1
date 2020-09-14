@@ -3,12 +3,10 @@
     @php
         use App\Apartment;
         use App\Plan;
-
         $apartment = Apartment::find($_GET['apt_id']);
         $plan = Plan::find($_GET['plan_id']);
         $plans = [1 => 'Base Plan', 2 => 'Expert Plan', 3 => 'Business Plan'];
     @endphp
-
     <div class="form_wrap">
         <h1>{{$plans[$_GET['plan_id']] . ' Payment'}}</h1>
         <ul>
@@ -21,14 +19,12 @@
                 <input id="amount" name="amount" min="1" type="hidden" value="{{$plan->price}}">
                 <input id="plan_id" name="plan_id" type="hidden" value="{{$plan->id}}">
                 <input id="apt_id" name="apt_id" type="hidden" value="{{$apartment->id}}">
-
                 <div class="bt-drop-in-wrapper">
                     <div id="bt-dropin"></div>
                 </div>
             </section>
-
             <input id="nonce" name="payment_method_nonce" type="hidden" />
-            <button class="button" type="submit"><span>Buy Sponsorship Plan</span></button>
+            <button class="button-h" type="submit"><span>Buy Sponsorship Plan</span></button>
         </form>
         @if (session('success_message'))
             <div class="alert alert-success" style="width: 20%;margin: auto;text-align: center;margin-top: 20px;">Transaction Completed</div>
@@ -43,7 +39,6 @@
     <script>
         var form = document.querySelector('#payment-form');
         var client_token = "{{ $token }}";
-
         braintree.dropin.create({
           authorization: client_token,
           selector: '#bt-dropin',
@@ -57,13 +52,11 @@
           }
           form.addEventListener('submit', function (event) {
             event.preventDefault();
-
             instance.requestPaymentMethod(function (err, payload) {
               if (err) {
                 console.log('Request Payment Method Error', err);
                 return;
               }
-
               // Add the nonce to the form and submit
               document.querySelector('#nonce').value = payload.nonce;
               form.submit();
