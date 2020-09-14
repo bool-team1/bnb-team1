@@ -19,7 +19,7 @@ class CreateApartmentsTable extends Migration
             //Set user_id as foreign key
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->string('title', 30)->nullable(false);
-            $table->string('address', 100)->nullable(false)->unique();
+            $table->string('address', 100)->nullable(false);
             $table->tinyInteger('rooms_n');
             $table->tinyInteger('bathrooms_n');
             $table->float('square_mt');

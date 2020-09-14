@@ -16605,73 +16605,6 @@ body h1 {
   margin-bottom: 50px;
 }
 
-.create_ctn input[type=checkbox] {
-  /* IE */
-  /* FF */
-  /* Safari and Chrome */
-  /* Opera */
-  transform: scale(1.3);
-  padding: 10px;
-}
-
-.create_ctn .form-control, .create_ctn .ap-input {
-  width: inherit;
-  background-color: #f56837;
-  color: white;
-  border: none;
-}
-.create_ctn .form-control:focus, .create_ctn .ap-input:focus {
-  width: inherit;
-  background-color: #f56837;
-  color: white;
-  border: none;
-}
-.create_ctn .form-control::-webkit-input-placeholder, .create_ctn .ap-input::-webkit-input-placeholder {
-  color: rgba(255, 255, 255, 0.75);
-}
-
-.create_ctn .ap-input {
-  width: 70%;
-}
-
-.create_ctn .form-control-file {
-  display: none;
-}
-
-.create_ctn .input-file-label {
-  border-radius: 5px;
-  padding: 10px 15px;
-  width: 270px;
-  text-align: center;
-  background: rgba(255, 255, 255, 0.8);
-  color: #f56837;
-  font-size: 17px;
-  font-weight: 600;
-  cursor: pointer;
-}
-.create_ctn .input-file-label:hover {
-  background: #f56837;
-  color: rgba(255, 255, 255, 0.8);
-  transition-duration: 0.3s;
-}
-.create_ctn .input-file-label i {
-  display: block;
-  font-size: 50px;
-  text-align: center;
-  padding-top: 5px;
-}
-
-.create_ctn .form-check {
-  padding-bottom: 20px;
-}
-.create_ctn .form-check:first-of-type {
-  margin-top: 15px;
-}
-.create_ctn .form-check i {
-  color: #f56837;
-  padding-left: 8px;
-}
-
 * {
   margin: 0;
   padding: 0;
@@ -16937,11 +16870,13 @@ html, body {
 .apartment-detail-wrapper .apartment-info-wrapper {
   margin-top: 10px;
 }
-.apartment-detail-wrapper .apartment-info-wrapper .apartment-map {
-  margin-bottom: 20px;
+.apartment-detail-wrapper .apartment-info-wrapper .apartment-map .map {
+  height: 400px;
+  width: 100%;
 }
 .apartment-detail-wrapper .apartment-info-wrapper .apartment-info {
   display: inline-block;
+  margin-top: 40px;
 }
 .apartment-detail-wrapper .apartment-info-wrapper .apartment-info strong {
   color: #FF6633;

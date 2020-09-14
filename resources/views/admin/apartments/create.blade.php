@@ -71,8 +71,7 @@
                        @endforeach
                    </div>
                    <div class="form-group">
-                       <label for="main_pic" class="input-file-label"><i class="fas fa-camera"></i><p>CARICA IMMAGINE PROFILO</p></label>
-                       <p class="img_file_name"></p>
+                       <label for="main_pic" class="input-file-label"></label>
                        <input type="file" name="main_pic" class="form-control-file" id="main_pic">
                    </div>
                     <div class="form-group">

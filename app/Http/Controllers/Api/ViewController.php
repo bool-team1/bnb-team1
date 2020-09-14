@@ -61,7 +61,6 @@ class ViewController extends Controller
                 //Pusha l'array dell'appartamento nell'array di tutti gli appartamenti
                 array_push($wannaBeJson, $apt_array);
             }
-            dd($wannaBeJson);
             return response()->json([
                 'success' => true,
                 'apts_array' => $wannaBeJson

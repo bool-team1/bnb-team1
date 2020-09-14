@@ -58,7 +58,7 @@ class ApartmentController extends Controller
 
                 'user_id' => 'required',
                 'title' => 'required|max:30',
-                'address' => 'required|max:100|unique:apartments',
+                'address' => 'required|max:100|',
                 'rooms_n' => 'required|numeric|min:1',
                 'bathrooms_n' => 'required|numeric|min:1',
                 'square_mt' => 'required|numeric|min:1',
@@ -146,7 +146,7 @@ class ApartmentController extends Controller
         $request->validate([
                 'user_id' => 'required',
                 'title' => 'required|max:30',
-                'address' => 'required|max:100|unique:apartments',
+                'address' => 'required|max:100',
                 'rooms_n' => 'required|numeric|min:1',
                 'bathrooms_n' => 'required|numeric|min:1',
                 'square_mt' => 'required|numeric|min:1',

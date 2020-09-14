@@ -14,28 +14,32 @@
         </div>
         <div class="apartment-info-wrapper row mt-4">
             <div class="apartment-map col-12 col-md-6 text-center">
-                <h3>Dove si trova:</h3>
-                <!--The div element for the map -->
-                <div id="map"></div>
-                <script>
-                    // Initialize and add the map
-                    function initMap() {
-                    // The location of Uluru
-                    var current_location = {lat: {{ $apartment->latitude }}, lng:{{ $apartment->longitude}} };
-                    // The map, centered at Uluru
-                    var map = new google.maps.Map(
-                        document.getElementById('map'), {zoom: 4, center: current_location});
-                    // The marker, positioned at Uluru
-                    var marker = new google.maps.Marker({position: current_location, map: map});
-                    }
-                </script>
-                <!--Load the API from the specified URL
-                * The async attribute allows the browser to render the page while the API loads
-                * The callback parameter executes the initMap() function
-                -->
-                <script defer
-                src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap">
-                </script>
+                <h2>Dove si trova:</h2>
+                    <div id="map" class="map"></div>
+                    <script type="text/javascript">
+                    var map = new ol.Map({
+                        target: 'map',
+                        layers: [
+                        new ol.layer.Tile({
+                            source: new ol.source.OSM()
+                        })
+                        ],
+                        view: new ol.View({
+                        center: ol.proj.fromLonLat([{{ $apartment->longitude }}, {{ $apartment->latitude }}]),
+                        zoom: 14
+                        })
+                    });
+                    var layer = new ol.layer.Vector({
+                        source: new ol.source.Vector({
+                            features: [
+                                new ol.Feature({
+                                    geometry: new ol.geom.Point(ol.proj.fromLonLat([{{ $apartment->longitude }}, {{ $apartment->latitude }}]))
+                                })
+                            ]
+                        })
+                    });
+                    map.addLayer(layer);
+                    </script>
             </div>
             <div class="apartment-info col-12 col-md-6 text-center">
                 <p><strong>Metri quadrati: </strong>{{ $apartment->square_mt }}</p>

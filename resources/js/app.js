@@ -116,71 +116,9 @@ if (document.getElementById('myChart')) {
         $filters.push($(this).val());
         });
 
-      //AJAX call to API for apartment results
-      $.ajax({
-        url : "http://localhost:8000/api/apartments",
-        method : "GET",
-        data : {
-            lat : $latitude,
-            lng: $longitude,
-            range: $range,
-            filters: $filters
-            },
-        success: function(data) {
-                //Resetting HTML fields
-                $(".search-results-details #results-count").html("");
-                $("#sponsored-header").text("");
-                $("#sponsored-body").html("");
-                $("#normal-results").html("");
-
-
-                //Updating results count description
-                $(".search-results-details #results-count").append("<p>Totale appartamenti trovati: " + data['filtered_count'] + "</p>");
-
-                //Cycling through sponsored results and adding it to specific container
-                $tot_sponsored = data['sponsored_results'].length;
-                if($tot_sponsored > 0) {
-
-                  $(".search-results-details #sponsored-header").append("<p>Annunci sponsorizzati</p>");
-                  $(".search-results-details #sponsored-results").addClass("sponsored-border");
-
-                  for (i = 0; i < $tot_sponsored; i++) {
-                    if (data['sponsored_results'][i]['facilities']) {
-                      $facilities_to_add = data['sponsored_results'][i]['facilities'].toString();
-                    } else {
-                      $facilities_to_add = "Nessuno"
-                    }
-
-                    $html_item_to_add = "<div class='result-item'><h6>" + data['sponsored_results'][i]['title'] + "</h6><div class='result-item-body'><img src='"+ data['sponsored_results'][i]['main_pic'] + "' alt=''><div class='result-item-details'><p><strong>Indirizzo: </strong>" + data['sponsored_results'][i]['address'] + "</p> <p><strong>Metri quadri: </strong>" + data['sponsored_results'][i]['square_mt'] + "</p> <p><strong>Stanze da letto: </strong>" + data['sponsored_results'][i]['rooms_n'] + "</p> <p><strong>Servizi: </strong>" + $facilities_to_add + "</p><p><strong>Distanza: </strong>" + data['sponsored_results'][i]['distance'].toFixed(2) + " km</p></div></div><a href='http://localhost:8000/" + data['sponsored_results'][i]['id'] +"/detail' class='btn btn-primary result-view'>Vedi i dettagli</a></div>";
-
-                    $(".search-results-details #sponsored-body").append($html_item_to_add);
-                  }
-
-                };
-
-                //Cycling through not sponsored results and adding it to specific container
-                $tot_not_sponsored = data['normal_results'].length;
-                if($tot_not_sponsored > 0) {
-
-                  for (i = 0; i < $tot_not_sponsored; i++) {
-                    if (data['normal_results'][i]['facilities']) {
-                      $facilities_to_add = data['normal_results'][i]['facilities'].toString();
-                    } else {
-                      $facilities_to_add = "Nessuno"
-                    }
-
-                    $html_item_to_add = "<div class='result-item'><h6>" + data['normal_results'][i]['title'] + "</h6><div class='result-item-body'><img src='"+ data['normal_results'][i]['main_pic'] + "' alt=''><div class='result-item-details'><p><strong>Indirizzo: </strong>" + data['normal_results'][i]['address'] + "</p> <p><strong>Metri quadri: </strong>" + data['normal_results'][i]['square_mt'] + "</p> <p><strong>Stanze da letto: </strong>" + data['normal_results'][i]['rooms_n'] + "</p> <p><strong>Servizi: </strong>" + $facilities_to_add + "</p><p><strong>Distanza: </strong>" + data['normal_results'][i]['distance'].toFixed(2) + " km</p></div></div><a href='http://localhost:8000/" + data['normal_results'][i]['id'] +"/detail' class='btn btn-primary result-view'>Vedi i dettagli</a></div>";
-
-                    $(".search-results-details #normal-results").append($html_item_to_add);
-                  }
-
-                };
-            },
-        error : function(e) {
-            alert("Error: API Apartment" + e);
-            }
-          });
-        };
+        //AJAX call to API for apartment results
+        printSearchResults($latitude, $longitude, $range, $filters);
+    };
 
     //Apartment search with Ajax at clicking button
     $("#search-submit").on("click", function(){
@@ -194,69 +132,7 @@ if (document.getElementById('myChart')) {
       });
 
       //AJAX call to API for apartment results
-      $.ajax({
-        url : "http://localhost:8000/api/apartments",
-        method : "GET",
-        data : {
-            lat : $latitude,
-            lng: $longitude,
-            range: $range,
-            filters: $filters
-            },
-        success: function(data) {
-                //Resetting HTML fields
-                $(".search-results-details #results-count").html("");
-                $("#sponsored-header").text("");
-                $("#sponsored-body").html("");
-                $("#normal-results").html("");
-
-
-                //Updating results count description
-                $(".search-results-details #results-count").append("<p>Totale appartamenti trovati: " + data['filtered_count'] + "</p>");
-
-                //Cycling through sponsored results and adding it to specific container
-                $tot_sponsored = data['sponsored_results'].length;
-                if($tot_sponsored > 0) {
-
-                    $(".search-results-details #sponsored-header").append("<p>Annunci sponsorizzati</p>");
-                    $(".search-results-details #sponsored-results").addClass("sponsored-border");
-
-                  for (i = 0; i < $tot_sponsored; i++) {
-                    if (data['sponsored_results'][i]['facilities']) {
-                      $facilities_to_add = data['sponsored_results'][i]['facilities'].toString();
-                    } else {
-                      $facilities_to_add = "Nessuno"
-                    }
-
-                    $html_item_to_add = "<div class='result-item'><h6>" + data['sponsored_results'][i]['title'] + "</h6><div class='result-item-body'><img src='"+ data['sponsored_results'][i]['main_pic'] + "' alt=''><div class='result-item-details'><p><strong>Indirizzo: </strong>" + data['sponsored_results'][i]['address'] + "</p> <p><strong>Metri quadri: </strong>" + data['sponsored_results'][i]['square_mt'] + "</p> <p><strong>Stanze da letto: </strong>" + data['sponsored_results'][i]['rooms_n'] + "</p> <p><strong>Servizi: </strong>" + $facilities_to_add + "</p><p><strong>Distanza: </strong>" + data['sponsored_results'][i]['distance'].toFixed(2) + " km</p></div></div><a href='http://localhost:8000/" + data['sponsored_results'][i]['id'] +"/detail' class='btn btn-primary result-view'>Vedi i dettagli</a></div>";
-
-                    $(".search-results-details #sponsored-body").append($html_item_to_add);
-                  }
-
-                };
-
-                //Cycling through not sponsored results and adding it to specific container
-                $tot_not_sponsored = data['normal_results'].length;
-                if($tot_not_sponsored > 0) {
-
-                  for (i = 0; i < $tot_not_sponsored; i++) {
-                    if (data['normal_results'][i]['facilities']) {
-                      $facilities_to_add = data['normal_results'][i]['facilities'].toString();
-                    } else {
-                      $facilities_to_add = "Nessuno"
-                    }
-
-                    $html_item_to_add = "<div class='result-item'><h6>" + data['normal_results'][i]['title'] + "</h6><div class='result-item-body'><img src='"+ data['normal_results'][i]['main_pic'] + "' alt=''><div class='result-item-details'><p><strong>Indirizzo: </strong>" + data['normal_results'][i]['address'] + "</p> <p><strong>Metri quadri: </strong>" + data['normal_results'][i]['square_mt'] + "</p> <p><strong>Stanze da letto: </strong>" + data['normal_results'][i]['rooms_n'] + "</p> <p><strong>Servizi: </strong>" + $facilities_to_add + "</p><p><strong>Distanza: </strong>" + data['normal_results'][i]['distance'].toFixed(2) + " km</p></div></div><a href='http://localhost:8000/" + data['normal_results'][i]['id'] +"/detail' class='btn btn-primary result-view'>Vedi i dettagli</a></div>";
-
-                    $(".search-results-details #normal-results").append($html_item_to_add);
-                  }
-
-                };
-            },
-        error : function(e) {
-            alert("Error: API Apartment" + e);
-            }
-      });
+      printSearchResults($latitude, $longitude, $range, $filters);
     });
     $("#home-search").on("click", function(){
         //Retrieve data for latitude, longitude and range
@@ -277,7 +153,7 @@ if (document.getElementById('myChart')) {
     });
     //-------------- HOMEPAGE SLIDER END-----------------
 
-    $('.navbar').on("click", function(){
+    $('.something').on("click", function(){
         $.ajax({
             url : "http://localhost:8000/api/views",
             method : "GET",
@@ -324,3 +200,69 @@ if (document.getElementById('myChart')) {
 
 
 });//END Document.ready
+
+function printSearchResults(latitude, longitude, range, filters) {
+    $.ajax({
+      url : "http://localhost:8000/api/apartments",
+      method : "GET",
+      data : {
+          lat : latitude,
+          lng: longitude,
+          range: range,
+          filters: filters
+          },
+      success: function(data) {
+              //Resetting HTML fields
+              $(".search-results-details #results-count").html("");
+              $("#sponsored-header").text("");
+              $("#sponsored-body").html("");
+              $("#normal-results").html("");
+
+
+              //Updating results count description
+              $(".search-results-details #results-count").append("<p>Totale appartamenti trovati: " + data['filtered_count'] + "</p>");
+
+              //Cycling through sponsored results and adding it to specific container
+              $tot_sponsored = data['sponsored_results'].length;
+              if($tot_sponsored > 0) {
+
+                  $(".search-results-details #sponsored-header").append("<p>Annunci sponsorizzati</p>");
+                  $(".search-results-details #sponsored-results").addClass("sponsored-border");
+
+                for (i = 0; i < $tot_sponsored; i++) {
+                  if (data['sponsored_results'][i]['facilities']) {
+                    $facilities_to_add = data['sponsored_results'][i]['facilities'].toString();
+                  } else {
+                    $facilities_to_add = "Nessuno"
+                  }
+
+                  $html_item_to_add = "<div class='result-item'><h6>" + data['sponsored_results'][i]['title'] + "</h6><div class='result-item-body'><img src='"+ data['sponsored_results'][i]['main_pic'] + "' alt=''><div class='result-item-details'><p><strong>Indirizzo: </strong>" + data['sponsored_results'][i]['address'] + "</p> <p><strong>Metri quadri: </strong>" + data['sponsored_results'][i]['square_mt'] + "</p> <p><strong>Stanze da letto: </strong>" + data['sponsored_results'][i]['rooms_n'] + "</p> <p><strong>Servizi: </strong>" + $facilities_to_add + "</p><p><strong>Distanza: </strong>" + data['sponsored_results'][i]['distance'].toFixed(2) + " km</p></div></div><a href='http://localhost:8000/" + data['sponsored_results'][i]['id'] +"/detail' class='btn btn-primary result-view'>Vedi i dettagli</a></div>";
+
+                  $(".search-results-details #sponsored-body").append($html_item_to_add);
+                }
+
+              };
+
+              //Cycling through not sponsored results and adding it to specific container
+              $tot_not_sponsored = data['normal_results'].length;
+              if($tot_not_sponsored > 0) {
+
+                for (i = 0; i < $tot_not_sponsored; i++) {
+                  if (data['normal_results'][i]['facilities']) {
+                    $facilities_to_add = data['normal_results'][i]['facilities'].toString();
+                  } else {
+                    $facilities_to_add = "Nessuno"
+                  }
+
+                  $html_item_to_add = "<div class='result-item'><h6>" + data['normal_results'][i]['title'] + "</h6><div class='result-item-body'><img src='"+ data['normal_results'][i]['main_pic'] + "' alt=''><div class='result-item-details'><p><strong>Indirizzo: </strong>" + data['normal_results'][i]['address'] + "</p> <p><strong>Metri quadri: </strong>" + data['normal_results'][i]['square_mt'] + "</p> <p><strong>Stanze da letto: </strong>" + data['normal_results'][i]['rooms_n'] + "</p> <p><strong>Servizi: </strong>" + $facilities_to_add + "</p><p><strong>Distanza: </strong>" + data['normal_results'][i]['distance'].toFixed(2) + " km</p></div></div><a href='http://localhost:8000/" + data['normal_results'][i]['id'] +"/detail' class='btn btn-primary result-view'>Vedi i dettagli</a></div>";
+
+                  $(".search-results-details #normal-results").append($html_item_to_add);
+                }
+
+              };
+          },
+      error : function(e) {
+          alert("Error: API Apartment" + e);
+          }
+    });
+}

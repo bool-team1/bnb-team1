@@ -107,10 +107,14 @@
     .apartment-info-wrapper {
         margin-top: 10px;
         .apartment-map {
-            margin-bottom: 20px;
+            .map {
+                height: 400px;
+                width: 100%;                
+            }
         }
         .apartment-info {
             display: inline-block;
+            margin-top: 40px;
             strong {
                 color: #FF6633;
             }
