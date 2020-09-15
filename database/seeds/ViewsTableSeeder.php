@@ -14,7 +14,7 @@ class ViewsTableSeeder extends Seeder
     {
         for ($i=0; $i < 13; $i++) {
             $newView = new View();
-            $newView->apartment_id = 15;
+            $newView->apartment_id = 12;
             $newView->created_at = date('2020-' . $i . '-01 00:00:00');
 
             $newView->save();

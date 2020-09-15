@@ -1,11 +1,5 @@
 <?php
 
-//SE CAMBIEREMO MODO DI SALVARE IMGS
-// if(!empty($data['image'])) {
-//     $img_path =  Storage::put('uploads', $data['image']);
-//     $data['main_pic'] = $img_path;
-// }
-
 namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -53,7 +47,6 @@ class ApartmentController extends Controller
      */
     public function store(Request $request)
     {
-        // dd($request->files['main_pic']);
         $request->validate([
 
                 'user_id' => 'required',
@@ -66,6 +59,12 @@ class ApartmentController extends Controller
                 'latitude' => 'required'
        ]);
         $data = $request->all();
+
+        if(!empty($data['image'])) {
+            $img_path =  Storage::put('uploads', $data['image']);
+            $data['main_pic'] = $img_path;
+        };
+
         //generazione dello slug dal titolo
         $slug = Str::of($data['title'])->slug('-');
         $original_slug = $slug;
@@ -155,6 +154,11 @@ class ApartmentController extends Controller
                 'latitude' => 'required'
        ]);
         $data = $request->all();
+
+        if(!empty($data['image'])) {
+            $img_path =  Storage::put('uploads', $data['image']);
+            $data['main_pic'] = $img_path;
+        };
 
         $apartment = Apartment::find($id);
         $apartment->update($data);

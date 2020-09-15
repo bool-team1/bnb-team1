@@ -25,25 +25,25 @@
                     @method('PUT')
                     <div class="form-group">
                         <label for="titolo">Titolo</label>
-                        <input type="text" name="title" class="form-control" id="titolo" placeholder="..." value="{{ old('title', $apartment->title) }}">
+                        <input required type="text" name="title" class="form-control" id="titolo" placeholder="..." value="{{ old('title', $apartment->title) }}">
                     </div>
                     <div class="form-group">
                             <label for="address">Inserisci l'Indirizzo</label>
                             <input type="search" name="address" id="address-input" placeholder="Es. Firenze" value="{{ old('address', $apartment->address) }}"/>
-                            <input type="hidden" id="search-lat" name="latitude"/>
-                            <input type="hidden" id="search-lng" name="longitude"/>
+                            <input type="hidden" id="search-lat" name="latitude" value="{{ old('latitude', $apartment->latitude) }}"/>
+                            <input type="hidden" id="search-lng" name="longitude" value="{{ old('longitude', $apartment->longitude) }}"/>
                     </div>
                     <div class="form-group">
                         <label for="rooms_n">Numero di stanze</label>
-                        <input type="text" name="rooms_n" class="form-control text-center" id="rooms_n" placeholder="..." size="1" value="{{ old('rooms_n', $apartment->rooms_n) }}">
+                        <input required min="1" type="number" name="rooms_n" class="form-control" id="rooms_n" placeholder="..." value="{{ old('rooms_n', $apartment->rooms_n) }}">
                     </div>
                     <div class="form-group">
                         <label for="bathrooms_n">Numero di bagni</label>
-                        <input type="text" name="bathrooms_n" class="form-control text-center" id="bathrooms_n" placeholder="..." size="1" value="{{ old('bathrooms_n', $apartment->bathrooms_n) }}">
+                        <input required min="1" type="number" name="bathrooms_n" class="form-control" id="bathrooms_n" placeholder="..." value="{{ old('bathrooms_n', $apartment->bathrooms_n) }}">
                     </div>
                     <div class="form-group">
                         <label for="square_mt">Metri quadri</label>
-                        <input type="text" name="square_mt" class="form-control text-center" id="square_mt" placeholder="..." size="2" value="{{ old('square_mt', $apartment->square_mt) }}">
+                        <input required min="1" type="number" name="square_mt" class="form-control" id="square_mt" placeholder="..." value="{{ old('square_mt', $apartment->square_mt) }}">
                     </div>
                     <div class="form-group mt-3">
                        Servizi:
@@ -61,7 +61,11 @@
                            <div class="form-check">
                                <label class="form-check-label">
                                    <input
+                                   @if($errors->any())
                                        {{ in_array($facility->id, old('facilities', [])) ? 'checked' : '' }}
+                                   @else
+                                       {{ $apartment->facilities->contains($facility) ? 'checked' : '' }}
+                                   @endif
                                        class="form-check-input"
                                        name="facilities[]"
                                        type="checkbox"
@@ -74,11 +78,11 @@
                     <div class="form-group">
                         <label for="img">Immagine</label>
                         <input type="file" name="image" class="form-control-file ">
-                        @if ( $apartment->main_pic)
-                            <img class="rounded" src="{{ $apartment->main_pic }}">
+                        {{-- @if ( $apartment->main_pic)
+                            <img class="rounded" src="{{ asset('storage/' . $apartment->main_pic) }}">
                             @else
                                 <p>Immagine non disponibile</p>
-                        @endif
+                        @endif --}}
                     </div>
                     <div class="form-group">
                         <input type="hidden" name="isPublic" value="0">

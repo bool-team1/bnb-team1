@@ -9,7 +9,7 @@
         </div>
         <div class="row">
             <div class="col-12 col-md-8 offset-md-2">
-            <img src="{{ $apartment->main_pic }}" alt="">
+            <img src="{{ asset('storage/' . $apartment->main_pic) }}" alt="">
             </div>
         </div>
         <div class="apartment-info-wrapper row mt-4">
@@ -17,28 +17,35 @@
                 <h2>Dove si trova:</h2>
                     <div id="map" class="map"></div>
                     <script type="text/javascript">
-                    var map = new ol.Map({
-                        target: 'map',
-                        layers: [
+                    const iconFeature = new ol.Feature({
+                        geometry: new ol.geom.Point(ol.proj.fromLonLat([{{$apartment->longitude}}, {{$apartment->latitude}}])),
+                        name: 'Posizione appartamento',
+                    });
+                    const map = new ol.Map({
+                    target: 'map',
+                    layers: [
                         new ol.layer.Tile({
-                            source: new ol.source.OSM()
-                        })
-                        ],
-                        view: new ol.View({
-                        center: ol.proj.fromLonLat([{{ $apartment->longitude }}, {{ $apartment->latitude }}]),
-                        zoom: 14
-                        })
-                    });
-                    var layer = new ol.layer.Vector({
+                        source: new ol.source.OSM(),
+                        }),
+                        new ol.layer.Vector({
                         source: new ol.source.Vector({
-                            features: [
-                                new ol.Feature({
-                                    geometry: new ol.geom.Point(ol.proj.fromLonLat([{{ $apartment->longitude }}, {{ $apartment->latitude }}]))
-                                })
-                            ]
+                            features: [iconFeature]
+                        }),
+                        style: new ol.style.Style({
+                            image: new ol.style.Icon({
+                            anchor: [0.5, 46],
+                            anchorXUnits: 'fraction',
+                            anchorYUnits: 'pixels',
+                            src: '{{ asset("storage/marker.png")}}'
+                            })
+                        })
+                        })
+                    ],
+                    view: new ol.View({
+                            center: ol.proj.fromLonLat([{{$apartment->longitude}}, {{$apartment->latitude}}]),
+                            zoom: 15
                         })
                     });
-                    map.addLayer(layer);
                     </script>
             </div>
             <div class="apartment-info col-12 col-md-6 text-center">

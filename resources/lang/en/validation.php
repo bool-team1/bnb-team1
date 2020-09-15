@@ -129,11 +129,7 @@ return [
     |
     */
 
-    'custom' => [
-        'attribute-name' => [
-            'rule-name' => 'custom-message',
-        ],
-    ],
+    'custom' => [],
 
     /*
     |--------------------------------------------------------------------------
@@ -146,6 +142,13 @@ return [
     |
     */
 
-    'attributes' => [],
+    'attributes' => [
+        'title' => 'Titolo',
+        'address' => 'Indirizzo',
+        'rooms_n' => 'Numero di stanze',
+        'bathrooms_n' => 'Numero di bagni',
+        'square_mt' => 'Metri quadrati',
+        'main_pic' => 'Immagine profilo',
+    ],
 
 ];

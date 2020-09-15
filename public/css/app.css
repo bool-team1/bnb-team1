@@ -16265,6 +16265,14 @@ label #sidebar_btn_2 {
   justify-content: center;
 }
 
+.buttons button {
+  padding: 0;
+}
+
+.buttons button a {
+  padding: 15px;
+}
+
 .btn-delete {
   margin-left: 9px;
 }
@@ -16352,6 +16360,21 @@ label #sidebar_btn_2 {
 
 .navbar-brand img {
   height: 60px;
+}
+
+.button-h {
+  border: none;
+  padding: 10px;
+  margin-right: 20px;
+  border-radius: 8px;
+  color: white;
+  background-color: #f56837;
+}
+.button-h p {
+  margin-bottom: 0px;
+}
+.button-h:hover {
+  color: white;
 }
 
 .button {
@@ -16466,13 +16489,13 @@ body h1 {
     height: 45px;
   }
 }
-.card {
+.card-apartment {
   background-color: #1c1c1c;
   border: 1px solid rgba(28, 28, 28, 0.125);
   color: white;
   border-radius: 8px;
 }
-.card a:hover::before {
+.card-apartment a:hover::before {
   content: "Visit Apartment";
   width: 100%;
   height: 45px;
@@ -16487,10 +16510,10 @@ body h1 {
   -webkit-animation-duration: 0.4s;
           animation-duration: 0.4s;
 }
-.card .card-img-top {
+.card-apartment .card-img-top {
   opacity: 0.65;
 }
-.card .card-img-top:hover {
+.card-apartment .card-img-top:hover {
   opacity: 1;
   transition-duration: 0.2s;
 }
@@ -16569,7 +16592,7 @@ body h1 {
 
 .form-search {
   margin-right: 6px;
-  width: 68%;
+  width: 99%;
 }
 
 .button a {
@@ -16595,14 +16618,31 @@ body h1 {
   font-weight: normal;
 }
 
-.fix-container {
+.new-apartament {
+  margin-top: 20px;
+  background-color: rgba(29, 29, 29, 0.7);
   color: white;
-}
-.fix-container .table th, .fix-container td {
-  color: white;
-}
-.fix-container .align-items-center h1 {
+  padding: 20px;
+  border-radius: 8px;
   margin-bottom: 50px;
+}
+
+.new-apartament-cont {
+  width: calc(100% - 245px);
+  padding-bottom: 52px;
+  margin-left: 245px;
+  background-color: #616161;
+  transition: 0.5s;
+  color: white;
+}
+
+@media screen and (max-width: 700px) {
+  .new-apartament-cont {
+    width: calc(100% - 60px);
+  }
+}
+.img-apartament {
+  margin-top: 20px;
 }
 
 * {
@@ -16679,14 +16719,16 @@ html, body {
 }
 .custom-auth-form {
   margin-top: 100px;
+  color: black;
 }
 
 .custom-auth-form-header {
-  background-color: #FF6633;
+  background-color: #616161;
+  color: white;
 }
 
 .custom-auth-form-body {
-  background-color: #616161;
+  background-color: white;
 }
 .custom-auth-form-body .btn-primary {
   background-color: #FF6633;
@@ -16696,29 +16738,30 @@ html, body {
 }
 
 .messages-list-wrapper {
-  width: 70%;
   margin: 100px auto;
-  background-color: #616161;
-  border: 2px solid #FF6633;
+  background-color: white;
+  border: 2px solid rgba(29, 29, 29, 0.87);
   border-radius: 5px;
   color: white;
 }
 .messages-list-wrapper .messages-list-header {
-  background-color: #FF6633;
-  color: black;
+  background-color: rgba(29, 29, 29, 0.87);
+  color: white;
   padding: 8px;
+  margin-left: -15px;
+  margin-right: -15px;
 }
 
 .message-read-wrapper {
   width: 70%;
   margin: 100px auto;
   background-color: #616161;
-  border: 2px solid #FF6633;
+  border: 2px solid #616161;
   border-radius: 5px;
   color: white;
 }
 .message-read-wrapper .message-read-header {
-  background-color: #FF6633;
+  background-color: #616161;
   color: black;
   padding: 8px;
 }
@@ -16759,6 +16802,16 @@ html, body {
 .message-create-wrapper .message-btn-back {
   background-color: inherit;
   color: #FF6633;
+}
+
+.btn-message {
+  margin-left: 0;
+  margin-bottom: 10px;
+  background-color: lightgray;
+}
+.btn-message:hover {
+  background-color: gray;
+  border-color: lightgray;
 }
 
 .search-wrapper {

@@ -22,26 +22,26 @@
                     @csrf
                     <div class="form-group">
                         <label for="titolo">Titolo</label>
-                        <input type="text" name="title" class="form-control" id="titolo" placeholder="..." value="{{ old('title') }}" max-length="30" size="35">
+                        <input  type="text" name="title" class="form-control" id="titolo" placeholder="..." value="{{ old('title') }}" max-length="30">
                     </div>
                     {{-- input per la ricerca --}}
                     <div class="form-group">
                             <label for="address">Inserisci l'indirizzo</label>
-                            <input type="search" name="address" id="address-input" placeholder="Es. Firenze" max-length="100"/>
-                            <input type="hidden" id="search-lat" name="latitude"/>
-                            <input type="hidden" id="search-lng" name="longitude"/>
+                            <input required type="search" name="address" id="address-input" placeholder="Es. Firenze" max-length="100"/>
+                            <input type="hidden" id="search-lat" name="latitude" value="{{ old('latitude') }}"/>
+                            <input type="hidden" id="search-lng" name="longitude" value="{{ old('longitude') }}"/>
                     </div>
                     <div class="form-group">
                         <label for="rooms_n">Numero di stanze</label>
-                        <input type="text" name="rooms_n" class="form-control text-center" id="rooms_n" placeholder="..." value="{{ old('rooms_n') }}" size="1">
+                        <input min="1" required type="number" name="rooms_n" class="form-control" id="rooms_n" placeholder="..." value="{{ old('rooms_n') }}">
                     </div>
                     <div class="form-group">
                         <label for="bathrooms_n">Numero di bagni</label>
-                        <input type="text" name="bathrooms_n" class="form-control text-center" id="bathrooms_n" placeholder="..." value="{{ old('bathrooms_n') }}" size="1">
+                        <input min="1" required  type="number" name="bathrooms_n" class="form-control" id="bathrooms_n" placeholder="..." value="{{ old('bathrooms_n') }}">
                     </div>
                     <div class="form-group">
                         <label for="square_mt">Metri quadri</label>
-                        <input type="text" name="square_mt" class="form-control text-center" id="square_mt" placeholder="..." value="{{ old('square_mt') }}" size="2">
+                        <input min="1" required type="number" name="square_mt" class="form-control" id="square_mt" placeholder="..." value="{{ old('square_mt') }}">
                     </div>
                     <input type="hidden" name="user_id" class="form-control-file" id="user_id" value= "{{$user_id}}">
 

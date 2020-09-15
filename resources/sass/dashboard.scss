@@ -361,6 +361,14 @@ label #sidebar_btn_2 {
   justify-content:center;
 }
 
+.buttons button {
+    padding: 0;
+}
+
+.buttons button a{
+    padding: 15px;
+}
+
 .btn-delete {
   margin-left: 9px;
 }
