@@ -13,15 +13,15 @@
                 <input type="hidden" name="apartment_id" value="{{ $apartment->id }}">
                 <div class="form-group">
                     <label for="sender">Inserisci il tuo nome</label>
-                    <input type="text" name="sender" class="form-control" id="sender" placeholder="Nome / Cognome" required value="{{ old('title') }}">
+                    <input max-length="30" type="text" name="sender" class="form-control" id="sender" placeholder="Nome / Cognome" required value="{{ old('title') }}">
                 </div>
                 <div class="form-group">
                     <label for="sender_email">Inserisci il tuo indirizzo email</label>
-                    <input type="text" name="sender_email" class="form-control" id="sender_email" placeholder="Email" required value="{{ old('content') }}">
+                    <input max-length="50" type="text" name="sender_email" class="form-control" id="sender_email" placeholder="Email" required value="{{ old('content') }}">
                 </div>
                 <div class="form-group">
                     <label for="object">Oggetto messaggio</label>
-                    <input type="text" name="object" class="form-control" id="object" required placeholder="Es: Richiesta disponibilità"  value="{{ old('content') }}">
+                    <input max-length="80" type="text" name="object" class="form-control" id="object" required placeholder="Es: Richiesta disponibilità"  value="{{ old('content') }}">
                 </div>
                 <div class="form-group">
                     <label for="body">Messaggio</label>

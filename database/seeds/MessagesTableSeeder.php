@@ -15,7 +15,7 @@ class MessagesTableSeeder extends Seeder
      {
          for ($i = 1; $i < 4; $i++){
              $newMessage = new Message();
-             $newMessage->apartment_id = 15;
+             $newMessage->apartment_id = 13;
              $newMessage->object = $faker->catchPhrase();
              $newMessage->body = $faker->realText(500);
              $newMessage->sender = $faker->name();

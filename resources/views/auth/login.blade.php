@@ -57,11 +57,9 @@
                                     {{ __('Login') }}
                                 </button>
 
-                                @if (Route::has('password.request'))
-                                    <a class="btn btn-link" href="{{ route('password.request') }}">
-                                        {{ __('auth.forgot-psw') }}
-                                    </a>
-                                @endif
+                                <a class="btn btn-primary" href="{{ route('register') }}">
+                                    Non sei un host? Registrati!
+                                </a>
                             </div>
                         </div>
                     </form>

@@ -153,43 +153,119 @@ if (document.getElementById('myChart')) {
     });
     //-------------- HOMEPAGE SLIDER END-----------------
 
-    $('.something').on("click", function(){
+    $('.custom-select').on("change", function(){
+
+        if ($('.custom-select option:selected').val() != 0) {
+            var apt_title = $('.custom-select option:selected').text();
+            $('#view_apt_title').text(apt_title);
+        }
+
+        var select_apartment_id = $(this).val();
+
         $.ajax({
             url : "http://localhost:8000/api/views",
             method : "GET",
             data : { user_id : userID },
             success: function(data) {
-                var data = data.apts_array;
-                console.log(data);
+                $('#msg_per_month').show();
+                $('#views_per_month').show();
 
+                var months = [
+                    'January',
+                    'February',
+                    'March',
+                    'April',
+                    'May',
+                    'June',
+                    'July',
+                    'August',
+                    'September',
+                    'October',
+                    'November',
+                    'December'
+                ];
+                var apartments = data.apts_array;
+                console.log(apartments);
                 //Cicla gli appartamenti restituiti dal json
-                data.forEach((apartment) => {
-                    console.log(apartment.apt_title);
-                    var months = [
-                        'January',
-                        'February',
-                        'March',
-                        'April',
-                        'May',
-                        'June',
-                        'July',
-                        'August',
-                        'September',
-                        'October',
-                        'November',
-                        'December'
-                    ];
+                apartments.forEach((apartment) => {
+                    //Lavora sull'appartamento dell'input select
+                    if (apartment.apt_id == select_apartment_id) {
+                        //Chart per messaggi
+                        var message_array = [];
+                        //Ordina per mese i dati dei messaggi
+                        for (var i = 1; i < 13; i++) {
+                           if (apartment.msg_per_month[i]) {
+                               message_array.push(apartment.msg_per_month[i]);
+                            } else {
+                                message_array.push(0);
+                            }
+                        }
+                        //Compila il grafico dei messaggi
+                        var myChart = new Chart($('#ChartMessage')[0].getContext('2d'), {
+                            type: 'line',
+                            data: {
+                                labels: months,
+                                datasets: [{
+                                    label: 'messaggi',
+                                    data: message_array,
+                                    backgroundColor: [
+                                        'rgb(255, 99, 132)',
+                                    ],
+                                    borderColor: [
+                                        'rgb(255, 99, 132)',
+                                    ],
+                                    borderWidth: 3
+                                }]
+                            },
+                            options: {
+                                scales: {
+                                    yAxes: [{
+                                        ticks: {
+                                            beginAtZero: true
+                                        }
+                                    }]
+                                }
+                            }
+                        });
 
-                    //Cicla msg_per_month e views_per_month che sono indicizzati per mese
-                    for (var i = 0; i < months.length; i++) {
-                        var key = i + 1;
-                        // ---msg/views_per_month restituiscono UNDEFINED se non ci sono records per quel mese---
-                        console.log(
-                            'Messages of ' + months[i] + ': ' + apartment.msg_per_month[key] + '\n' +
-                            'Views of ' + months[i] + ': ' + apartment.views_per_month[key]
-                        );
-                    }
-                    console.log('\n');
+                        // chart per visualizzazioni
+                        var views_array = [];
+                        //Ordina per mese i dati delle visualizzazioni
+                        for (var i = 1; i < 13; i++) {
+                           if (apartment.views_per_month[i]) {
+                               views_array.push(apartment.views_per_month[i]);
+                            } else {
+                                views_array.push(0);
+                            }
+                        }
+                        //Compila il grafico delle views
+                        var mySecondChart = new Chart($('#ChartViews')[0].getContext('2d'), {
+                            type: 'line',
+                            data: {
+                                labels: months,
+                                datasets: [{
+                                    label: 'visualizzazioni',
+                                    data: views_array,
+                                    backgroundColor: [
+                                        'rgba(207, 0, 15)',
+                                    ],
+                                    borderColor: [
+                                        'rgba(207, 0, 15)',
+                                    ],
+                                    borderWidth: 3
+                                }]
+                            },
+                            options: {
+                                scales: {
+                                    yAxes: [{
+                                        ticks: {
+                                            beginAtZero: true
+                                        }
+                                    }]
+                                }
+                            }
+                        });
+                    };
                 });
             },
             error : function(e) {
@@ -254,7 +330,7 @@ function printSearchResults(latitude, longitude, range, filters) {
                     $facilities_to_add = "Nessuno"
                   }
 
-                  $html_item_to_add = "<div class='result-item'><h6>" + data['normal_results'][i]['title'] + "</h6><div class='result-item-body'><img src='"+ data['normal_results'][i]['main_pic'] + "' alt=''><div class='result-item-details'><p><strong>Indirizzo: </strong>" + data['normal_results'][i]['address'] + "</p> <p><strong>Metri quadri: </strong>" + data['normal_results'][i]['square_mt'] + "</p> <p><strong>Stanze da letto: </strong>" + data['normal_results'][i]['rooms_n'] + "</p> <p><strong>Servizi: </strong>" + $facilities_to_add + "</p><p><strong>Distanza: </strong>" + data['normal_results'][i]['distance'].toFixed(2) + " km</p></div></div><a href='http://localhost:8000/" + data['normal_results'][i]['id'] +"/detail' class='btn btn-primary result-view'>Vedi i dettagli</a></div>";
+                  $html_item_to_add = "<div class='result-item'><h6>" + data['normal_results'][i]['title'] + "</h6><div class='result-item-body'><img src='http://localhost:8000/storage/" + data['normal_results'][i]['main_pic'] + "' alt=''><div class='result-item-details'><p><strong>Indirizzo: </strong>" + data['normal_results'][i]['address'] + "</p> <p><strong>Metri quadri: </strong>" + data['normal_results'][i]['square_mt'] + "</p> <p><strong>Stanze da letto: </strong>" + data['normal_results'][i]['rooms_n'] + "</p> <p><strong>Servizi: </strong>" + $facilities_to_add + "</p><p><strong>Distanza: </strong>" + data['normal_results'][i]['distance'].toFixed(2) + " km</p></div></div><a href='http://localhost:8000/" + data['normal_results'][i]['id'] +"/detail' class='btn btn-primary result-view'>Vedi i dettagli</a></div>";
 
                   $(".search-results-details #normal-results").append($html_item_to_add);
                 }

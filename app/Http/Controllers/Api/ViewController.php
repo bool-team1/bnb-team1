@@ -20,7 +20,7 @@ class ViewController extends Controller
         $apartments = Apartment::where('user_id', $user_id)->get();
 
             foreach ($apartments as $apartment) {
-                $apt_array = ['apt_title' => $apartment->title];
+                $apt_array = ['apt_title' => $apartment->title, 'apt_id' => $apartment->id];
                 $msg_months_array = [];
                 $views_months_array = [];
 

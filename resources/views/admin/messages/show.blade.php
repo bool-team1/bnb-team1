@@ -11,6 +11,7 @@
         </div>
         <div class="message-read-body">
             {{ $message->body }}
+            <a class="btn btn-primary d-block mt-3" href="{{ route('admin.message.index')}}">Torna ai messaggi</a>
         </div>
     </div>
 @endsection
