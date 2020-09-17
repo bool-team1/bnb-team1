@@ -55,6 +55,7 @@ class ApartmentController extends Controller
                 'rooms_n' => 'required|numeric|min:1',
                 'bathrooms_n' => 'required|numeric|min:1',
                 'square_mt' => 'required|numeric|min:1',
+                'main_pic' => 'image|max:1024',
                 'longitude' => 'required',
                 'latitude' => 'required'
        ]);

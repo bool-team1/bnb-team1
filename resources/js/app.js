@@ -224,7 +224,8 @@ if (document.getElementById('myChart')) {
                                             beginAtZero: true
                                         }
                                     }]
-                                }
+                                },
+                                responsive: true
                             }
                         });
 

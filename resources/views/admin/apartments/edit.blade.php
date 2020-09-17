@@ -78,11 +78,6 @@
                     <div class="form-group">
                         <label for="img">Immagine</label>
                         <input type="file" name="image" class="form-control-file ">
-                        {{-- @if ( $apartment->main_pic)
-                            <img class="rounded" src="{{ asset('storage/' . $apartment->main_pic) }}">
-                            @else
-                                <p>Immagine non disponibile</p>
-                        @endif --}}
                     </div>
                     <div class="form-group">
                         <input type="hidden" name="isPublic" value="0">

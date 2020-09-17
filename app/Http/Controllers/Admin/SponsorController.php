@@ -8,6 +8,7 @@ use Braintree;
 use App\Ad;
 use App\Apartment;
 use DateTime;
+use Auth;
 
 class SponsorController extends Controller
 {
@@ -26,6 +27,7 @@ class SponsorController extends Controller
         // Check if apt has already an active sponsor
         $ads = Ad::all();
         $data = $ads->where('apartment_id', $_GET['apt_id']);
+        $apartment = Apartment::find($_GET['apt_id']);
         date_default_timezone_set('Europe/Rome');
         $isActive = false;
         foreach ($data as $ad) {
@@ -45,6 +47,8 @@ class SponsorController extends Controller
 
             return redirect()->route('admin.home', ['active_sponsor' => 'true']);
 
+        } elseif ($apartment->user_id != Auth::id()) {
+            return redirect()->route('admin.home', ['wrong_user' => 'true']);
         } else {
             return view('admin.sponsor.sponsor', ['token' => $token]);
         }

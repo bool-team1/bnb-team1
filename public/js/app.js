@@ -85315,7 +85315,8 @@ $(document).ready(function () {
                       beginAtZero: true
                     }
                   }]
-                }
+                },
+                responsive: true
               }
             }); // chart per visualizzazioni
 

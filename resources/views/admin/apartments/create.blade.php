@@ -73,8 +73,8 @@
                        @endforeach
                    </div>
                    <div class="form-group">
-                       <label for="main_pic" class="input-file-label"></label>
-                       <input type="file" name="main_pic" class="form-control-file" id="main_pic">
+                       <label for="img" class="input-file-label"></label>
+                       <input type="file" name="image" class="form-control-file" id="main_pic">
                    </div>
                     <div class="form-group">
                         <input type="hidden" name="isPublic" value="0">
