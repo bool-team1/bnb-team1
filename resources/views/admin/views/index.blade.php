@@ -5,6 +5,7 @@
         var userID = "{{ Auth::user()->id }}";
     </script>
 @endif
+<main class="content col-lg-12 col-md-10 col-sm-4 new-apartament-cont">
     <div class="container">
         <div class="row">
             <div class="col-10 offset-2">
@@ -38,4 +39,5 @@
             </div>
         </div>
     </div>
+</main>
 @endsection
