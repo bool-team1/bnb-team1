@@ -85251,15 +85251,48 @@ $(document).ready(function () {
     $longitude = $("#search-lng").val();
     console.log('ok');
     window.location.replace('http://localhost:8000/search?lat=' + $latitude + '&lng=' + $longitude + '&range=30');
-  }); //-------------- HOMEPAGE SLIDER -----------------
+  }); //-------------- HOMEPAGE SLIDERS -----------------
 
-  $('#autoWidth').lightSlider({
+  var sponsored_slider = $('#autoWidth').lightSlider({
     autoWidth: true,
     loop: true,
+    controls: false,
     onSliderLoad: function onSliderLoad() {
       $('#autoWidth').removeClass('cS-hidden');
     }
-  }); //-------------- HOMEPAGE SLIDER END-----------------
+  });
+  var populars_slider = $('#responsive').lightSlider({
+    item: 3,
+    loop: true,
+    controls: false,
+    responsive: [{
+      breakpoint: 992,
+      settings: {
+        item: 2,
+        slideMove: 1
+      }
+    }, {
+      breakpoint: 390,
+      settings: {
+        item: 1,
+        slideMove: 1
+      }
+    }]
+  });
+  $('#pop_prev').click(function () {
+    populars_slider.goToPrevSlide();
+  });
+  $('#pop_next').click(function () {
+    populars_slider.goToNextSlide();
+  });
+  $('#spn_prev').click(function () {
+    sponsored_slider.goToPrevSlide();
+    console.log('spn_prev');
+  });
+  $('#spn_next').click(function () {
+    sponsored_slider.goToNextSlide();
+    console.log('spn_next');
+  }); //-------------- HOMEPAGE SLIDERS END-----------------
 
   $('.custom-select').on("change", function () {
     if ($('.custom-select option:selected').val() != 0) {
@@ -85303,7 +85336,7 @@ $(document).ready(function () {
                 datasets: [{
                   label: 'messaggi',
                   data: message_array,
-                  backgroundColor: ['rgb(255, 99, 132)'],
+                  backgroundColor: ['rgba(255, 99, 132, .3)'],
                   borderColor: ['rgb(255, 99, 132)'],
                   borderWidth: 3
                 }]
@@ -85338,7 +85371,7 @@ $(document).ready(function () {
                 datasets: [{
                   label: 'visualizzazioni',
                   data: views_array,
-                  backgroundColor: ['rgba(207, 0, 15)'],
+                  backgroundColor: ['rgba(207, 0, 15, .3)'],
                   borderColor: ['rgba(207, 0, 15)'],
                   borderWidth: 3
                 }]

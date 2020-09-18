@@ -29,7 +29,7 @@
                 <div id="filters-list">
                 @foreach ($facilities as $facility)
                     <div>
-                        <label for="{{ $facility->type }} d-inline"><input type="checkbox" name="{{ $facility->type }}" value="{{ $facility->type }}"> {{ $facility->type }}</label>
+                        <label for="{{ $facility->type }} d-inline"><input type="checkbox" name="{{ $facility->type }}" value="{{ $facility->type }}"> {{ ucfirst($facility->type) }}</label>
                     </div>
                 @endforeach
                 </div>

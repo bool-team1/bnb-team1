@@ -143,15 +143,53 @@ if (document.getElementById('myChart')) {
         window.location.replace('http://localhost:8000/search?lat=' + $latitude + '&lng=' + $longitude + '&range=30');
     });
 
-    //-------------- HOMEPAGE SLIDER -----------------
-        $('#autoWidth').lightSlider({
+    //-------------- HOMEPAGE SLIDERS -----------------
+    var sponsored_slider = $('#autoWidth').lightSlider({
         autoWidth:true,
         loop:true,
+        controls: false,
         onSliderLoad: function() {
             $('#autoWidth').removeClass('cS-hidden');
         }
     });
-    //-------------- HOMEPAGE SLIDER END-----------------
+    var populars_slider = $('#responsive').lightSlider({
+        item: 3,
+        loop:true,
+        controls: false,
+        responsive : [
+           {
+               breakpoint:992,
+               settings: {
+                   item:2,
+                   slideMove:1
+                 }
+           },
+           {
+               breakpoint: 390,
+               settings: {
+                   item:1,
+                   slideMove:1
+                 }
+           }
+       ]
+    });
+
+    $('#pop_prev').click(function(){
+        populars_slider.goToPrevSlide();
+    });
+    $('#pop_next').click(function(){
+        populars_slider.goToNextSlide();
+    });
+    $('#spn_prev').click(function(){
+        sponsored_slider.goToPrevSlide();
+        console.log('spn_prev');
+    });
+    $('#spn_next').click(function(){
+        sponsored_slider.goToNextSlide();
+        console.log('spn_next');
+    });
+
+    //-------------- HOMEPAGE SLIDERS END-----------------
 
     $('.custom-select').on("change", function(){
 
@@ -209,7 +247,7 @@ if (document.getElementById('myChart')) {
                                     label: 'messaggi',
                                     data: message_array,
                                     backgroundColor: [
-                                        'rgb(255, 99, 132)',
+                                        'rgba(255, 99, 132, .3)',
                                     ],
                                     borderColor: [
                                         'rgb(255, 99, 132)',
@@ -248,7 +286,7 @@ if (document.getElementById('myChart')) {
                                     label: 'visualizzazioni',
                                     data: views_array,
                                     backgroundColor: [
-                                        'rgba(207, 0, 15)',
+                                        'rgba(207, 0, 15, .3)',
                                     ],
                                     borderColor: [
                                         'rgba(207, 0, 15)',

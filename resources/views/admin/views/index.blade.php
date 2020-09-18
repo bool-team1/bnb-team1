@@ -5,7 +5,7 @@
         var userID = "{{ Auth::user()->id }}";
     </script>
 @endif
-    <div class="container">
+    <div class="container mb-5">
         <div class="row">
             <div class="col-10 offset-2">
                 <div class="input-group">
@@ -30,7 +30,7 @@
                     <canvas id="ChartMessage"></canvas>
                 </div>
             </div>
-            <div class="col-10 offset-2">
+            <div class="col-10 offset-2 mt-3">
                 <div id="views_per_month">
                     <h2>Visualizzazioni per mese</h2>
                     <canvas id="ChartViews"></canvas>

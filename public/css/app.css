@@ -16522,6 +16522,9 @@ body h1 {
   opacity: 1;
   transition-duration: 0.2s;
 }
+.card-apartment .card-text:first-of-type {
+  font-size: 13px;
+}
 
 .btn-danger {
   background-color: #f56837;
@@ -16628,6 +16631,32 @@ body h1 {
   height: 185px;
   overflow: hidden;
   text-align: center;
+}
+
+.house-feat {
+  position: relative;
+}
+
+#spn_prev, #spn_next, #pop_prev, #pop_next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  font-size: 50px;
+  color: white;
+}
+#spn_prev:focus, #spn_next:focus, #pop_prev:focus, #pop_next:focus {
+  border: none;
+  outline: none;
+}
+
+#spn_prev, #pop_prev {
+  left: -20px;
+}
+
+#spn_next, #pop_next {
+  right: -20px;
 }
 
 .new-apartament {

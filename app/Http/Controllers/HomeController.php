@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Apartment;
+use App\View;
 
 class HomeController extends Controller
 {
@@ -16,10 +17,10 @@ class HomeController extends Controller
            ->with('facilities')
            ->with('ads')
            ->get();
+       $popular_results = Apartment::withCount('views')->orderBy('views_count', 'desc')->take(6)->get();
         $sponsored_index = 0;
         $sponsored_results = array();
         $current_date = date('Y-m-d H:i:s');
-
            foreach ($apartments as $element) {
                if(count($element->ads) > 0) {
                    $current_apartment = [
@@ -46,6 +47,6 @@ class HomeController extends Controller
                    }
                };
             };
-        return view('home', ['sponsored_results' => $sponsored_results]);
+        return view('home', ['sponsored_results' => $sponsored_results, 'popular_results' => $popular_results]);
     }
 }
