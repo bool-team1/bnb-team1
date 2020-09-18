@@ -111,9 +111,18 @@
     background-color: #313131;
     color: White;
     margin-bottom: 200px;
+    border-radius: 8px;
     .apartment-detail-header {
-        background-color: #FF6633;
+        background-color: lightgrey;
         color: black;
+    }
+    h2 {
+      margin-top: 10px;
+      color: $specialdark;
+    }
+    h3 {
+      font-size: 18px;
+      margin-bottom: 15px;
     }
     img {
         width: 100%;
@@ -122,6 +131,11 @@
     }
     .apartment-info-wrapper {
         margin-top: 10px;
+        margin-left: 2%;
+        margin-right: 2%;
+        h2 {
+          color: white;
+        }
         .apartment-map {
             .map {
                 height: 400px;
@@ -129,8 +143,17 @@
             }
         }
         .apartment-info {
-            display: inline-block;
-            margin-top: 40px;
+          border-radius: 8px;
+          background-color: rgba(29,29,29,0.7);
+          margin-left: 8%;
+          display: inline-block;
+          margin-top: 45px;
+            .info-apartament {
+              margin-top: 12%;
+            }
+            p{
+              margin-top: 2%;
+            }
             strong {
                 color: #FF6633;
             }
@@ -139,7 +162,6 @@
             }
             .apartment-services {
                 display: inline-block;
-                background-color: black;
                 padding: 15px;
                 ul {
                     li {
@@ -151,14 +173,16 @@
         }
     }
     .apartment-links {
+        margin-top: 10px;
         padding: 20px;
         .apartment-btn-main {
             background-color: #FF6633;
             color: white;
         }
         .apartment-btn-back {
-            background-color: inherit;
-            color: #FF6633;
+            padding: 6px;
+            background-color: orange;
+            color: white;
         }
     }
 }
