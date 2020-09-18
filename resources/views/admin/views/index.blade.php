@@ -6,9 +6,9 @@
     </script>
 @endif
 <main class="content col-lg-12 col-md-10 col-sm-4 new-apartament-cont">
-    <div class="container">
-        <div class="row">
-            <div class="col-10 offset-2">
+    <div class="container view_data">
+        <div class="row bg-spdark">
+            <div class="col-12">
                 <div class="input-group">
                     @if (count($apartments) <= 0)
                         @php
@@ -24,18 +24,20 @@
                     @endif
                 </div>
             </div>
-            <h2 id="view_apt_title" class="col-10 offset-2 text-center my-5"></h2>
-            <div class="col-10 offset-2">
-                <div id="msg_per_month">
-                    <h2>Messaggi per mese</h2>
-                    <canvas id="ChartMessage"></canvas>
-                </div>
-            </div>
-            <div class="col-10 offset-2">
-                <div id="views_per_month">
-                    <h2>Visualizzazioni per mese</h2>
-                    <canvas id="ChartViews"></canvas>
-                </div>
+            <div class="container container_view">
+              <h2 id="view_apt_title" class="col-12 my-5"></h2>
+              <div class="col-12 ">
+                  <div id="msg_per_month">
+                      <h4>Messaggi per mese</h4>
+                      <canvas id="ChartMessage"></canvas>
+                  </div>
+              </div>
+              <div class="col-12">
+                  <div id="views_per_month">
+                      <h4>Visualizzazioni per mese</h4>
+                      <canvas id="ChartViews"></canvas>
+                  </div>
+              </div>
             </div>
         </div>
     </div>
