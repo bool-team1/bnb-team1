@@ -16218,6 +16218,10 @@ label #sidebar_btn_2 {
   .content {
     width: calc(100% - 60px);
   }
+
+  .buttons button {
+    margin-bottom: 10px;
+  }
 }
 #check:checked ~ .content {
   width: calc(100% - 60px);
@@ -16261,7 +16265,6 @@ label #sidebar_btn_2 {
 }
 
 .buttons {
-  margin-left: 6px;
   justify-content: center;
 }
 
@@ -16446,7 +16449,7 @@ body h1 {
   border-radius: 8px;
 }
 .card-apartment a:hover::before {
-  content: "Visit Apartment";
+  content: "Vedi appartamento";
   width: 100%;
   height: 45px;
   background: #f56837d1;
@@ -16662,6 +16665,10 @@ html, body {
 
 .ap-icon-pin, .ap-icon-clear {
   display: none;
+}
+
+.form-control input {
+  box-shadow: none;
 }
 
 .form_wrap {
@@ -16928,6 +16935,7 @@ html, body {
   margin-bottom: 15px;
 }
 .apartment-detail-wrapper img {
+  margin-top: 30px;
   width: 100%;
   border: 1px solid lightgrey;
   border-top: none;
@@ -17408,4 +17416,39 @@ html, body {
 
 h2 {
   color: white;
+}
+
+.bg-spdark {
+  text-align: center;
+  background-color: #1c1c1c;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.view_data {
+  padding-top: 30px;
+}
+
+.container_view {
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.msg_chart_wrap, .views_chart_wrap {
+  height: 300px;
+}
+
+.views_chart_wrap {
+  margin-top: 50px;
+}
+
+@media screen and (max-width: 700px) {
+  .container_view {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .msg_chart_wrap, .views_chart_wrap {
+    height: 250px;
+  }
 }

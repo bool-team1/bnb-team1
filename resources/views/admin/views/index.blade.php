@@ -26,16 +26,20 @@
             </div>
             <div class="container container_view">
               <h2 id="view_apt_title" class="col-12 my-5"></h2>
-              <div class="col-12 ">
+              <div class="col-12 mb-5">
                   <div id="msg_per_month">
                       <h4>Messaggi per mese</h4>
-                      <canvas id="ChartMessage"></canvas>
+                      <div class="msg_chart_wrap">
+                          <canvas id="ChartMessage"></canvas>
+                      </div>
                   </div>
               </div>
               <div class="col-12">
                   <div id="views_per_month">
                       <h4>Visualizzazioni per mese</h4>
-                      <canvas id="ChartViews"></canvas>
+                      <div class="views_chart_wrap">
+                          <canvas id="ChartViews"></canvas>
+                      </div>
                   </div>
               </div>
             </div>

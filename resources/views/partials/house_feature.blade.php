@@ -57,6 +57,6 @@
                 @php $pop_i++; @endphp
             @endforeach
         </ul>
-        <button name="button" id="pop_prev" style="position: absolute; top: 50%; left: -20px;"><</button>
-        <button name="button" id="pop_next" style="position: absolute; top: 50%; right: -20px;">></button>
+        <button name="button" id="pop_prev"><</button>
+        <button name="button" id="pop_next"></button>
 </div>

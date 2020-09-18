@@ -35,26 +35,25 @@
                     </div>
                     <div class="form-group">
                         <label for="rooms_n">Numero di stanze</label>
-                        <input required min="1" type="number" name="rooms_n" class="form-control" id="rooms_n" placeholder="..." value="{{ old('rooms_n', $apartment->rooms_n) }}">
+                        <input required min="1" max="30" type="number" name="rooms_n" class="form-control" id="rooms_n" placeholder="..." value="{{ old('rooms_n', $apartment->rooms_n) }}">
                     </div>
-                    <div class="form-group">
-                        <label for="bathrooms_n">Numero di bagni</label>
-                        <input required min="1" type="number" name="bathrooms_n" class="form-control" id="bathrooms_n" placeholder="..." value="{{ old('bathrooms_n', $apartment->bathrooms_n) }}">
+                    <div class="form-group">                        <label for="bathrooms_n">Numero di bagni</label>
+                        <input required min="1" max="5" type="number" name="bathrooms_n" class="form-control" id="bathrooms_n" placeholder="..." value="{{ old('bathrooms_n', $apartment->bathrooms_n) }}">
                     </div>
                     <div class="form-group">
                         <label for="square_mt">Metri quadri</label>
-                        <input required min="1" type="number" name="square_mt" class="form-control" id="square_mt" placeholder="..." value="{{ old('square_mt', $apartment->square_mt) }}">
+                        <input required min="1" max="10000" type="number" name="square_mt" class="form-control" id="square_mt" placeholder="..." value="{{ old('square_mt', $apartment->square_mt) }}">
                     </div>
                     <div class="form-group mt-3">
                        Servizi:
                        @php
                            $services = [
-                               1 => 'Wifi<i class="fas fa-wifi"></i></li>',
-                               2 => 'Swimming pool<i class="fas fa-swimming-pool"></i>',
-                               3 => 'Turkish Bath<i class="fas fa-hot-tub"></i>',
-                               4 => 'Car Spot<i class="fas fa-parking"></i>',
-                               5 => 'Reception<i class="fas fa-concierge-bell"></i>',
-                               6 => 'Sea sight<i class="fas fa-water"></i>',
+                               1 => 'Wifi <i class="fas fa-wifi pl-1" style="color: #f56837;"></i></li>',
+                               2 => 'Piscina <i class="fas fa-swimming-pool pl-1" style="color: #f56837;"></i>',
+                               3 => 'Sauna <i class="fas fa-hot-tub pl-1" style="color: #f56837;"></i>',
+                               4 => 'Posto Auto <i class="fas fa-parking pl-1" style="color: #f56837;"></i>',
+                               5 => 'Portineria <i class="fas fa-concierge-bell pl-1" style="color: #f56837;"></i>',
+                               6 => 'Vista mare <i class="fas fa-water pl-1" style="color: #f56837;"></i>',
                            ];
                        @endphp
                        @foreach ($facilities  as $facility)

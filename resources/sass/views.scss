@@ -30,13 +30,20 @@ h2 {
   margin-right: 10%;
 }
 
-#ChartMessage {
-  margin-bottom: 40px;
+.msg_chart_wrap, .views_chart_wrap {
+    height: 300px;
+}
+
+.views_chart_wrap {
+    margin-top: 50px;
 }
 
 @media screen and (max-width: 700px) {
   .container_view {
     margin-left: 0;
     margin-right: 0;
+  }
+  .msg_chart_wrap, .views_chart_wrap {
+      height: 250px;
   }
 }

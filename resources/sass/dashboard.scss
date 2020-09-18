@@ -314,6 +314,9 @@ label #sidebar_btn_2 {
     .content {
         width: calc(100% - 60px);
     }
+    .buttons button {
+        margin-bottom: 10px;
+    }
 }
 #check:checked ~ .content {
     width: calc(100% - 60px);
@@ -357,7 +360,6 @@ label #sidebar_btn_2 {
 }
 
 .buttons {
-  margin-left: 6px;
   justify-content:center;
 }
 

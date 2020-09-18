@@ -256,6 +256,8 @@ if (document.getElementById('myChart')) {
                                 }]
                             },
                             options: {
+                                responsive: true,
+                                maintainAspectRatio: false,
                                 scales: {
                                     yAxes: [{
                                         ticks: {
@@ -295,6 +297,8 @@ if (document.getElementById('myChart')) {
                                 }]
                             },
                             options: {
+                                responsive: true,
+                                maintainAspectRatio: false,
                                 scales: {
                                     yAxes: [{
                                         ticks: {
@@ -346,9 +350,9 @@ function printSearchResults(latitude, longitude, range, filters) {
 
                 for (i = 0; i < $tot_sponsored; i++) {
                   if (data['sponsored_results'][i]['facilities']) {
-                    $facilities_to_add = data['sponsored_results'][i]['facilities'].toString();
+                    $facilities_to_add = data['sponsored_results'][i]['facilities'].join(', ');
                   } else {
-                    $facilities_to_add = "Nessuno"
+                    $facilities_to_add = "Nessuno";
                   }
 
                   $html_item_to_add = "<div class='result-item'><h6>" + data['sponsored_results'][i]['title'] + "</h6><div class='result-item-body'><img src='http://localhost:8000/storage/" + data['sponsored_results'][i]['main_pic'] + "' alt=''><div class='result-item-details'><p><strong>Indirizzo: </strong>" + data['sponsored_results'][i]['address'] + "</p> <p><strong>Metri quadri: </strong>" + data['sponsored_results'][i]['square_mt'] + "</p> <p><strong>Stanze da letto: </strong>" + data['sponsored_results'][i]['rooms_n'] + "</p> <p><strong>Servizi: </strong>" + $facilities_to_add + "</p><p><strong>Distanza: </strong>" + data['sponsored_results'][i]['distance'].toFixed(2) + " km</p></div></div><a href='http://localhost:8000/" + data['sponsored_results'][i]['id'] +"/detail' class='btn btn-primary result-view'>Vedi i dettagli</a></div>";
@@ -364,7 +368,7 @@ function printSearchResults(latitude, longitude, range, filters) {
 
                 for (i = 0; i < $tot_not_sponsored; i++) {
                   if (data['normal_results'][i]['facilities']) {
-                    $facilities_to_add = data['normal_results'][i]['facilities'].toString();
+                    $facilities_to_add = data['normal_results'][i]['facilities'].join(', ');
                   } else {
                     $facilities_to_add = "Nessuno"
                   }

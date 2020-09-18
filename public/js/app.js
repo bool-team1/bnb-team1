@@ -85109,6 +85109,8 @@ module.exports = function(module) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 __webpack_require__(/*! ./lightslider */ "./resources/js/lightslider.js"); //Jquery dependency
@@ -85341,16 +85343,17 @@ $(document).ready(function () {
                   borderWidth: 3
                 }]
               },
-              options: {
+              options: _defineProperty({
+                responsive: true,
+                maintainAspectRatio: false,
                 scales: {
                   yAxes: [{
                     ticks: {
                       beginAtZero: true
                     }
                   }]
-                },
-                responsive: true
-              }
+                }
+              }, "responsive", true)
             }); // chart per visualizzazioni
 
             var views_array = []; //Ordina per mese i dati delle visualizzazioni
@@ -85377,6 +85380,8 @@ $(document).ready(function () {
                 }]
               },
               options: {
+                responsive: true,
+                maintainAspectRatio: false,
                 scales: {
                   yAxes: [{
                     ticks: {
@@ -85425,7 +85430,7 @@ function printSearchResults(latitude, longitude, range, filters) {
 
         for (i = 0; i < $tot_sponsored; i++) {
           if (data['sponsored_results'][i]['facilities']) {
-            $facilities_to_add = data['sponsored_results'][i]['facilities'].toString();
+            $facilities_to_add = data['sponsored_results'][i]['facilities'].join(', ');
           } else {
             $facilities_to_add = "Nessuno";
           }
@@ -85442,7 +85447,7 @@ function printSearchResults(latitude, longitude, range, filters) {
       if ($tot_not_sponsored > 0) {
         for (i = 0; i < $tot_not_sponsored; i++) {
           if (data['normal_results'][i]['facilities']) {
-            $facilities_to_add = data['normal_results'][i]['facilities'].toString();
+            $facilities_to_add = data['normal_results'][i]['facilities'].join(', ');
           } else {
             $facilities_to_add = "Nessuno";
           }
