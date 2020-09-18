@@ -16928,6 +16928,7 @@ html, body {
   margin-bottom: 15px;
 }
 .apartment-detail-wrapper img {
+  margin-top: 30px;
   width: 100%;
   border: 1px solid lightgrey;
   border-top: none;
@@ -17408,4 +17409,31 @@ html, body {
 
 h2 {
   color: white;
+}
+
+.bg-spdark {
+  text-align: center;
+  background-color: #1c1c1c;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.view_data {
+  padding-top: 30px;
+}
+
+.container_view {
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+#ChartMessage {
+  margin-bottom: 40px;
+}
+
+@media screen and (max-width: 700px) {
+  .container_view {
+    margin-left: 0;
+    margin-right: 0;
+  }
 }
