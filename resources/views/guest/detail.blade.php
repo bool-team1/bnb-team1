@@ -48,10 +48,12 @@
                     });
                     </script>
             </div>
-            <div class="apartment-info col-12 col-md-6 text-center">
-                <p><strong>Metri quadrati: </strong>{{ $apartment->square_mt }}</p>
-                <p><strong>Stanze da letto: </strong>{{ $apartment->rooms_n }}</p>
-                <p><strong>Numero bagni: </strong>{{ $apartment->bathrooms_n }}</p>
+            <div class="apartment-info col-8 col-md-5 text-center">
+              <div class="info-apartament">
+                <p><strong>Metri quadrati: </strong> &nbsp; {{ $apartment->square_mt }}</p>
+                <p><strong>Stanze da letto: </strong> &nbsp; {{ $apartment->rooms_n }}</p>
+                <p><strong>Numero bagni: </strong> &nbsp; {{ $apartment->bathrooms_n }}</p>
+              </div>
                 @php
                          $services = [
                                   1 => '<li><i class="fas fa-wifi"></i> Wifi</li>',

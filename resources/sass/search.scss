@@ -1,17 +1,24 @@
 .search-wrapper {
     background-color: lightgrey;
-    padding-bottom: 200px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 10px;
+    margin-bottom: 50px;
+    border-radius: 8px;
     .search-header {
-        background-color: orange;
-        padding: 8px;
+        background-color: lightgrey;
+        padding-top: 2px;
+        padding-bottom: 10px;
         display: flex;
         justify-content: space-between;
         align-items: center;
         color: black;
         #search-submit {
-            padding: 8px;
-            background-color: #333333;
-            color: orange;
+            border-radius: 8px;
+            padding: 8px 16px;
+            background-color: orange;
+            color: white;
+            border:none;
         }
     }
     .search-body {
@@ -33,6 +40,8 @@
         .search-results-details {
             background-color: #F1F1F1;
             color: white;
+            padding-bottom: 14px;
+            border-radius: 8px;
             #results-count {
                 padding: 8px 15px;
                 color: black;
@@ -41,6 +50,11 @@
                     text-align: center;
                 }
             }
+            .btn {
+              border: none;
+              color: white;
+              margin-left: 50%;
+            }
             #sponsored-results {
                 padding: 0px;
                 #sponsored-header {
@@ -48,17 +62,17 @@
                         padding: 10px;
                         color: black;
                         font-weight: bold;
+                        margin-bottom: 0;
                     }
                     background-color: orange;
                     text-align: center;
                 }
             }
             .sponsored-border {
-                border: 3px solid orange;
+                border: 9px solid orange;
             }
             .result-item {
                 text-align: center;
-                margin: 10px 0px;
                 background-color: #313131;
                 h6 {
                     background-color: black;
@@ -87,6 +101,7 @@
                     color: black;
                     background-color: orange;
                     margin: 10px auto;
+                    margin-bottom: 30px;
                 }
             }
         }
@@ -96,9 +111,18 @@
     background-color: #313131;
     color: White;
     margin-bottom: 200px;
+    border-radius: 8px;
     .apartment-detail-header {
-        background-color: #FF6633;
+        background-color: lightgrey;
         color: black;
+    }
+    h2 {
+      margin-top: 10px;
+      color: $specialdark;
+    }
+    h3 {
+      font-size: 18px;
+      margin-bottom: 15px;
     }
     img {
         width: 100%;
@@ -107,6 +131,11 @@
     }
     .apartment-info-wrapper {
         margin-top: 10px;
+        margin-left: 2%;
+        margin-right: 2%;
+        h2 {
+          color: white;
+        }
         .apartment-map {
             .map {
                 height: 400px;
@@ -114,8 +143,17 @@
             }
         }
         .apartment-info {
-            display: inline-block;
-            margin-top: 40px;
+          border-radius: 8px;
+          background-color: rgba(29,29,29,0.7);
+          margin-left: 8%;
+          display: inline-block;
+          margin-top: 45px;
+            .info-apartament {
+              margin-top: 12%;
+            }
+            p{
+              margin-top: 2%;
+            }
             strong {
                 color: #FF6633;
             }
@@ -124,7 +162,6 @@
             }
             .apartment-services {
                 display: inline-block;
-                background-color: black;
                 padding: 15px;
                 ul {
                     li {
@@ -136,14 +173,16 @@
         }
     }
     .apartment-links {
+        margin-top: 10px;
         padding: 20px;
         .apartment-btn-main {
             background-color: #FF6633;
             color: white;
         }
         .apartment-btn-back {
-            background-color: inherit;
-            color: #FF6633;
+            padding: 6px;
+            background-color: orange;
+            color: white;
         }
     }
 }
